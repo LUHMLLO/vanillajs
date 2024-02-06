@@ -1,32 +1,36 @@
 /**
- * @description Functional lib for making dropdown components.
+ * @description A library for creating and managing dropdown components.
+ * @class
  */
 class Drops {
 	/**
-	 * @param {Element[]} drops
-	 * @returns {Array<Element>}
+	 * @description Gets an array of dropdown elements.
+	 * @param {NodeListOf<Element>} [drops=document.querySelectorAll('dropdown')] - The dropdown elements.
+	 * @returns {Element[]} An array of dropdown elements.
 	 */
-	getDrops(drops = [...document.querySelectorAll('dropdown')]) {
-		return drops;
+	getDrops(drops = document.querySelectorAll("dropdown")) {
+		return [...drops];
 	}
 
 	/**
-	 * @description Initializes the drops components.
-	 * @param {Element[]} drops
+	 * @description Initializes dropdown components.
+	 * @param {Element[]} [drops=this.getDrops()] - The dropdown elements to initialize.
 	 */
 	init(drops = this.getDrops()) {
-		if (!drops?.length) {
-			return console.warn('no dropdown component found');
+		if (!drops.length) {
+			console.warn("Drops: No dropdown component found.");
+			return;
 		}
 
-		drops?.forEach((drop) => {
-			const toggle = drop?.querySelector('toggle');
+		drops.forEach((drop) => {
+			const toggle = drop.querySelector("toggle");
 			if (!toggle) {
-				return console.warn('unable to find toggle inside dropdown');
+				console.warn("Drops: Unable to find toggle inside dropdown.");
+				return;
 			}
 
-			toggle?.addEventListener('click', (/** @type {Event}*/ e) => {
-				e.preventDefault();
+			toggle.addEventListener("click", (event) => {
+				event.preventDefault();
 				this.toggle(drop);
 			});
 		});
@@ -38,24 +42,29 @@ class Drops {
 	 */
 	toggle(dropdown) {
 		if (!dropdown) {
-			return console.warn('unable to find dropdown');
+			console.warn("Drops: Unable to find dropdown.");
+			return;
 		}
 
-		document.addEventListener('click', (e) => {
-			this.listenClicksOutside(e); // Pass the event as a parameter
-		});
+		document.addEventListener("click", this.listenClicksOutside);
 
 		/** @type {HTMLDialogElement | null} dropmenu*/
-		const dropmenu = dropdown?.querySelector('[data-role=dropmenu]');
+		const dropmenu = dropdown.querySelector("[data-role=dropmenu]");
 		if (!dropmenu) {
-			return console.warn('unable to find dropmenu inside dropdown');
+			console.warn("Drops: Unable to find dropmenu inside dropdown.");
+			return;
 		}
 
 		this.toggleAdjacents(dropdown);
 
-		dropmenu?.hasAttribute('open') ? dropmenu?.close() : dropmenu?.show();
-		!dropmenu?.hasAttribute('open') &&
-			document.removeEventListener('click', this.listenClicksOutside);
+		if (dropmenu.hasAttribute("open")) {
+			dropmenu.close();
+		} else {
+			dropmenu.show();
+		}
+
+		!dropmenu.hasAttribute("open") &&
+			document.removeEventListener("click", this.listenClicksOutside);
 	}
 
 	/**
@@ -64,28 +73,29 @@ class Drops {
 	 */
 	toggleAdjacents(dropdown) {
 		this.getDrops().forEach((drop) => {
-			/** @type {HTMLDialogElement | null} dmenu*/
-			let dropmenu = drop?.querySelector('[data-role=dropmenu]');
-			if (!dropmenu) {
-				return console.warn('unable to find dropmenu inside dropdown');
+			/** @type {HTMLDialogElement | null} dropmenu*/
+			const dropmenu = drop.querySelector("[data-role=dropmenu]");
+			if (dropdown !== drop && dropmenu) {
+				dropmenu.close();
 			}
-			dropdown != drop && dropmenu?.close();
 		});
 	}
 
 	/**
-	 * @description Listens for clicks outside of active drop and closes it.
-	 * @param {MouseEvent} e
+	 * @description Listens for clicks outside of active drops and closes them.
+	 * @param {MouseEvent} event - The click event.
 	 */
-	listenClicksOutside(e) {
+	listenClicksOutside = (event) => {
 		this.getDrops().forEach((dropdown) => {
 			/** @type {HTMLDialogElement | null} dropmenu*/
-			const dropmenu = dropdown?.querySelector('[data-role=dropmenu]');
-			if (!dropmenu) {
-				return console.warn('unable to find dropmenu inside dropdown');
+			const dropmenu = dropdown.querySelector("[data-role=dropmenu]");
+			if (
+				dropmenu &&
+				event.target instanceof Node &&
+				!dropdown.contains(event.target)
+			) {
+				dropmenu.close();
 			}
-			!dropdown.contains(/** @type {Node}*/(e.target)) &&
-				dropmenu?.close();
 		});
-	}
+	};
 }
