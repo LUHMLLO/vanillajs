@@ -1,0 +1,68 @@
+:root {
+    /* base theme */
+    --clr-accent: hsl(118, 100%, 48%);
+    --clr-background: hsl(0, 0%, 4%);
+    --clr-text: hsl(0, 0%, 96%);
+    --clr-subtext: hsl(0, 0%, 72%);
+    --clr-primary: hsl(0, 0%, 8%);
+    --clr-secondary: hsl(0, 0%, 12%);
+    --clr-tertiary: hsl(0, 0%, 16%);
+
+    /* for border radius */
+    --radius-5xs: 6.39pt;
+    --radius-4xs: 7.29pt;
+    --radius-3xs: 8.31pt;
+    --radius-2xs: 9.47pt;
+    --radius-xs: 10.8pt;
+    --radius-sm: 12.31pt;
+    --radius-md: 14.04pt;
+    --radius-nm: 16pt;
+    --radius-xl: 20.79pt;
+    --radius-2xl: 23.7pt;
+    --radius-3xl: 27.02pt;
+    --radius-4xl: 30.81pt;
+    --radius-5xl: 35.12pt;
+
+    /* for font calculations, gaps, paddings, . . . */
+    --scale-5xs: calc(0.0625rem * 6.39);
+    --scale-4xs: calc(0.0625rem * 7.29);
+    --scale-3xs: calc(0.0625rem * 8.31);
+    --scale-2xs: calc(0.0625rem * 9.47);
+    --scale-xs: calc(0.0625rem * 10.8);
+    --scale-sm: calc(0.0625rem * 12.31);
+    --scale-md: calc(0.0625rem * 14.04);
+    --scale-nm: calc(0.0625rem * 16);
+    --scale-xl: calc(0.0625rem * 20.79);
+    --scale-2xl: calc(0.0625rem * 23.7);
+    --scale-3xl: calc(0.0625rem * 27.02);
+    --scale-4xl: calc(0.0625rem * 30.81);
+    --scale-5xl: calc(0.0625rem * 35.12);
+}
+
+* {
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+html {
+    background-color: var(--clr-background);
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow: clip;
+}
+
+html,
+body {
+    display: contents;
+}
+
+row {
+    display: flex;
+    gap: var(--scale-nm);
+    padding: var(--scale-5xl);
+}

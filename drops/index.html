@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drops</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        card {
+            background-color: var(--clr-primary);
+            border-radius: var(--radius-sm);
+            color: var(--clr-text);
+            height: 16rem;
+            padding: var(--scale-nm);
+            width: max-content;
+            z-index: auto;
+
+            >dropdown {
+                display: flex;
+                flex-direction: column;
+                isolation: isolate;
+                position: relative !important;
+                z-index: 1;
+
+                >toggle {
+                    background-color: var(--clr-secondary);
+                    border-radius: var(--radius-sm);
+                    cursor: pointer;
+                    display: flex;
+                    gap: var(--scale-5xs);
+                    padding: var(--scale-2xs) var(--scale-2xl);
+                    transition: background-color 360ms ease-in-out;
+
+                    &:hover {
+                        background-color: color-mix(in srgb, var(--clr-secondary), white 3%);
+                    }
+
+                    &:active {
+                        background-color: color-mix(in srgb, var(--clr-secondary), black 3%);
+                    }
+                }
+
+                >[data-role="dropmenu"] {
+                    &[open] {
+                        display: flex;
+                    }
+
+                    background-color: var(--clr-tertiary);
+                    border-radius: var(--radius-sm);
+                    flex-direction: column;
+                    gap: var(--scale-5xs);
+                    overflow: hidden;
+                    padding: var(--scale-5xs);
+                    position: absolute;
+                    min-width: max-content;
+                    z-index: 2;
+
+                    inset: 100% 0 0 50%;
+                    margin: var(--scale-5xs) auto auto auto;
+                    translate: -50% 0%;
+
+                    >button {
+                        align-items: center;
+                        background-color: var(--clr-secondary);
+                        border-radius: var(--radius-sm);
+                        color: var(--clr-text);
+                        cursor: pointer;
+                        display: flex;
+                        flex-grow: 1;
+                        padding: var(--scale-xs) var(--scale-xl);
+                        transition: background-color 0.3s cubic-bezier(0.2, 0, 0, 1);
+                        white-space: nowrap;
+
+                        &:hover {
+                            background-color: color-mix(in srgb, var(--clr-secondary), white 3%);
+                        }
+
+                        &:active {
+                            background-color: color-mix(in srgb, var(--clr-secondary), black 32%);
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+    <script src="./drops.js"></script>
+</head>
+
+<body>
+    <form onsubmit="alert('still working')">
+        <row id="cardsRow">
+            <card>
+                <dropdown>
+                    <toggle>dropdown</toggle>
+                    <dialog data-role="dropmenu">
+                        <button>long item name</button>
+                        <button>longer item name</button>
+                        <button>even longer item name for a button</button>
+                    </dialog>
+                </dropdown>
+                <br>
+                <dropdown>
+                    <toggle>dropdown</toggle>
+                    <dialog data-role="dropmenu">
+                        <button>long item name</button>
+                        <button>longer item name</button>
+                        <button>even longer item name for a button</button>
+                    </dialog>
+                </dropdown>
+            </card>
+        </row>
+        <button type="submit">test button</button>
+        <row>
+            <card>
+                <dropdown>
+                    i have no toggle
+                    <dialog data-role="dropmenu">
+                        <button>long item name</button>
+                        <button>longer item name</button>
+                        <button>even longer item name for a button</button>
+                    </dialog>
+                </dropdown>
+            </card>
+            <card>
+                <dropdown>
+                    <toggle>dropdown</toggle>
+                    theres no dropmenu
+                </dropdown>
+            </card>
+        </row>
+    </form>
+
+    <script type="module" defer>
+        const drops = new Drops();
+        drops.init();
+
+        const cardsRow = document.querySelector("#cardsRow");
+
+        let card = document.getElementsByTagName("card")[0].cloneNode(true);
+        cardsRow.appendChild(card);
+
+        if (card instanceof Element) {
+            let foundDrops = [...card.querySelectorAll("dropdown")];
+            drops.init(foundDrops);
+            // drops.toggle(foundDrops[1]);
+        }
+    </script>
+</body>
+
+</html>
