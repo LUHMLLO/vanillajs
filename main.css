@@ -171,7 +171,7 @@ dropdown {
         justify-content: center;
         padding: var(--scale-3xs) var(--scale-sm);
         text-align: center;
-        transition: background-color 360ms ease-in-out;
+        transition: background-color 360ms cubic-bezier(0.2, 0, 0, 1);
 
         &:hover {
             background-color: color-mix(in srgb, var(--clr-secondary), white 3%);
@@ -247,16 +247,19 @@ productpack {
     min-height: 32rem;
     overflow: visible;
     position: relative;
-    transition: box-shadow 360ms ease-in-out;
+    transition: box-shadow 360ms cubic-bezier(0.2, 0, 0, 1);
     z-index: auto;
-
-    &.active {
-        outline: 0.125rem solid var(--clr-accent);
-        outline-offset: -0.0625rem;
-    }
 
     &:hover {
         box-shadow: 0 var(--scale-5xs) var(--scale-sm) color-mix(in srgb, var(--clr-subtext), transparent 96%);
+    }
+
+    &.active {
+        box-shadow: 0 0 calc(var(--scale-5xs) - 1rem) calc(var(--scale-5xs) / 2.56) var(--clr-accent);
+
+        &:hover {
+            box-shadow: 0 0 calc(var(--scale-5xs) - 1rem) calc(var(--scale-5xs) / 2.56) var(--clr-accent), 0 var(--scale-5xs) var(--scale-sm) color-mix(in srgb, var(--clr-subtext), transparent 96%);
+        }
     }
 
     & var {
@@ -440,7 +443,7 @@ productpack {
             &[interactive] {
                 cursor: pointer;
                 pointer-events: initial;
-                transition: background-color 360ms ease-in-out;
+                transition: background-color 360ms cubic-bezier(0.2, 0, 0, 1);
 
                 &:hover {
                     background-color: color-mix(in srgb, var(--clr-tertiary), white 3%);
