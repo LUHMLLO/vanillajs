@@ -375,7 +375,6 @@ productpack {
                 display: block;
                 display: -webkit-box;
                 font-size: var(--scale-sm);
-                height: calc(var(--scale-3xs) + 2.625rem);
                 margin: var(--scale-xs) auto;
                 overflow: clip;
                 padding: 0 var(--scale-nm);
@@ -403,7 +402,7 @@ productpack {
         border-radius: var(--radius-5xs);
         display: flex;
         gap: var(--scale-5xs);
-        height: 4rem;
+        height: calc(var(--scale-nm) * 3.75);
         justify-content: center;
         outline: solid 0.25rem var(--clr-primary);
         outline-offset: -0.25rem;
