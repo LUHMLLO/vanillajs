@@ -97,6 +97,10 @@ body {
     overflow-x: clip;
     overflow-y: auto;
     width: 100dvw;
+
+    &#app{
+        padding: var(--scale-nm);
+    }
 }
 
 /* utility tags */
