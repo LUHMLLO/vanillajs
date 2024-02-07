@@ -459,4 +459,15 @@ productpack {
             }
         }
     }
+
+    &[mini] {
+        >productpack__body {
+            >productpack__product {
+                >figure {
+                    flex-grow: 1;
+                    height: auto;
+                }
+            }
+        }
+    }
 }
