@@ -5,7 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drops</title>
-    <link rel="stylesheet" href="../css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="../main.css">
     <style>
         card {
             background-color: var(--clr-primary);
@@ -13,78 +22,9 @@
             color: var(--clr-text);
             height: 16rem;
             padding: var(--scale-nm);
-            /* width: max-content; */
             z-index: auto;
-
-            >dropdown {
-                display: flex;
-                flex-direction: column;
-                isolation: isolate;
-                position: relative !important;
-                z-index: 1;
-
-                >toggle {
-                    background-color: var(--clr-secondary);
-                    border-radius: var(--radius-sm);
-                    cursor: pointer;
-                    display: flex;
-                    gap: var(--scale-5xs);
-                    padding: var(--scale-2xs) var(--scale-2xl);
-                    transition: background-color 360ms ease-in-out;
-
-                    &:hover {
-                        background-color: color-mix(in srgb, var(--clr-secondary), white 3%);
-                    }
-
-                    &:active {
-                        background-color: color-mix(in srgb, var(--clr-secondary), black 3%);
-                    }
-                }
-
-                >[data-role="dropmenu"] {
-                    &[open] {
-                        display: flex;
-                    }
-
-                    background-color: var(--clr-tertiary);
-                    border-radius: var(--radius-sm);
-                    flex-direction: column;
-                    gap: var(--scale-5xs);
-                    overflow: hidden;
-                    padding: var(--scale-5xs);
-                    position: absolute;
-                    min-width: max-content;
-                    z-index: 2;
-
-                    inset: 100% 0 0 50%;
-                    margin: var(--scale-5xs) auto auto auto;
-                    translate: -50% 0%;
-
-                    >button {
-                        align-items: center;
-                        background-color: var(--clr-secondary);
-                        border-radius: var(--radius-sm);
-                        color: var(--clr-text);
-                        cursor: pointer;
-                        display: flex;
-                        flex-grow: 1;
-                        padding: var(--scale-xs) var(--scale-xl);
-                        transition: background-color 0.3s cubic-bezier(0.2, 0, 0, 1);
-                        white-space: nowrap;
-
-                        &:hover {
-                            background-color: color-mix(in srgb, var(--clr-secondary), white 3%);
-                        }
-
-                        &:active {
-                            background-color: color-mix(in srgb, var(--clr-secondary), black 32%);
-                        }
-                    }
-                }
-            }
         }
     </style>
-    <script src="./drops.js"></script>
 </head>
 
 <body>
@@ -128,22 +68,23 @@
         </grid>
         <button type="submit">test button</button>
     </form>
-
-    <script type="module" defer>
-        const drops = new Drops();
-        drops.init();
-
-        const cardsRow = document.querySelector("#cardsRow");
-
-        let card = document.getElementsByTagName("card")[0].cloneNode(true);
-        cardsRow.appendChild(card);
-
-        if (card instanceof Element) {
-            let foundDrops = [...card.querySelectorAll("dropdown")];
-            drops.init(foundDrops);
-            // drops.toggle(foundDrops[1]);
-        }
-    </script>
 </body>
+
+<script src="./drops.js"></script>
+<script type="module" defer>
+    const drops = new Drops();
+    drops.init();
+
+    const cardsRow = document.querySelector("#cardsRow");
+
+    let card = document.getElementsByTagName("card")[0].cloneNode(true);
+    cardsRow.appendChild(card);
+
+    if (card instanceof Element) {
+        let foundDrops = [...card.querySelectorAll("dropdown")];
+        drops.init(foundDrops);
+        // drops.toggle(foundDrops[1]);
+    }
+</script>
 
 </html>
