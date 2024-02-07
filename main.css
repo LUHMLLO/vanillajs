@@ -98,7 +98,7 @@ body {
     overflow-y: auto;
     width: 100dvw;
 
-    &#app{
+    &#app {
         padding: var(--scale-nm);
     }
 }
@@ -110,7 +110,7 @@ button {
     display: flex;
     font-size: var(--scale-sm);
     gap: var(--scale-sm);
-    padding: var(--scale-xs) var(--scale-sm);
+    padding: var(--scale-3xs) var(--scale-sm);
 }
 
 footer,
@@ -147,7 +147,6 @@ grid {
     &[max="4"] {
         --max: 4;
         grid-template-columns: repeat(auto-fill, minmax(max(var(--minWidth), calc(100% / var(--max) - var(--gap))), 1fr));
-        /* grid-template-columns: repeat(auto-fill, minmax(max(var(--minwidth), calc((100% - var(--gap) * (var(--max) - 1)) / var(--max))), 1fr)); */
     }
 }
 
@@ -242,10 +241,12 @@ dropdown {
             align-items: center;
             background-color: var(--clr-tertiary);
             border-radius: var(--radius-sm);
+            border: none;
             color: var(--clr-text);
             cursor: pointer;
             display: flex;
             flex-grow: 1;
+            outline: none;
             padding: var(--scale-xs) var(--scale-xl);
             transition: background-color 0.3s cubic-bezier(0.2, 0, 0, 1);
             white-space: nowrap;
@@ -336,7 +337,7 @@ productpack {
 
         >row {
             justify-content: space-between;
-            z-index: 2;
+            z-index: 1;
 
             >tag {
                 background-color: var(--clr-accent);
