@@ -13,7 +13,7 @@
             color: var(--clr-text);
             height: 16rem;
             padding: var(--scale-nm);
-            width: max-content;
+            /* width: max-content; */
             z-index: auto;
 
             >dropdown {
@@ -89,7 +89,7 @@
 
 <body>
     <form onsubmit="alert('still working')">
-        <row id="cardsRow">
+        <grid id="cardsRow" max="4">
             <card>
                 <dropdown>
                     <toggle>dropdown</toggle>
@@ -109,9 +109,6 @@
                     </dialog>
                 </dropdown>
             </card>
-        </row>
-        <button type="submit">test button</button>
-        <row>
             <card>
                 <dropdown>
                     i have no toggle
@@ -128,7 +125,8 @@
                     theres no dropmenu
                 </dropdown>
             </card>
-        </row>
+        </grid>
+        <button type="submit">test button</button>
     </form>
 
     <script type="module" defer>

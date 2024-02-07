@@ -99,19 +99,28 @@ subsection {
 }
 
 grid {
-    --gap: 1rem;
+    --gap: var(--scale-nm);
     --minWidth: 16rem;
     display: grid;
     gap: var(--gap);
-  
-    &[max="4"] {
-      --max: 4;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(max(var(--minWidth), calc(100% / var(--max) - var(--gap))), 1fr)
-      );
+    grid-template-columns: 1fr;
+
+    &[max="2"] {
+        --max: 2;
+        grid-template-columns: repeat(auto-fill, minmax(max(var(--minWidth), calc(100% / var(--max) - var(--gap))), 1fr));
     }
-  }
+
+    &[max="3"] {
+        --max: 3;
+        grid-template-columns: repeat(auto-fill, minmax(max(var(--minWidth), calc(100% / var(--max) - var(--gap))), 1fr));
+    }
+
+    &[max="4"] {
+        --max: 4;
+        grid-template-columns: repeat(auto-fill, minmax(max(var(--minWidth), calc(100% / var(--max) - var(--gap))), 1fr));
+        /* grid-template-columns: repeat(auto-fill, minmax(max(var(--minwidth), calc((100% - var(--gap) * (var(--max) - 1)) / var(--max))), 1fr)); */
+    }
+}
 
 
 /* material symbols patches */
