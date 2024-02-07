@@ -202,15 +202,9 @@ dropdown {
             display: flex;
         }
 
-        &[data-position-x=right] {
-            inset: 100% 0 0 50%;
-            margin: var(--scale-5xs) auto auto auto;
-            translate: -50% 0%;
-        }
-
-        &[data-position-y=bottom] {
-            inset: 100% 0 0 50%;
-            margin: var(--scale-5xs) auto auto auto;
+        &[data-position=bottom] {
+            inset: 100% 50%;
+            margin: var(--scale-5xs) auto auto;
             translate: -50% 0%;
         }
 
