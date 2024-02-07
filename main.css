@@ -454,7 +454,7 @@ productpack {
 
             >var {
                 align-items: center;
-                background-color: var(--clr-secondary);
+                background-color: var(--clr-secondary--light);
                 border-radius: var(--radius-xl);
                 display: flex;
                 font-size: var(--scale-xs);
