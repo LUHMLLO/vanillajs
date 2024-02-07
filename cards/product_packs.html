@@ -117,7 +117,7 @@
                 </button>
             </productpack__footer>
         </productpack>
-        
+
         <productpack class="active">
             <productpack__header>
                 <row>
@@ -229,17 +229,6 @@
                     <span>Pack #54739</span>
                 </heading>
 
-                <dropdown dropdown="product_company">
-                    <toggle product-company="">
-                        Choose Product Type
-                    </toggle>
-                    <dialog data-role="dropmenu" data-position="bottom">
-                        <button type="button" class="product-company" value="energy_efficiency_product">Energy
-                            Efficiency</button>
-                        <button type="button" class="product-company" value="geothermal_product">Geothermal</button>
-                        <button type="button" class="product-company" value="hvac_product">HVAC</button>
-                    </dialog>
-                </dropdown>
             </productpack__header>
 
             <productpack__body>
@@ -271,17 +260,6 @@
 <script type="module" defer>
     const drops = new Drops();
     drops.init();
-
-    const cardsRow = document.querySelector("#cardsRow");
-
-    let card = document.getElementsByTagName("card")[0].cloneNode(true);
-    cardsRow.appendChild(card);
-
-    if (card instanceof Element) {
-        let foundDrops = [...card.querySelectorAll("dropdown")];
-        drops.init(foundDrops);
-        // drops.toggle(foundDrops[1]);
-    }
 </script>
 
 </html>
