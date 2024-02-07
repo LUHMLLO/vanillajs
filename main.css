@@ -1,13 +1,32 @@
 :root {
     /* base theme */
+    --clr-accent--light: color-mix(in srgb, var(--clr-accent), white 48%);
     --clr-accent: hsl(118, 100%, 48%);
     --clr-accent--dark: color-mix(in srgb, var(--clr-accent), black 48%);
+
+    --clr-background--light: color-mix(in srgb, var(--clr-background), white 3%);
     --clr-background: hsl(0, 0%, 4%);
+    --clr-background--dark: color-mix(in srgb, var(--clr-background), black 6%);
+
+    --clr-text--light: color-mix(in srgb, var(--clr-text), white 3%);
     --clr-text: hsl(0, 0%, 96%);
+    --clr-text--dark: color-mix(in srgb, var(--clr-text), black 6%);
+
+    --clr-subtext--light: color-mix(in srgb, var(--clr-subtext), white 3%);
     --clr-subtext: hsl(0, 0%, 72%);
+    --clr-subtext--dark: color-mix(in srgb, var(--clr-subtext), black 6%);
+
+    --clr-primary--light: color-mix(in srgb, var(--clr-primary), white 3%);
     --clr-primary: hsl(0, 0%, 8%);
+    --clr-primary--dark: color-mix(in srgb, var(--clr-primary), black 6%);
+
+    --clr-secondary--light: color-mix(in srgb, var(--clr-secondary), white 3%);
     --clr-secondary: hsl(0, 0%, 12%);
+    --clr-secondary--dark: color-mix(in srgb, var(--clr-secondary), black 6%);
+
+    --clr-tertiary--light: color-mix(in srgb, var(--clr-tertiary), white 3%);
     --clr-tertiary: hsl(0, 0%, 16%);
+    --clr-tertiary--dark: color-mix(in srgb, var(--clr-tertiary), black 6%);
 
     /* for border radius */
     --radius-5xs: 6.39pt;
@@ -44,6 +63,10 @@
     --baseFontSize: 16px;
     --baseFontWeight: 400;
     --baseLineHeight: 1.5;
+
+    /* shadows */
+    --shadow-nm: 0 var(--scale-5xs) var(--scale-nm) color-mix(in srgb, var(--clr-subtext--dark), transparent 96%);
+    --shadow-xl: 0 var(--scale-5xs) var(--scale-xl) color-mix(in srgb, var(--clr-subtext--dark), transparent 96%);
 }
 
 * {
@@ -174,18 +197,19 @@ dropdown {
         transition: background-color 360ms cubic-bezier(0.2, 0, 0, 1);
 
         &:hover {
-            background-color: color-mix(in srgb, var(--clr-secondary), white 3%);
+            background-color: var(--clr-secondary--light);
         }
 
         &:active {
-            background-color: color-mix(in srgb, var(--clr-secondary), black 6%);
+            background-color: var(--clr-secondary--dark);
         }
     }
 
     >dialog[data-role=dropmenu] {
-        background-color: var(--clr-tertiary);
+        background-color: var(--clr-secondary);
         border-radius: var(--radius-sm);
         border: none;
+        box-shadow: var(--shadow-xl);
 
         flex-direction: column;
         gap: var(--scale-5xs);
@@ -212,7 +236,7 @@ dropdown {
         li,
         a {
             align-items: center;
-            background-color: var(--clr-secondary);
+            background-color: var(--clr-tertiary);
             border-radius: var(--radius-sm);
             color: var(--clr-text);
             cursor: pointer;
@@ -229,11 +253,11 @@ dropdown {
             }
 
             &:hover {
-                background-color: color-mix(in srgb, var(--clr-secondary), white 3%);
+                background-color: var(--clr-tertiary--light);
             }
 
             &:active {
-                background-color: color-mix(in srgb, var(--clr-secondary), black 6%);
+                background-color: var(--clr-tertiary--dark);
             }
         }
     }
@@ -251,14 +275,14 @@ productpack {
     z-index: auto;
 
     &:hover {
-        box-shadow: 0 var(--scale-5xs) var(--scale-sm) color-mix(in srgb, var(--clr-subtext), transparent 96%);
+        box-shadow: var(--shadow-nm);
     }
 
     &.active {
         box-shadow: 0 0 calc(var(--scale-5xs) - 1rem) calc(var(--scale-5xs) / 2.56) var(--clr-accent);
 
         &:hover {
-            box-shadow: 0 0 calc(var(--scale-5xs) - 1rem) calc(var(--scale-5xs) / 2.56) var(--clr-accent), 0 var(--scale-5xs) var(--scale-sm) color-mix(in srgb, var(--clr-subtext), transparent 96%);
+            box-shadow: 0 0 calc(var(--scale-5xs) - 1rem) calc(var(--scale-5xs) / 2.56) var(--clr-accent), var(--shadow-nm);
         }
     }
 
@@ -446,11 +470,11 @@ productpack {
                 transition: background-color 360ms cubic-bezier(0.2, 0, 0, 1);
 
                 &:hover {
-                    background-color: color-mix(in srgb, var(--clr-tertiary), white 3%);
+                    background-color: var(--clr-tertiary--light);
                 }
 
                 &:active {
-                    background-color: color-mix(in srgb, var(--clr-tertiary), black 6%);
+                    background-color: var(--clr-tertiary--dark);
                 }
             }
 
