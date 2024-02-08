@@ -23,6 +23,10 @@ class Drops {
 		}
 
 		drops.forEach((drop) => {
+			if (drop.hasAttribute('disabled')) {
+				return;
+			}
+
 			const toggle = drop.querySelector("toggle");
 			if (!toggle) {
 				console.warn("Drops: Unable to find toggle inside dropdown.");
