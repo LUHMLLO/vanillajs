@@ -1,8 +1,6 @@
 :root {
     /* base theme */
-    --clr-accent--light: color-mix(in srgb, var(--clr-accent), white 48%);
     --clr-accent: hsl(124, 69%, 28%);
-    --clr-accent--dark: color-mix(in srgb, var(--clr-accent), black 48%);
     --clr-context: hsl(169, 69%, 28%);
 
     --clr-background: hsl(0, 0%, 4%);
@@ -119,17 +117,19 @@ p {
 }
 
 a {
+    --component-text: var(--clr-accent);
+
     align-items: center;
     display: inline-flex;
-    color: var(--clr-accent);
+    color: var(--component-text);
     transition: color var(--animProperties);
 
     &:hover {
-        color: var(--clr-accent--light);
+        color: color-mix(in srgb, var(--component-text), white 6%);
     }
 
     &:active {
-        color: var(--clr-accent--dark);
+        color: color-mix(in srgb, var(--component-text), black 9%);
     }
 }
 
@@ -514,7 +514,7 @@ productpack {
 
             &[status=active] {
                 --component-bg: var(--clr-accent);
-                color: var(--clr-accent--dark);
+                color: var(--clr-text);
                 cursor: initial;
                 font-weight: 600;
                 pointer-events: none;
