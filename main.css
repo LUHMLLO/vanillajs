@@ -115,12 +115,21 @@ h5,
 h6,
 p {
     display: flex;
-    width: 100%;
 }
 
 a {
     align-items: center;
     display: inline-flex;
+    color: var(--clr-accent);
+    transition: color var(--animProperties);
+
+    &:hover {
+        color: var(--clr-accent--light);
+    }
+
+    &:active {
+        color: var(--clr-accent--dark);
+    }
 }
 
 /* utility tags */
@@ -598,6 +607,7 @@ dialog {
 
             >h6 {
                 font-size: var(--scale-nm);
+                width: 100%;
             }
 
             >p {
