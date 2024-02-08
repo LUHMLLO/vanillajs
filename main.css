@@ -625,7 +625,7 @@ dialog {
             }
 
             button {
-                background-color: var(--clr-context);
+                --component-bg: var(--clr-context);
                 border-radius: var(--radius-3xs);
                 color: var(--clr-text);
                 font-size: var(--scale-sm);
