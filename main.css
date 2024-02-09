@@ -658,13 +658,13 @@ dialog {
         border-top: solid var(--clr-secondary) calc(var(--scale-3xs) * 0.1);
     }
 
-    &[data-variant=warning] {
+    /* &[data-variant=warning] {
         >dialog__header {}
 
         >dialog__body {}
 
         >dialog__footer {}
-    }
+    } */
 
     &[data-variant=onboarding] {
         padding: 0;
