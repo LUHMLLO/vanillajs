@@ -572,18 +572,38 @@ productpack {
     }
 
     &[mini] {
-        min-height: calc(var(--scale-nm) * 24);
-        width: calc(var(--scale-5xl) * 6);
+        min-height: calc(var(--scale-nm) * 10);
+        width: calc(var(--scale-5xl) * 5);
+
+        >productpack__header {
+            >row {
+                >tag {
+                    font-size: 72%;
+                }
+            }
+
+            >heading {
+                >span {
+                    font-size: 88%;
+                }
+            }
+
+            >dropdown {
+                >toggle {
+                    font-size: 64%;
+                }
+            }
+        }
 
         >productpack__body {
             display: flex;
+            padding: var(--scale-sm);
 
             >productpack__product {
                 flex-grow: 1;
 
                 >figure {
-                    flex-grow: 1;
-                    height: auto;
+                    display: none;
                 }
             }
         }
