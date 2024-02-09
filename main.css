@@ -15,16 +15,16 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --clr-accent: hsl(124, 69%, 28%);
-        --clr-context: hsl(169, 69%, 28%);
+        --clr-accent: hsl(124, 69%, 64%);
+        --clr-context: hsl(169, 69%, 64%);
 
-        --clr-background: hsl(124, 64%, 99%);
-        --clr-text: hsl(0, 0%, 4%);
-        --clr-subtext: hsl(0, 0%, 16%);
+        --clr-background: color-mix(in srgb, var(--clr-accent), #fbfbfe 96%);
+        --clr-text: color-mix(in srgb, var(--clr-background), black 88%);
+        --clr-subtext: color-mix(in srgb, var(--clr-accent), var(--clr-text) 56%);
 
-        --clr-primary: hsl(124, 56%, 84%);
-        --clr-secondary: hsl(140, 56%, 90%);
-        --clr-tertiary: hsl(124, 56%, 96%);
+        --clr-primary: color-mix(in srgb, var(--clr-background), #a3ec90 12%);
+        --clr-secondary: color-mix(in srgb, var(--clr-primary), #b4d499 18%);
+        --clr-tertiary: color-mix(in srgb, var(--clr-secondary), #b7e2a6 32%);
     }
 }
 
@@ -67,8 +67,8 @@
     --baseLineHeight: clamp(1.25, 1.5, 1.75);
 
     /* shadows */
-    --shadow-nm: 0 var(--scale-5xs) var(--scale-nm) color-mix(in srgb, var(--clr-text), transparent 88%);
-    --shadow-xl: 0 var(--scale-5xs) var(--scale-xl) color-mix(in srgb, var(--clr-text), transparent 88%);
+    --shadow-nm: 0 var(--radius-5xs) var(--radius-nm) color-mix(in srgb, var(--clr-primary), hsla(0, 0%, 0%, 0.333) 48%);
+    --shadow-xl: 0 var(--radius-5xs) var(--radius-xl) color-mix(in srgb, var(--clr-primary), hsla(0, 0%, 0%, 0.333) 48%);
 
     /*animations*/
     --animProperties: var(--animDuration) var(--animTiming);
@@ -674,7 +674,7 @@ dialog {
                     font-size: var(--scale-3xs);
 
                     &.active {
-                        color: var(--clr-text);
+                        color: var(--clr-accent);
                     }
                 }
             }
