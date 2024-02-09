@@ -28,6 +28,36 @@
     }
 }
 
+.dark-scheme {
+    :root {
+        --clr-accent: hsl(124, 69%, 28%);
+        --clr-context: hsl(169, 69%, 28%);
+
+        --clr-background: hsl(0, 0%, 4%);
+        --clr-text: hsl(0, 0%, 96%);
+        --clr-subtext: hsl(0, 0%, 72%);
+
+        --clr-primary: hsl(0, 0%, 8%);
+        --clr-secondary: hsl(0, 0%, 12%);
+        --clr-tertiary: hsl(0, 0%, 16%);
+    }
+}
+
+.light-scheme {
+    :root {
+        --clr-accent: hsl(124, 69%, 64%);
+        --clr-context: hsl(169, 69%, 64%);
+
+        --clr-background: color-mix(in srgb, var(--clr-accent), #fbfbfe 96%);
+        --clr-text: color-mix(in srgb, var(--clr-background), black 88%);
+        --clr-subtext: color-mix(in srgb, var(--clr-accent), var(--clr-text) 56%);
+
+        --clr-primary: color-mix(in srgb, var(--clr-background), #a3ec90 12%);
+        --clr-secondary: color-mix(in srgb, var(--clr-primary), #b4d499 18%);
+        --clr-tertiary: color-mix(in srgb, var(--clr-secondary), #b7e2a6 32%);
+    }
+}
+
 :root {
     /* for border radius */
     --radius-5xs: 6.39pt;
