@@ -256,6 +256,18 @@ grid {
         --max: 4;
         grid-template-columns: repeat(auto-fill, minmax(max(var(--minWidth), calc(100% / var(--max) - var(--gap))), 1fr));
     }
+
+    &[demo] {
+        grid-auto-rows: 1fr;
+
+        >column {
+            outline: dashed 0.125rem var(--clr-primary);
+            outline-offset: -0.125rem;
+            padding: var(--scale-nm);
+            place-items: center center;
+            place-content: center center;
+        }
+    }
 }
 
 scrollable,
