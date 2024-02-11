@@ -16,5 +16,5 @@ export default defineConfig({
     esbuild: {
         drop: ['console', 'debugger'],
     },
-    publicDir: './public'
+    assetsInclude: ['./src/assets/js/**/*.js'],
 });
