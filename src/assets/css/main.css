@@ -166,6 +166,14 @@ p {
     display: flex;
 }
 
+button,
+figure,
+img,
+toggle,
+i {
+    user-select: none;
+}
+
 a {
     --component-text: var(--clr-accent);
 
