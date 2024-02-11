@@ -1,4 +1,4 @@
-import './lib/css/main.css';
+import './assets/css/main.css';
 import { App } from './app';
 
 import * as ViewStart from './views/index.js'

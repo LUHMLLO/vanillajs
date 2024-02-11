@@ -1,6 +1,6 @@
 export const ViewScripts = function () {
     return `
-        <script src="/src/lib/drops.js"></script>
+        <script src="src/assets/drops.js"></script>
         <script type="module" defer>
             const drops = new Drops();
             drops.init();
@@ -419,14 +419,7 @@ export const ViewTemplate = function () {
 // This component defines the CSS styles for the application.
 export const ViewStyles = function () {
     return `
-        <style> 
-            body {
-                font-family: sans-serif;
-            }
-  
-            h1 {
-                color: blue;
-            }
+        <style>
         </style>
     `;
 };

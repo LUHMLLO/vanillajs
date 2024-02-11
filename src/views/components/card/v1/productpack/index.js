@@ -221,6 +221,5 @@ export const ViewStyles = function () {
     return `
         <style>
         </style>
-        }
-    `
-}
+    `;
+};

@@ -12,8 +12,6 @@ export class App {
         if (RenderView instanceof HTMLElement) {
             this.AppElement = RenderView;
             this.AppRoutes = Router;
-            this.DocumentHead = document.head;
-            this.DocumentBody = document.body;
         } else {
             throw new Error('Element is not an instance of Element');
         }
@@ -26,13 +24,23 @@ export class App {
     async router(pathname = document.location.pathname) {
         const match = this.AppRoutes.find((route) => route.path.toLocaleLowerCase().trim() === pathname.toLocaleLowerCase().trim());
         const route = match?.module;
-
-
         if (route) {
-            console.log(this.DocumentBody)
-            this.DocumentHead.appendChild = await route.ViewStyles();
-            this.DocumentBody.appendChild = await route.ViewScripts();
-            this.AppElement.innerHTML = route.ViewTemplate();
+            let styles = await route.ViewStyles(); // assuming this returns a string with HTML tags
+            let scripts = await route.ViewScripts(); // assuming this returns a string with HTML tags
+            let styleDiv = document.createElement('div');
+            styleDiv.innerHTML = styles;
+            document.head.appendChild(styleDiv.querySelector('style'));
+            let scriptDiv = document.createElement('div');
+            scriptDiv.innerHTML = scripts;
+            scriptDiv.querySelectorAll('script').forEach((oldScript) => {
+                let script = document.createElement('script');
+                script.textContent = oldScript.textContent;
+                if (oldScript.src) {
+                    script.src = oldScript.src;
+                }
+                document.body.appendChild(script);
+            })
+            this.AppElement.innerHTML = await route.ViewTemplate();
             return route;  // Return the matched route as an object
         } else {
             try {
