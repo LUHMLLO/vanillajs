@@ -35,6 +35,7 @@
      * to avoid limiting type declarations.
      */
     "include": [
+        "src/**/*.d.js",
         "src/**/*.js"
     ]
 }

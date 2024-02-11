@@ -379,7 +379,7 @@ dropdown {
     }
 }
 
-productpack {
+card-v1-productpack {
     --component-bg: var(--clr-primary);
 
     background-color: var(--component-bg);
@@ -442,7 +442,7 @@ productpack {
         }
     }
 
-    >productpack__header {
+    >component__header {
         display: flex;
         flex-direction: column;
         gap: var(--scale-3xs);
@@ -486,7 +486,7 @@ productpack {
         }
     }
 
-    >productpack__body {
+    >component__body {
         display: grid;
         flex-grow: 1;
         gap: var(--scale-nm);
@@ -544,7 +544,7 @@ productpack {
         }
     }
 
-    >productpack__footer {
+    >component__footer {
         align-items: center;
         background-color: var(--clr-secondary);
         border-radius: var(--radius-3xs);
@@ -587,7 +587,7 @@ productpack {
         min-height: calc(var(--scale-nm) * 10);
         width: calc(var(--scale-5xl) * 5);
 
-        >productpack__header {
+        >component__header {
             >row {
                 >tag {
                     font-size: 72%;
@@ -607,7 +607,7 @@ productpack {
             }
         }
 
-        >productpack__body {
+        >component__body {
             display: flex;
             padding: var(--scale-sm);
 
@@ -648,46 +648,46 @@ dialog {
         filter: blur(var(--radius-3xs));
     }
 
-    >dialog__header,
-    >dialog__body,
-    >dialog__footer {
+    >component__header,
+    >component__body,
+    >component__footer {
         align-items: center;
         display: flex;
         gap: var(--scale-3xs);
         width: 100%;
     }
 
-    >dialog__header {
+    >component__header {
         border-bottom: solid var(--clr-secondary) calc(var(--scale-3xs) * 0.1);
     }
 
-    >dialog__body {
+    >component__body {
         flex-direction: column;
         flex-grow: 1;
     }
 
-    >dialog__footer {
+    >component__footer {
         border-top: solid var(--clr-secondary) calc(var(--scale-3xs) * 0.1);
     }
 
     /* &[data-variant=warning] {
-        >dialog__header {}
+        >component__header {}
 
-        >dialog__body {}
+        >component__body {}
 
-        >dialog__footer {}
+        >component__footer {}
     } */
 
     &[data-variant=onboarding] {
         padding: 0;
 
-        >dialog__header,
-        >dialog__body,
-        >dialog__footer {
+        >component__header,
+        >component__body,
+        >component__footer {
             padding: var(--scale-sm);
         }
 
-        >dialog__body {
+        >component__body {
             >figure {
                 background-color: var(--clr-secondary);
                 border-radius: var(--radius-3xs);
@@ -721,7 +721,7 @@ dialog {
             }
         }
 
-        >dialog__footer {
+        >component__footer {
             >button {
                 --component-bg: var(--clr-secondary);
             }
