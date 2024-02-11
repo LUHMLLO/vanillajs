@@ -16,5 +16,5 @@ export default defineConfig({
     esbuild: {
         drop: ['console', 'debugger'],
     },
-    assetsInclude: ['./src/assets/js/**/*.js'],
+    assetsInclude: ['src/assets/js/*'],
 });

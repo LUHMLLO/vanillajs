@@ -2,7 +2,7 @@
  * @description A library for creating and managing dropdown components.
  * @class
  */
-class Drops {
+export class Drops {
 	/**
 	 * @description Gets an array of dropdown elements.
 	 * @param {NodeListOf<Element>} [drops=document.querySelectorAll('dropdown')] - The dropdown elements.

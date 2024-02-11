@@ -1,6 +1,6 @@
 export const ViewScripts = function () {
     return `
-        <script src="src/assets/drops.js"></script>
+        <script src="src/assets/js/drops.js"></script>
         <script type="module" defer>
             const drops = new Drops();
             drops.init();
