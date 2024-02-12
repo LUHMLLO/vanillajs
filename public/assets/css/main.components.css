@@ -224,16 +224,14 @@ card-v1-productpack {
         border-radius: var(--radius-3xs);
         display: flex;
         gap: var(--scale-5xs);
-        height: calc(var(--scale-nm) * 3.75);
+        height: calc(var(--scale-5xl) * 1.5);
         justify-content: center;
         outline: solid 0.25rem var(--clr-primary);
         outline-offset: -0.25rem;
-        padding: var(--scale-sm) var(--scale-nm);
+        padding: 0 var(--scale-nm);
 
         >button {
             --component-bg: var(--clr-tertiary);
-            gap: var(--scale-5xs);
-            height: 100%;
 
             >var {
                 align-items: center;
@@ -367,15 +365,7 @@ dialog {
                 --component-bg: var(--clr-context);
                 border-radius: var(--radius-3xs);
                 color: var(--clr-text);
-                font-size: var(--scale-sm);
-                gap: var(--scale-3xs);
-                padding: var(--scale-3xs) var(--scale-sm);
                 width: 100%;
-
-                >span {
-                    flex-grow: 1;
-                    text-align: left;
-                }
             }
         }
 

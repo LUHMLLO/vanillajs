@@ -155,7 +155,6 @@ export const ViewTemplate = function () {
                             <dropdown>
                                 <toggle>
                                     <icon>more_vert</icon>
-
                                 </toggle>
                                 <dialog data-role="dropmenu" data-position="bottom" open>
                                     <button>Rename</button>
