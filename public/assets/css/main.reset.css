@@ -108,6 +108,10 @@ toggle {
     &:active {
         background-color: color-mix(in srgb, var(--component-bg), black 6%);
     }
+
+    &[data-variant=primary] {
+        --component-bg: var(--clr-accent);
+    }
 }
 
 figure {

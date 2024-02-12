@@ -125,10 +125,12 @@ card-v1-productpack {
             z-index: 1;
 
             >tag {
+                align-items: center;
                 background-color: var(--clr-accent);
                 border-radius: var(--radius-3xs) 0 var(--radius-3xs) 0;
                 color: var(--clr-text);
-                font-size: var(--scale-md);
+                display: inline-flex;
+                font-size: 72%;
                 font-weight: 500;
                 padding: var(--scale-3xs) var(--scale-sm);
             }
@@ -249,7 +251,7 @@ card-v1-productpack {
                 --component-bg: var(--clr-accent);
                 color: var(--clr-text);
                 cursor: initial;
-                font-weight: 600;
+                font-weight: 500;
                 pointer-events: none;
             }
         }
@@ -260,12 +262,6 @@ card-v1-productpack {
         width: calc(var(--scale-5xl) * 5);
 
         >component__header {
-            >row {
-                >tag {
-                    font-size: 72%;
-                }
-            }
-
             >heading {
                 >span {
                     font-size: 88%;
@@ -304,7 +300,6 @@ dialog {
     flex-direction: column;
     width: calc(var(--scale-nm) * 24);
     overflow: clip;
-    padding: var(--scale-sm);
 
     &[open] {
         display: flex;
@@ -326,55 +321,46 @@ dialog {
         align-items: center;
         display: flex;
         gap: var(--scale-3xs);
+        padding: var(--scale-sm);
         width: 100%;
+
+        >button:not([data-variant]) {
+            --component-bg: var(--clr-secondary);
+        }
     }
 
     >component__header {
         border-bottom: solid var(--clr-secondary) calc(var(--scale-3xs) * 0.1);
+        justify-content: space-between;
     }
 
     >component__body {
         flex-direction: column;
         flex-grow: 1;
+
+        >h6 {
+            font-size: var(--scale-nm);
+            width: 100%;
+        }
+
+        >p {
+            color: var(--clr-subtext);
+            font-size: var(--scale-md);
+        }
     }
 
     >component__footer {
         border-top: solid var(--clr-secondary) calc(var(--scale-3xs) * 0.1);
+        justify-content: space-between;
     }
 
-    /* &[data-variant=warning] {
-        >component__header {}
-
-        >component__body {}
-
-        >component__footer {}
-    } */
-
     &[data-variant=onboarding] {
-        padding: 0;
-
-        >component__header,
-        >component__body,
-        >component__footer {
-            padding: var(--scale-sm);
-        }
-
         >component__body {
             >figure {
                 background-color: var(--clr-secondary);
                 border-radius: var(--radius-3xs);
                 height: calc(var(--scale-nm) * 16);
                 width: 100%;
-            }
-
-            >h6 {
-                font-size: var(--scale-nm);
-                width: 100%;
-            }
-
-            >p {
-                color: var(--clr-subtext);
-                font-size: var(--scale-md);
             }
 
             button {

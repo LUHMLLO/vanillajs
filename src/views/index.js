@@ -65,16 +65,29 @@ export const ViewTemplate = function () {
 
             <column>
                 <dialog open>
-                    base dialog
+                    <component__header>
+                        <small>dialog header</small>
+                        <icon>close</icon>
+                    </component__header>
+                    <component__body>
+                        <small>dialog body</small>
+                    </component__body>
+                    <component__footer>
+                        <small>dialog footer</small>
+                        <button>call to action</button>
+                    </component__footer>
                 </dialog>
             </column>
 
             <column>
                 <dialog open data-variant="warning">
                     <component__header>
-                        <i class="material-symbols-outlined">
+                        <icon>
                             warning
-                        </i>
+                        </icon>
+                        <icon>
+                            close
+                        </icon>
                     </component__header>
 
                     <component__body>
@@ -85,14 +98,18 @@ export const ViewTemplate = function () {
                     </component__body>
 
                     <component__footer>
-                        <a href="{{$url}}">Go to Opportunity</a>
+                        <button>Call to action</button>
+                        <button data-variant="primary">Call to action</button>
                     </component__footer>
                 </dialog>
             </column>
 
             <column>
                 <dialog open data-variant="onboarding">
-                    <component__header>
+                    <component__header class="justify-end">
+                        <icon>
+                            close
+                        </icon>
                     </component__header>
 
                     <component__body>
