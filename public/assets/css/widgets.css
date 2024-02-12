@@ -1,0 +1,26 @@
+icon,
+.material-symbols-outlined,
+.material-symbols-rounded,
+.material-symbols-sharp {
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-feature-settings: "liga";
+    aspect-ratio: 1;
+    flex-shrink: 0;
+    font-family: "Material Symbols Outlined", "Material Symbols Rounded",
+        "Material Symbols Sharp";
+    font-feature-settings: "liga";
+    font-weight: normal;
+    font-size: var(--scale-2xl, 1.5rem);
+    font-style: normal;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 400, "opsz" 48;
+    height: max-content;
+    line-height: 1;
+    letter-spacing: normal;
+    overflow: clip;
+    text-transform: none;
+    width: max-content;
+
+    &[data-fill=true] {
+        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 400, "opsz" 48;
+    }
+}

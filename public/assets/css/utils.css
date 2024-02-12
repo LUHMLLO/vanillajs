@@ -1,0 +1,25 @@
+.scroll,
+.scroll-x,
+.scroll-y {
+    display: flex;
+    gap: var(--scale-nm);
+
+    >* {
+        flex-shrink: 0;
+    }
+}
+
+.scroll {
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.scroll-x {
+    overflow-x: auto;
+    overflow-y: clip;
+}
+
+.scroll-y {
+    overflow-x: clip;
+    overflow-y: auto;
+}

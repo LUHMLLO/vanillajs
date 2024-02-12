@@ -9,10 +9,8 @@ export const ViewScripts = function () {
     `
 }
 
-
-
 export const ViewTemplate = function () {
-    return `<scrollable-x id="miniatures">
+    return `<row id="miniatures" class="scroll-x">
     <card-v1-productpack mini>
         <component__header>
             <row>
@@ -47,7 +45,7 @@ export const ViewTemplate = function () {
             </button>
         </component__footer>
     </card-v1-productpack>
-</scrollable-x>`
+</row>`
 }
 
 
