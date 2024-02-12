@@ -56,8 +56,9 @@ export class App {
     async handleScripts(route) {
         let script = document.createElement('script');
         script.type = 'module'
+        script.crossOrigin = 'user-credentials';
         script.innerHTML = await route.ViewScripts();
-       
+
         document.body.appendChild(script);
     }
 
