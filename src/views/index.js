@@ -6,8 +6,6 @@ export const ViewScripts = function () {
     `
 };
 
-// Template component:
-// This component defines the HTML structure and layout of the application.
 export const ViewTemplate = function () {
     return `
         <grid max="4" demo>
@@ -413,11 +411,7 @@ export const ViewTemplate = function () {
     `;
 };
 
-// Styles component:
-// This component defines the CSS styles for the application.
 export const ViewStyles = function () {
     return `
-        <style>
-        </style>
     `;
 };

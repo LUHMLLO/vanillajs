@@ -1,7 +1,5 @@
 export const ViewScripts = function () {
     return `
-        <script type="module" defer>
-        </script>
     `
 };
 
@@ -15,7 +13,5 @@ export const ViewTemplate = function () {
 // This component defines the CSS styles for the application.
 export const ViewStyles = function () {
     return `
-        <style>
-        </style>
     `;
 };

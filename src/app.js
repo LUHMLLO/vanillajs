@@ -29,12 +29,8 @@ export class App {
         const route = match?.module;
 
         if (route) {
-            let styles = document.createElement('div');
-            styles.innerHTML = await route.ViewStyles();
-            document.head.appendChild(styles.querySelector('style'));
-
+            this.handleStyles(route);
             this.AppElement.innerHTML = await route.ViewTemplate();
-
             this.handleScripts(route);
 
             return route;
@@ -53,11 +49,30 @@ export class App {
     /**
      * @param {RouteModule} route
      */
+    async handleStyles(route) {
+        let style = document.createElement('style');
+        style.setAttribute('type', 'text/css')
+        style.innerHTML = await route.ViewStyles();
+
+        if (style.innerHTML.trim() === '') {
+            return
+        }
+
+        document.head.appendChild(style);
+    }
+
+    /**
+     * @param {RouteModule} route
+     */
     async handleScripts(route) {
         let script = document.createElement('script');
         script.type = 'module'
         script.crossOrigin = 'user-credentials';
         script.innerHTML = await route.ViewScripts();
+
+        if (script.innerHTML.trim() === '') {
+            return
+        }
 
         document.body.appendChild(script);
     }

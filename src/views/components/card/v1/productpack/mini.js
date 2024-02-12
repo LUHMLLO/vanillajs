@@ -52,5 +52,6 @@ export const ViewTemplate = function () {
 
 
 export const ViewStyles = function () {
-    return `<style><style>`
+    return `
+    `
 }
