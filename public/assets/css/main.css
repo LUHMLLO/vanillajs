@@ -91,7 +91,7 @@
 
     /* fonts */
     --baseFontFamily: 'DM Sans', sans-serif;
-    --baseFontSize: 16px;
+    --baseFontSize: clamp(0.64rem, 1dvw * 0.124vmin, 1rem);
     /* --baseFontSize: clamp(.125rem, .125vw + 16vmin, .96rem); */
     --baseFontWeight: 400;
     --baseLineHeight: clamp(1.25, 1.5, 1.75);
