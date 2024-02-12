@@ -22,26 +22,22 @@ export class App {
      * @returns {Promise<RouteModule>} A Promise that resolves when the routing and content loading are complete.
      */
     async router(pathname = document.location.pathname) {
-        const match = this.AppRoutes.find((route) => route.path.toLocaleLowerCase().trim() === pathname.toLocaleLowerCase().trim());
+        const match = this.AppRoutes.find((route) =>
+            route.path.toLocaleLowerCase().trim() === pathname.toLocaleLowerCase().trim()
+        );
+
         const route = match?.module;
+
         if (route) {
-            let styles = await route.ViewStyles(); // assuming this returns a string with HTML tags
-            let scripts = await route.ViewScripts(); // assuming this returns a string with HTML tags
-            let styleDiv = document.createElement('div');
-            styleDiv.innerHTML = styles;
-            document.head.appendChild(styleDiv.querySelector('style'));
-            let scriptDiv = document.createElement('div');
-            scriptDiv.innerHTML = scripts;
-            scriptDiv.querySelectorAll('script').forEach((oldScript) => {
-                let script = document.createElement('script');
-                script.textContent = oldScript.textContent;
-                if (oldScript.src) {
-                    script.src = oldScript.src;
-                }
-                document.body.appendChild(script);
-            })
+            let styles = document.createElement('div');
+            styles.innerHTML = await route.ViewStyles();
+            document.head.appendChild(styles.querySelector('style'));
+
             this.AppElement.innerHTML = await route.ViewTemplate();
-            return route;  // Return the matched route as an object
+
+            this.handleScripts(route);
+
+            return route;
         } else {
             try {
                 // @ts-ignore
@@ -52,6 +48,17 @@ export class App {
                 console.error("Error importing 404 module: ", error);
             }
         }
+    }
+
+    /**
+     * @param {RouteModule} route
+     */
+    async handleScripts(route) {
+        let script = document.createElement('script');
+        script.type = 'module'
+        script.innerHTML = await route.ViewScripts();
+       
+        document.body.appendChild(script);
     }
 
 }

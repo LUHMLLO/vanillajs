@@ -1,14 +1,12 @@
 export const ViewScripts = function () {
     return `
-    <script type="module" defer>
-    const miniatures = document.getElementById('miniatures');
+        const miniatures = document.getElementById('miniatures');
 
-    for (let index = 0; index < 6; index++) {
-        const card = document.querySelector("productpack[mini]").cloneNode(true);
-        miniatures.appendChild(card);
-    }
-</script>
-`
+        for (let index = 0; index < 6; index++) {
+            const card = document.querySelector("productpack[mini]").cloneNode(true);
+            miniatures.appendChild(card);
+        }
+    `
 }
 
 
@@ -54,5 +52,5 @@ export const ViewTemplate = function () {
 
 
 export const ViewStyles = function () {
-    return ``
+    return `<style><style>`
 }

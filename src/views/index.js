@@ -1,10 +1,8 @@
 export const ViewScripts = function () {
     return `
-        <script src="src/assets/js/drops.js"></script>
-        <script type="module" defer>
-            const drops = new Drops();
-            drops.init();
-        </script>
+        import Drops from "./assets/js/drops.js"
+        const drops = new Drops();
+        drops.init();
     `
 };
 
