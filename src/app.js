@@ -18,35 +18,6 @@ export class App {
     }
 
     /**
-     * @description Handles routing based on filesystem mechanics.
-     * @returns {Promise<RouteModule>} A Promise that resolves when the routing and content loading are complete.
-     */
-    async router(pathname = document.location.pathname) {
-        const match = this.AppRoutes.find((route) =>
-            route.path.toLocaleLowerCase().trim() === pathname.toLocaleLowerCase().trim()
-        );
-
-        const route = match?.module;
-
-        if (route) {
-            this.handleStyles(route);
-            this.AppElement.innerHTML = await route.ViewTemplate();
-            this.handleScripts(route);
-
-            return route;
-        } else {
-            try {
-                // @ts-ignore
-                const module = await import('/src/views/404');
-                this.AppElement.innerHTML = module.ViewTemplate();
-                return module;  // Return the 404 module
-            } catch (error) {
-                console.error("Error importing 404 module: ", error);
-            }
-        }
-    }
-
-    /**
      * @param {RouteModule} route
      */
     async handleStyles(route) {
@@ -75,6 +46,36 @@ export class App {
         }
 
         document.body.appendChild(script);
+    }
+
+    /**
+     * @description Handles routing based on filesystem mechanics.
+     * @returns {Promise<RouteModule>} A Promise that resolves when the routing and content loading are complete.
+     */
+    async router(pathname = document.location.pathname) {
+
+        const match = this.AppRoutes.find((route) =>
+            route.path.toLocaleLowerCase().trim() === pathname.toLocaleLowerCase().trim()
+        );
+
+        const route = match?.module;
+
+        if (route) {
+            this.handleStyles(route);
+            this.AppElement.innerHTML = await route.ViewTemplate();
+            this.handleScripts(route);
+
+            return route;
+        } else {
+            try {
+                // @ts-ignore
+                const module = await import('/src/views/404');
+                this.AppElement.innerHTML = module.ViewTemplate();
+                return module;  // Return the 404 module
+            } catch (error) {
+                console.error("Error importing 404 module: ", error);
+            }
+        }
     }
 
 }
