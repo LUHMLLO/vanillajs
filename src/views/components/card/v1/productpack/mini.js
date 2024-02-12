@@ -3,7 +3,7 @@ export const ViewScripts = function () {
         const miniatures = document.getElementById('miniatures');
 
         for (let index = 0; index < 6; index++) {
-            const card = document.querySelector("productpack[mini]").cloneNode(true);
+            const card = document.querySelector("card-v1-productpack[mini]").cloneNode(true);
             miniatures.appendChild(card);
         }
     `

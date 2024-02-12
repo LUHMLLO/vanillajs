@@ -1,6 +1,6 @@
 export const ViewScripts = function () {
     return `
-        import Drops from "./assets/js/drops.js"
+        import Drops from "${new URL('/assets/js/drops.js', import.meta.url).href}";
         const drops = new Drops();
         drops.init();
     `
