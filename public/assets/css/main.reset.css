@@ -139,6 +139,16 @@ row {
     flex-direction: row;
 }
 
+component__header,
+header {
+    min-height: calc(var(--scale-5xl) * 1.56);
+}
+
+component__footer,
+footer {
+    min-height: calc(var(--scale-5xl) * 1.56);
+}
+
 column,
 section,
 subsection {

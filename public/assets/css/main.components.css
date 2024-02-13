@@ -224,7 +224,6 @@ card-v1-productpack {
         border-radius: var(--radius-3xs);
         display: flex;
         gap: var(--scale-5xs);
-        height: calc(var(--scale-5xl) * 1.5);
         justify-content: center;
         outline: solid 0.25rem var(--clr-primary);
         outline-offset: -0.25rem;
