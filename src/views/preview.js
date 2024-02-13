@@ -1,17 +1,25 @@
-export const ViewScripts = function () {
-    return `
-        console.log(window.location.href);
-    `
-};
+import { CSSResult, css, html, render } from "lit";
 
-export const ViewTemplate = function () {
+/** @returns {String} */
+export function ViewScripts() {
     return `
-        <h1>preview page</h1>
-        <column id="previewer"></column>
+        import Drops from "${new URL('/assets/js/drops.js', import.meta.url).href}";
+        const drops = new Drops();
+        drops.init();
     `;
 };
 
-export const ViewStyles = function () {
-    return `
+/** @param {HTMLElement} container */
+export async function ViewTemplate(container) {
+    console.log('preview container', container);
+    return render(html`
+        <h1>preview page</h1>
+        <column id="previewer"></column>
+    `, container);
+};
+
+/** @returns {CSSResult} */
+export function ViewStyles() {
+    return css`
     `;
 };

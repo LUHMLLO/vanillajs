@@ -18,12 +18,14 @@ export class App {
     }
 
     /**
-     * @param {RouteModule} route
+     * @param {String} styles
      */
-    async handleStyles(route) {
+    async handleStyles(styles) {
+
+
         let style = document.createElement('style');
         style.setAttribute('type', 'text/css')
-        style.innerHTML = await route.ViewStyles();
+        style.innerHTML = styles;
 
         if (style.innerHTML.trim() === '') {
             return
@@ -33,13 +35,13 @@ export class App {
     }
 
     /**
-     * @param {RouteModule} route
+     * @param {String} scripts
      */
-    async handleScripts(route) {
+    async handleScripts(scripts) {
         let script = document.createElement('script');
         script.type = 'module'
         script.crossOrigin = 'user-credentials';
-        script.innerHTML = await route.ViewScripts();
+        script.innerHTML = scripts;
 
         if (script.innerHTML.trim() === '') {
             return
@@ -61,16 +63,17 @@ export class App {
         const route = match?.module;
 
         if (route) {
-            this.handleStyles(route);
-            this.AppElement.innerHTML = await route.ViewTemplate();
-            this.handleScripts(route);
+            this.handleStyles(await route.ViewStyles())
+            await route.ViewTemplate(this.AppElement);
+            this.handleScripts(await route.ViewScripts())
 
             return route;
         } else {
             try {
                 // @ts-ignore
                 const module = await import('/src/views/404');
-                this.AppElement.innerHTML = module.ViewTemplate();
+                await module.ViewTemplate(this.AppElement);
+
                 return module;  // Return the 404 module
             } catch (error) {
                 console.error("Error importing 404 module: ", error);
