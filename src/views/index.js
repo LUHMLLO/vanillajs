@@ -11,7 +11,7 @@ export function ViewScripts() {
 
 /** @param {HTMLElement} container */
 export async function ViewTemplate(container) {
-    console.log('index container', container);
+    console.log('ViewTemplate Container', container);
     return render(html`
         <grid max="4" demo>
             <column>
@@ -43,11 +43,19 @@ export async function ViewTemplate(container) {
             </column>
         
             <column>
-                <a href="#">link</a>
+                <a href="#">
+                    <icon>link</icon>
+                    link
+                    <icon>chevron_right</icon>
+                </a>
             </column>
         
             <column>
-                <button>button</button>
+                <button>
+                    <icon>link</icon>
+                    button
+                    <icon>chevron_right</icon>
+                </button>
             </column>
         
             <column>
@@ -56,10 +64,21 @@ export async function ViewTemplate(container) {
                         alt="figure-img">
                 </figure>
             </column>
+
+            <column>
+                <field>
+                    <label>label</label>
+                    <input type="text" />
+                </field>
+            </column>
         
             <column>
                 <dropdown>
-                    <toggle>Dropdown</toggle>
+                    <toggle>                        
+                        <icon>dropdown</icon>
+                        Dropdown
+                        <icon>expand_more</icon>
+                    </toggle>
                     <dialog data-role="dropmenu" data-position="bottom">
                         <button>option 1</button>
                         <button>option 2</button>

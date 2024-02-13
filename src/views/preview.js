@@ -11,7 +11,7 @@ export function ViewScripts() {
 
 /** @param {HTMLElement} container */
 export async function ViewTemplate(container) {
-    console.log('preview container', container);
+    console.log('ViewTemplate Container', container);
     return render(html`
         <h1>preview page</h1>
         <column id="previewer"></column>

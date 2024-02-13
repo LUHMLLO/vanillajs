@@ -83,6 +83,7 @@
     --scale-sm: calc(0.0625rem * 12.31);
     --scale-md: calc(0.0625rem * 14.04);
     --scale-nm: calc(0.0625rem * 16);
+    --scale-lg: calc(0.0625rem * 18.24);
     --scale-xl: calc(0.0625rem * 20.79);
     --scale-2xl: calc(0.0625rem * 23.7);
     --scale-3xl: calc(0.0625rem * 27.02);

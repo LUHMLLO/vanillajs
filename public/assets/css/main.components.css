@@ -234,9 +234,10 @@ card-v1-productpack {
 
             >var {
                 align-items: center;
-                background-color: color-mix(in srgb, var(--component-bg), white 6%);
+                background-color: color-mix(in srgb, var(--component-bg), gray 16%);
                 border-radius: var(--radius-sm);
                 display: flex;
+                flex-shrink: 0;
                 font-size: var(--scale-xs);
                 height: var(--scale-xl);
                 justify-content: center;

@@ -96,7 +96,7 @@ toggle {
     display: inline-flex;
     font-size: var(--scale-sm);
     font-weight: 400;
-    gap: var(--scale-sm);
+    gap: var(--scale-5xs);
     height: var(--scale-4xl);
     padding: 0 var(--scale-sm);
     width: max-content;
@@ -116,7 +116,10 @@ toggle {
 
     >span {
         flex-grow: 1;
+        overflow: clip;
         text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }
 

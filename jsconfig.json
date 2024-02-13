@@ -1,40 +1,37 @@
 {
     "$schema": "https://json.schemastore.org/jsconfig",
     "compilerOptions": {
+        // The module resolution strategy. 'bundler' is used for webpack or Parcel.
         "moduleResolution": "bundler",
+        // The ECMAScript target version. 'ESNext' means the latest version.
         "target": "ESNext",
+        // The ECMAScript module system to use. 'ESNext' means the latest version.
         "module": "ESNext",
-        /**
-       * svelte-preprocess cannot figure out whether you have
-       * a value or a type, so tell TypeScript to enforce using
-       * `import type` instead of `import` for Types.
-       */
+        // Enforces using 'import type' instead of 'import' for Types. This is useful when using svelte-preprocess.
         "verbatimModuleSyntax": true,
+        // Ensures every file is its own module.
         "isolatedModules": true,
+        // Allows importing of JSON modules.
         "resolveJsonModule": true,
-        /**
-       * To have warnings / errors of the Svelte compiler at the
-       * correct position, enable source maps by default.
-       */
+        // Generates corresponding '.map' file for debugging purposes.
         "sourceMap": true,
+        // Enables CommonJS and ES Module interoperability.
         "esModuleInterop": true,
+        // Skips type checking of all declaration files (*.d.ts).
         "skipLibCheck": true,
-        /**
-       * Typecheck JS in `.svelte` and `.js` files by default.
-       * Disable this if you'd like to use dynamic types.
-       */
+        // Enables type checking for JavaScript files.
         "checkJs": true,
-        /**
-       * declare import aliases
-       */
+        // Base directory to resolve non-relative module names.
         "baseUrl": ".",
-        "paths": {}
+        // Paths mapped to their alias.
+        "paths": {},
+        // Enables experimental support for decorators.
+        "experimentalDecorators": true,
+        // Disables emitting 'define' for class fields.
+        "useDefineForClassFields": false
     },
-    /**
-     * Use global.d.ts instead of compilerOptions.types
-     * to avoid limiting type declarations.
-     */
     "include": [
+        // Includes all JavaScript and TypeScript definition files in 'src' directory.
         "src/**/*.d.js",
         "src/**/*.js"
     ]
