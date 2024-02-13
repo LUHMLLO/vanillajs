@@ -63,15 +63,15 @@ export class App {
         const route = match?.module;
 
         if (route) {
-            this.handleStyles(await route.ViewStyles())
+            this.handleStyles(await route.ViewStyles());
             await route.ViewTemplate(this.AppElement);
-            this.handleScripts(await route.ViewScripts())
+            this.handleScripts(await route.ViewScripts());
 
             return route;
         } else {
             try {
                 // @ts-ignore
-                const module = await import('/src/views/404');
+                const module = await import('/src/views/404/+page.js');
                 await module.ViewTemplate(this.AppElement);
 
                 return module;  // Return the 404 module

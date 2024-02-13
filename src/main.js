@@ -6,8 +6,8 @@ import '../public/assets/css/widgets.css';
 
 import { App } from './app';
 
-import * as ViewStart from './views/index.js'
-import * as ViewPreview from './views/preview.js'
+import * as ViewStart from './views/+page'
+import * as ViewPreview from './views/preview/+page'
 
 
 /** @type {Object[]} - The array of route objects.*/
