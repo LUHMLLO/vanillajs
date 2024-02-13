@@ -23,7 +23,7 @@ dropdown {
         inset: 50% 50%;
         margin: 0;
         overflow: clip;
-        padding: var(--scale-5xs);
+        padding: calc(var(--scale-sm) * 0.5);
         position: absolute;
         translate: -50% -50%;
         min-width: max-content;
@@ -62,6 +62,7 @@ card-v1-productpack {
     overflow: visible;
     position: relative;
     transition: box-shadow var(--animProperties);
+    width: calc(var(--scale-nm) * 24);
     z-index: auto;
 
     &:hover {
@@ -117,7 +118,7 @@ card-v1-productpack {
     >component__header {
         display: flex;
         flex-direction: column;
-        gap: var(--scale-3xs);
+        gap: var(--scale-5xs);
         z-index: 2;
 
         >row {
@@ -132,14 +133,13 @@ card-v1-productpack {
                 display: inline-flex;
                 font-size: 72%;
                 font-weight: 500;
-                padding: var(--scale-3xs) var(--scale-sm);
+                min-height: var(--scale-5xl);
+                padding: 0 var(--scale-sm);
             }
 
             >dropdown {
                 >toggle {
                     border-radius: 0 var(--radius-3xs) 0 var(--radius-3xs);
-                    font-size: var(--scale-xl);
-                    padding: var(--scale-3xs) var(--scale-sm);
                 }
 
                 & button {
@@ -151,7 +151,7 @@ card-v1-productpack {
         >heading {
             color: var(--clr-text);
             font-size: var(--scale-nm);
-            padding: 0 var(--scale-5xs);
+            padding: 0 var(--scale-sm);
             text-align: center;
         }
 
@@ -163,10 +163,10 @@ card-v1-productpack {
     >component__body {
         display: grid;
         flex-grow: 1;
-        gap: var(--scale-nm);
+        gap: var(--scale-5xs);
         grid-template-columns: repeat(auto-fit,
                 minmax(max(6rem, calc(100% / 3)), 1fr));
-        padding: var(--scale-nm);
+        padding: var(--scale-sm);
 
         >productpack__product {
             border-radius: var(--radius-3xs);
@@ -199,7 +199,7 @@ card-v1-productpack {
                 font-size: var(--scale-sm);
                 margin: var(--scale-xs) auto;
                 overflow: clip;
-                padding: 0 var(--scale-nm);
+                padding: 0 var(--scale-sm);
                 position: relative;
                 text-overflow: ellipsis;
             }
@@ -227,7 +227,7 @@ card-v1-productpack {
         justify-content: center;
         outline: solid 0.25rem var(--clr-primary);
         outline-offset: -0.25rem;
-        padding: 0 var(--scale-nm);
+        padding: 0 var(--scale-sm);
 
         >button {
             --component-bg: var(--clr-tertiary);
@@ -318,7 +318,7 @@ dialog {
     >component__footer {
         align-items: center;
         display: flex;
-        gap: var(--scale-3xs);
+        gap: var(--scale-5xs);
         padding: var(--scale-sm);
         width: 100%;
 
@@ -377,7 +377,7 @@ dialog {
             >row {
                 flex-grow: 1;
                 justify-content: center;
-                gap: calc(var(--scale-3xs) * 0.25);
+                gap: calc(var(--scale-5xs) * 0.125);
 
                 >icon {
                     color: var(--clr-tertiary);
@@ -389,5 +389,33 @@ dialog {
                 }
             }
         }
+    }
+}
+
+field {
+    border-radius: var(--radius-3xs);
+    display: inline-flex;
+    flex-direction: column;
+    overflow: clip;
+
+    >label {
+        align-items: center;
+        background-color: var(--clr-secondary);
+        display: inline-flex;
+        min-height: var(--scale-5xl);
+        padding: 0 var(--scale-sm);
+    }
+
+    >dropdown,
+    input,
+    select,
+    textarea {
+        --component-bg: var(--clr-context);
+        align-items: center;
+        color: var(--clr-text);
+        display: inline-flex;
+        min-height: var(--scale-5xl);
+        height: max-content;
+        padding: 0 var(--scale-sm);
     }
 }

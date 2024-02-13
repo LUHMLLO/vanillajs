@@ -72,6 +72,7 @@ a {
     align-items: center;
     display: inline-flex;
     color: var(--component-text);
+    gap: var(--scale-5xs);
     transition: color var(--animProperties);
 
     &:hover {
@@ -89,7 +90,7 @@ toggle {
     --component-bg: var(--clr-primary);
 
     align-items: center;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-3xs);
     background-color: var(--component-bg);
     color: var(--clr-text);
     cursor: pointer;
@@ -160,7 +161,7 @@ subsection {
 }
 
 grid {
-    --gap: var(--scale-nm);
+    --gap: var(--scale-5xs);
     --minWidth: clamp(18rem, 1vw, 24rem);
     display: grid;
     gap: var(--gap);
@@ -187,9 +188,36 @@ grid {
         >column {
             outline: dashed 0.125rem var(--clr-primary);
             outline-offset: -0.125rem;
-            padding: var(--scale-nm);
+            padding: var(--scale-sm);
             place-items: center center;
             place-content: center center;
         }
+    }
+}
+
+input,
+textarea,
+select {
+    --component-bg: var(--clr-primary);
+
+    align-items: center;
+    background-color: var(--component-bg);
+    border-radius: var(--radius-3xs);
+    display: inline-flex;
+    color: var(--clr-text);
+    display: inline-flex;
+    font-size: var(--scale-sm);
+    gap: var(--scale-5xs);
+    height: var(--scale-4xl);
+    padding: 0 var(--scale-sm);
+    width: max-content;
+    transition: background-color var(--animProperties);
+
+    &:hover {
+        background-color: color-mix(in srgb, var(--component-bg), white 3%);
+    }
+
+    &:active {
+        background-color: color-mix(in srgb, var(--component-bg), black 6%);
     }
 }

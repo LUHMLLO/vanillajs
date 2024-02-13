@@ -66,9 +66,51 @@ export async function ViewTemplate(container) {
             </column>
 
             <column>
+                <input type="text"/>
+            </column>
+
+            <column>
+                <textarea></textarea>
+            </column>
+
+            <column>
+                <select name="pets" id="pet-select">
+                    <option value="">--Please choose an option--</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="hamster">Hamster</option>
+                    <option value="parrot">Parrot</option>
+                    <option value="spider">Spider</option>
+                    <option value="goldfish">Goldfish</option>
+                </select>
+            </column>
+
+            <column>
                 <field>
                     <label>label</label>
                     <input type="text" />
+                </field>
+            </column>
+
+            <column>
+                <field>
+                    <label>label</label>
+                    <textarea></textarea>
+                </field>
+            </column>
+
+            <column>
+                <field>
+                    <label>label</label>
+                    <select name="pets" id="pet-select">
+                        <option value="">--Please choose an option--</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="hamster">Hamster</option>
+                        <option value="parrot">Parrot</option>
+                        <option value="spider">Spider</option>
+                        <option value="goldfish">Goldfish</option>
+                    </select>
                 </field>
             </column>
         
@@ -130,7 +172,10 @@ export async function ViewTemplate(container) {
         
             <column>
                 <dialog open data-variant="onboarding">
-                    <component__header class="justify-end">
+                    <component__header>
+                        <icon>
+                            dialogs
+                        </icon>
                         <icon>
                             close
                         </icon>

@@ -2,7 +2,7 @@
 .scroll-x,
 .scroll-y {
     display: flex;
-    gap: var(--scale-nm);
+    gap: var(--scale-5xs);
 
     >* {
         flex-shrink: 0;
