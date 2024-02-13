@@ -5,23 +5,7 @@ import '../public/assets/css/utils.css';
 import '../public/assets/css/widgets.css';
 
 import { App } from './app';
+import { StaticPages } from './pages';
 
-import * as ViewStart from './views/+page'
-import * as ViewPreview from './views/preview/+page'
-
-
-/** @type {Object[]} - The array of route objects.*/
-const routes = [
-    {
-        path: '/',
-        module: ViewStart,
-    },
-    {
-        path: '/preview/:component',
-        module: ViewPreview,
-    },
-];
-
-const app = new App(document.getElementById('app'), routes);
-app.router();
-
+const app = new App(document.getElementById('app'), StaticPages);
+app.mount();

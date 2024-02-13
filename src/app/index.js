@@ -1,4 +1,3 @@
-
 /**
  * @description Core app module; Main Service; Heart of the app.
  */
@@ -6,68 +5,34 @@ export class App {
 
     /**
      * @param {RenderView} RenderView - The element where the content will be rendered.
-     * @param {Router} Router - The array of route objects.
+     * @param {Pager} Pages - The array of route objects.
      */
-    constructor (RenderView = document.querySelector('#app'), Router) {
+    constructor (RenderView = document.querySelector('#app'), Pages) {
         if (RenderView instanceof HTMLElement) {
             this.AppElement = RenderView;
-            this.AppRoutes = Router;
-        } else {
-            throw new Error('Element is not an instance of Element');
-        }
-    }
-
-    /**
-     * @param {String} styles
-     */
-    async handleStyles(styles) {
-
-
-        let style = document.createElement('style');
-        style.setAttribute('type', 'text/css')
-        style.innerHTML = styles;
-
-        if (style.innerHTML.trim() === '') {
-            return
+            this.AppPages = Pages
+            return;
         }
 
-        document.head.appendChild(style);
+        throw new Error('App container is not an instance of <Element | HTMLElement>');
     }
 
-    /**
-     * @param {String} scripts
-     */
-    async handleScripts(scripts) {
-        let script = document.createElement('script');
-        script.type = 'module'
-        script.crossOrigin = 'user-credentials';
-        script.innerHTML = scripts;
+    async mount() {
+        const pathname = document.location.pathname
 
-        if (script.innerHTML.trim() === '') {
-            return
-        }
-
-        document.body.appendChild(script);
-    }
-
-    /**
-     * @description Handles routing based on filesystem mechanics.
-     * @returns {Promise<RouteModule>} A Promise that resolves when the routing and content loading are complete.
-     */
-    async router(pathname = document.location.pathname) {
-
-        const match = this.AppRoutes.find((route) =>
-            route.path.toLocaleLowerCase().trim() === pathname.toLocaleLowerCase().trim()
+        const match = this.AppPages.find(( /** @type {Page} */ page) =>
+            page.path.toLocaleLowerCase().trim() === pathname.toLocaleLowerCase().trim()
         );
 
-        const route = match?.module;
+        /** @type {Page} page */
+        const page = match;
 
-        if (route) {
-            this.handleStyles(await route.ViewStyles());
-            await route.ViewTemplate(this.AppElement);
-            this.handleScripts(await route.ViewScripts());
+        if (page) {
+            // this.handleStyles(await route.ViewStyles());
+            await page.module.ViewTemplate(this.AppElement);
+            // this.handleScripts(await route.ViewScripts());
 
-            return route;
+            return page;
         } else {
             try {
                 // @ts-ignore
