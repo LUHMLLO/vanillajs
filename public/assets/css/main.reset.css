@@ -90,7 +90,7 @@ toggle {
     --component-bg: var(--clr-primary);
 
     align-items: center;
-    border-radius: var(--radius-3xs);
+    border-radius: var(--radius-sm);
     background-color: var(--component-bg);
     color: var(--clr-text);
     cursor: pointer;
@@ -138,6 +138,8 @@ figure {
 
 footer,
 header,
+label,
+nav,
 row {
     display: flex;
     flex-direction: row;
@@ -145,7 +147,7 @@ row {
 
 component__header,
 header {
-    min-height: calc(var(--scale-5xl) * 1.56);
+    min-height: var(--scale-5xl);
 }
 
 component__footer,
@@ -154,8 +156,7 @@ footer {
 }
 
 column,
-section,
-subsection {
+section {
     display: flex;
     flex-direction: column;
 }
@@ -208,7 +209,8 @@ select {
     display: inline-flex;
     font-size: var(--scale-sm);
     gap: var(--scale-5xs);
-    height: var(--scale-4xl);
+    min-height: var(--scale-5xl);
+    height: max-content;
     padding: 0 var(--scale-sm);
     width: max-content;
     transition: background-color var(--animProperties);

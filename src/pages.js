@@ -1,5 +1,6 @@
 import * as ViewStart from './views/+page'
-import * as ViewPreview from './views/preview/+page.js'
+import * as ViewPreview from './views/preview/+page'
+import * as ViewProposal from './views/proposal/+page'
 
 /** @type {Pager} - The array of route objects.*/
 export const StaticPager = [
@@ -12,5 +13,10 @@ export const StaticPager = [
         name: 'preview',
         path: '/preview',
         module: ViewPreview,
+    },
+    {
+        name: 'proposal',
+        path: '/proposal',
+        module: ViewProposal,
     },
 ];

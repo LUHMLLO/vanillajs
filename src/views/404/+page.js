@@ -12,7 +12,7 @@ export function ViewScripts() {
 /** @param {HTMLElement} container */
 export async function ViewTemplate(container) {
     console.log('ViewTemplate Container', container);
-    return render(html`
+    render(html`
         <h1>4.0.4</h1>
     `, container);
 };

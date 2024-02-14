@@ -235,7 +235,7 @@ card-v1-productpack {
             >var {
                 align-items: center;
                 background-color: color-mix(in srgb, var(--component-bg), gray 16%);
-                border-radius: var(--radius-sm);
+                border-radius: var(--radius-5xl);
                 display: flex;
                 flex-shrink: 0;
                 font-size: var(--scale-xs);
@@ -393,29 +393,21 @@ dialog {
 }
 
 field {
-    border-radius: var(--radius-3xs);
     display: inline-flex;
     flex-direction: column;
     overflow: clip;
-
-    >label {
-        align-items: center;
-        background-color: var(--clr-secondary);
-        display: inline-flex;
-        min-height: var(--scale-5xl);
-        padding: 0 var(--scale-sm);
-    }
 
     >dropdown,
     input,
     select,
     textarea {
-        --component-bg: var(--clr-context);
         align-items: center;
         color: var(--clr-text);
         display: inline-flex;
-        min-height: var(--scale-5xl);
-        height: max-content;
         padding: 0 var(--scale-sm);
+    }
+
+    &[data-variant=card]{
+        border-radius: var(--radius-3xs);
     }
 }
