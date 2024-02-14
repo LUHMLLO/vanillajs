@@ -6,6 +6,7 @@ import '../public/assets/css/widgets.css';
 
 import { App } from './app';
 import { StaticPages } from './pages';
+import Pager from '../dist/pager';
 
-const app = new App(document.getElementById('app'), StaticPages);
+const app = new App(document.getElementById('app'), Pager);
 app.mount();

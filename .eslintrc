@@ -1,13 +1,16 @@
 {
+    "extends": [
+        "eslint:recommended"
+    ],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
         }
     },
     "plugins": [
-        "react"
+        "add"
     ],
-    "extends": [
-        "eslint:recommended"
-    ]
+    "rules": {
+      "add/no-unused-vars": "error"
+    }
 }

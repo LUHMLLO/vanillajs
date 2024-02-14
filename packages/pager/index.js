@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'fs-extra';
 
 /**
  * This function serves as the application's intrinsic router, auto-generating routes based on

@@ -3,16 +3,18 @@ import { CSSResult, css, html, render } from "lit";
 /** @returns {String} */
 export function ViewScripts() {
     return `
-        import Drops from "${new URL('/assets/js/drops.js', import.meta.url).href}";
+        import("${new URL('/assets/js/drops.js', import.meta.url).href}").then((module) => {
+            module.init();
+          });
         const drops = new Drops();
         drops.init();
     `;
 };
 
 /** @param {HTMLElement} container */
-export async function ViewTemplate(container) {
+export function ViewTemplate(container) {
     console.log('ViewTemplate Container', container);
-    return render(html`
+    render(html`
         <grid max="4" demo>
             <column>
                 <h1>Heading 1</h1>

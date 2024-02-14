@@ -1,19 +1,14 @@
 import { defineConfig } from "vite";
+import eslintPlugin from "@nabla/vite-plugin-eslint";
+import { buildOptions } from "./build.options";
 
 export default defineConfig({
-    build: {
-        minify: 'terser',
-        outDir: 'dist',
-        target: ['ESNext'],
-        terserOptions: {
-            safari10: true,
-            ie8: true,
-            compress: true,
-            mangle: true,
-            module: true,
-        },
-    },
-    esbuild: {
-        drop: ['console', 'debugger'],
-    },
+  plugins: [eslintPlugin()],
+  build: {
+    outDir: "dist/codepens",
+    ...buildOptions,
+  },
+  esbuild: {
+    drop: ["console", "debugger"],
+  },
 });
