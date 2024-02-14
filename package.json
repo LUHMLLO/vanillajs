@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "gen:pages" : "node ./packages/pager/index.min.cjs",
     "dev": "vite",
     "build": "vite build --config vite.config.app.js",
     "build:pager": "vite build --config vite.config.pager.js",

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "",
+    "path": "/+error.j",
+    "component": "./views/+error.js"
+  },
+  {
+    "name": "root",
+    "path": "/",
+    "component": "./views/+page.js"
+  },
+  {
+    "name": "preview",
+    "path": "/preview",
+    "component": "./views/preview/+page.js"
+  },
+  {
+    "name": "proposal",
+    "path": "/proposal",
+    "component": "./views/proposal/+page.js"
+  }
+]
