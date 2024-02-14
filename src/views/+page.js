@@ -1,4 +1,4 @@
-import { CSSResult, css, html, render } from "lit";
+import { CSSResult, css } from "lit";
 
 /** @returns {String} */
 export function ViewScripts() {
@@ -9,10 +9,9 @@ export function ViewScripts() {
     `;
 };
 
-/** @param {HTMLElement} container */
-export function ViewTemplate(container) {
-    console.log('ViewTemplate', container);
-    render(html`
+/** @returns {Promise<String>} */
+export async function ViewTemplate() {
+    return String.raw`
         <grid max="4" demo>
             <column>
                 <h1>Heading 1</h1>
@@ -66,15 +65,15 @@ export function ViewTemplate(container) {
             </column>
 
             <column>
-                <input type="text"/>
+                <input id="example-input-text" type="text"/>
             </column>
 
             <column>
-                <textarea></textarea>
+                <textarea id="example-textarea"></textarea>
             </column>
 
             <column>
-                <select name="pets" id="pet-select">
+                <select title="pets" name="pets" id="pet-select">
                     <option value="">--Please choose an option--</option>
                     <option value="dog">Dog</option>
                     <option value="cat">Cat</option>
@@ -87,22 +86,22 @@ export function ViewTemplate(container) {
 
             <column>
                 <field>
-                    <label>label</label>
-                    <input type="text" />
+                    <label for="example-input-field">label</label>
+                    <input id="example-input-field" type="text" />
                 </field>
             </column>
 
             <column>
                 <field>
-                    <label>label</label>
-                    <textarea></textarea>
+                    <label for="example-textarea-field">label</label>
+                    <textarea id="example-textarea-field"></textarea>
                 </field>
             </column>
 
             <column>
                 <field>
-                    <label>label</label>
-                    <select name="pets" id="pet-select">
+                    <label for="pet2-select">label</label>
+                    <select title="pets" name="pets2" id="pet2-select">
                         <option value="">--Please choose an option--</option>
                         <option value="dog">Dog</option>
                         <option value="cat">Cat</option>
@@ -493,7 +492,7 @@ export function ViewTemplate(container) {
                 </card-v1-productpack>
             </column>
         </grid>
-    `, container);
+    `;
 }
 
 

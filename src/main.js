@@ -7,5 +7,9 @@ import '../public/assets/css/widgets.css';
 import { App } from './app';
 import { StaticPager } from './pages';
 
-const app = new App(document.getElementById('app'), StaticPager);
-app.mount();
+const AppElement = document.getElementById('app');
+
+if (AppElement) {
+    const app = new App(AppElement, StaticPager);
+    app.mount();
+}

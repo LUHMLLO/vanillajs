@@ -1,4 +1,4 @@
-import { CSSResult, css, html, render } from "lit";
+import { CSSResult, css } from "lit";
 
 /** @returns {String} */
 export function ViewScripts() {
@@ -9,12 +9,11 @@ export function ViewScripts() {
     `;
 };
 
-/** @param {HTMLElement} container */
-export async function ViewTemplate(container) {
-    console.log('ViewTemplate', container);
-    render(html`
+/** @returns {Promise<String>} */
+export async function ViewTemplate() {
+    return String.raw`
         <h1>4.0.4</h1>
-    `, container);
+    `;
 };
 
 /** @returns {CSSResult} */

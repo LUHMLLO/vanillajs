@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 dropdown {
     display: flex;
     flex-direction: column;
@@ -194,7 +196,6 @@ card-v1-productpack {
             p {
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 2;
-                display: block;
                 display: -webkit-box;
                 font-size: var(--scale-sm);
                 margin: var(--scale-xs) auto;
@@ -407,7 +408,7 @@ field {
         padding: 0 var(--scale-sm);
     }
 
-    &[data-variant=card]{
+    &[data-variant=card] {
         border-radius: var(--radius-3xs);
     }
 }

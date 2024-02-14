@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 * {
     border: none;
     box-sizing: border-box;
@@ -21,7 +23,6 @@ html {
     font-size: var(--baseFontSize);
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-smooth: always;
     font-style: normal;
     font-variant-ligatures: normal;
     font-optical-sizing: auto;
@@ -63,6 +64,7 @@ figure,
 img,
 toggle,
 i {
+    -webkit-user-select: none;
     user-select: none;
 }
 

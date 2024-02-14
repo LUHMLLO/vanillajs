@@ -1,13 +1,14 @@
+@charset "utf-8";
+
 icon,
 .material-symbols-outlined,
 .material-symbols-rounded,
 .material-symbols-sharp {
-    -webkit-font-smoothing: antialiased;
-    -webkit-font-feature-settings: "liga";
     aspect-ratio: 1;
     flex-shrink: 0;
     font-family: "Material Symbols Outlined", "Material Symbols Rounded",
         "Material Symbols Sharp";
+    -webkit-font-feature-settings: "liga";
     font-feature-settings: "liga";
     font-weight: normal;
     font-size: var(--scale-lg);

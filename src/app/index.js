@@ -7,7 +7,7 @@ export class App {
      * @param {RenderView} RenderView - The element where the content will be rendered.
      * @param {Pager} Pages - The array of route objects.
      */
-    constructor (RenderView = document.querySelector('#app'), Pages) {
+    constructor (RenderView, Pages) {
         if (RenderView instanceof HTMLElement) {
             this.AppElement = RenderView;
             this.AppPages = Pages
@@ -20,24 +20,24 @@ export class App {
     async mount() {
         const pathname = document.location.pathname
 
-        /** @type {Page} page */
+        /** @type {Page | undefined} page */
         const page = this.AppPages.find(( /** @type {Page} */ page) =>
             page.path.toLocaleLowerCase().trim() === pathname.toLocaleLowerCase().trim()
         );
 
         if (page) {
             this.handleStyles(await page.module.ViewStyles());
-            await page.module.ViewTemplate(this.AppElement);
+            this.AppElement.innerHTML = await page.module.ViewTemplate();
             this.handleScripts(await page.module.ViewScripts());
 
             return page;
         } else {
             try {
                 // @ts-ignore
-                const module = await import('/src/views/404/+page.js');
-                await module.ViewTemplate(this.AppElement);
+                const page = await import('/src/views/404/+page.js');
+                this.AppElement.innerHTML = await page.ViewTemplate();
 
-                return module;  // Return the 404 module
+                return page;
             } catch (error) {
                 console.error("Error importing 404 module: ", error);
             }

@@ -19,8 +19,12 @@
         "esModuleInterop": true,
         // Skips type checking of all declaration files (*.d.ts).
         "skipLibCheck": true,
+        // Allow JavaScript files to be a part of your program.
+        "allowJs": true,
         // Enables type checking for JavaScript files.
         "checkJs": true,
+        // Enable all strict type checking options.
+        "strict": true,
         // Base directory to resolve non-relative module names.
         "baseUrl": ".",
         // Paths mapped to their alias.
@@ -28,7 +32,9 @@
         // Enables experimental support for decorators.
         "experimentalDecorators": true,
         // Disables emitting 'define' for class fields.
-        "useDefineForClassFields": false
+        "useDefineForClassFields": false,
+        //Ensure that casing is correct in imports.
+        "forceConsistentCasingInFileNames": true
     },
     "include": [
         // Includes all JavaScript and TypeScript definition files in 'src' directory.
