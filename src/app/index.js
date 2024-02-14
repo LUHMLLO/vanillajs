@@ -20,12 +20,10 @@ export class App {
     async mount() {
         const pathname = document.location.pathname
 
-        const match = this.AppPages.find(( /** @type {Page} */ page) =>
+        /** @type {Page} page */
+        const page = this.AppPages.find(( /** @type {Page} */ page) =>
             page.path.toLocaleLowerCase().trim() === pathname.toLocaleLowerCase().trim()
         );
-
-        /** @type {Page} page */
-        const page = match;
 
         if (page) {
             this.handleStyles(await page.module.ViewStyles());
