@@ -11,7 +11,7 @@ export function ViewScripts() {
 
 /** @param {HTMLElement} container */
 export function ViewTemplate(container) {
-    console.log('ViewTemplate Container', container);
+    console.log('ViewTemplate', container);
     render(html`
         <grid max="4" demo>
             <column>
