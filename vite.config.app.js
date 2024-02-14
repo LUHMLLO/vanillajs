@@ -4,6 +4,7 @@ import { buildOptions } from "./build.options";
 
 export default defineConfig({
   plugins: [eslintPlugin()],
+  // @ts-ignore
   build: {
     outDir: "dist/codepens",
     ...buildOptions,

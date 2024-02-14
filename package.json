@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build:router": "vite build --config vite.config.router.js",
+    "build": "vite build --config vite.config.app.js",
+    "build:pager": "vite build --config vite.config.router.js",
     "preview": "vite preview"
   },
   "devDependencies": {
