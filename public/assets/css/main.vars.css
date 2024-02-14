@@ -2,8 +2,8 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --clr-accent: hsl(124, 69%, 28%);
-        --clr-context: hsl(169, 69%, 28%);
+        --clr-accent: hsl(124, 69%, 40%);
+        --clr-context: hsl(169, 69%, 40%);
 
         --clr-background: hsl(0, 0%, 4%);
         --clr-text: hsl(0, 0%, 96%);
@@ -32,8 +32,8 @@
 
 .dark-scheme {
     :root {
-        --clr-accent: hsl(124, 69%, 28%);
-        --clr-context: hsl(169, 69%, 28%);
+        --clr-accent: hsl(124, 69%, 40%);
+        --clr-context: hsl(169, 69%, 40%);
 
         --clr-background: hsl(0, 0%, 4%);
         --clr-text: hsl(0, 0%, 96%);

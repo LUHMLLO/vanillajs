@@ -34,7 +34,7 @@ export class App {
         } else {
             try {
                 // @ts-ignore
-                const page = await import('/src/views/404/+page.js');
+                const page = await import('/src/views/+error.js');
                 this.AppElement.innerHTML = await page.ViewTemplate();
 
                 return page;

@@ -1,5 +1,3 @@
-import { CSSResult, css } from "lit";
-
 /** @returns {String} */
 export function ViewScripts() {
     return `
@@ -16,8 +14,8 @@ export async function ViewTemplate() {
     `;
 };
 
-/** @returns {CSSResult} */
-export function ViewStyles() {
-    return css`
+/** @returns {Promise<String>} */
+export async function ViewStyles() {
+    return String.raw`
     `;
 };
