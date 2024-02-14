@@ -37,12 +37,15 @@ export default async function Pager() {
             const stats = await fs.promises.stat(fullPath);
 
             if (stats.isFile()) {
+                if (file === '+error.js') {
+                    return;
+                }
+
                 const { ViewScripts, ViewStyles, ViewTemplate } = await import(fullPath);
 
                 /** @type {Page} */
                 const page = { name: 'root', path: `/`, module: { ViewScripts, ViewStyles, ViewTemplate } };
 
-                console.log(page)
                 pages.push(page);
             }
 
@@ -52,8 +55,6 @@ export default async function Pager() {
                 /** @type {Page} */
                 const page = { name: file, path: `/${file}`, module: { ViewScripts, ViewStyles, ViewTemplate } };
 
-
-                console.log(page)
                 pages.push(page);
             }
         }

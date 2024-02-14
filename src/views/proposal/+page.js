@@ -1,6 +1,9 @@
 /** @returns {Promise<String>} */
 export async function ViewScripts() {
     return String.raw`
+        import ThemeSchemes from "${new URL('/assets/js/themes.js', import.meta.url).href}";
+        window.themeHandler = new ThemeSchemes();
+        themeHandler.load();
     `;
 };
 
@@ -26,9 +29,20 @@ export async function ViewTemplate() {
                         filter_alt
                     </icon>
                 </row>
-                <figure data-variant=avatar>
-                    <img src="https://cdn.dribbble.com/userupload/12848764/file/original-2c583b50c3d879bd6feeaad53dc59233.jpg?resize=752x" alt="avatar-thumbnail" />
-                </figure>
+                <row class="align --center gap --5xs">
+                    <button onclick="themeHandler.set('auto')">
+                        set theme auto
+                    </button>
+                    <button onclick="themeHandler.set('light')">
+                        set theme light
+                    </button>
+                    <button onclick="themeHandler.set('dark')">
+                        set theme dark
+                    </button>
+                    <figure data-variant=avatar>
+                        <img src="https://cdn.dribbble.com/userupload/12848764/file/original-2c583b50c3d879bd6feeaad53dc59233.jpg?resize=752x" alt="avatar-thumbnail" />
+                    </figure>
+                </row>
             </workspace__header>
             
             <workspace__body>

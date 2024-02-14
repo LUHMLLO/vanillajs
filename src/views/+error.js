@@ -1,6 +1,6 @@
-/** @returns {String} */
-export function ViewScripts() {
-    return `
+/** @returns {Promise<String>} */
+export async function ViewScripts() {
+    return String.raw`
         import Drops from "${new URL('/assets/js/drops.js', import.meta.url).href}";
         const drops = new Drops();
         drops.init();
