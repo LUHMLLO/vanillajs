@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --config vite.config.app.js",
-    "build:pager": "vite build --config vite.config.router.js",
+    "build:pager": "vite build --config vite.config.pager.js",
     "preview": "vite preview"
   },
   "devDependencies": {

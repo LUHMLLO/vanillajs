@@ -10,11 +10,11 @@ dropdown {
     z-index: auto;
 
     >toggle {
-        --component-bg: var(--clr-secondary);
+        --c-background: var(--clr-secondary);
     }
 
     >dialog[data-role=dropmenu] {
-        --component-bg: var(--clr-secondary);
+        --c-background: var(--clr-secondary);
 
         border-radius: var(--radius-3xs);
         border: none;
@@ -43,7 +43,7 @@ dropdown {
 
         >button,
         a {
-            --component-bg: var(--clr-tertiary);
+            --c-background: var(--clr-tertiary);
             min-width: 100%;
         }
     }
@@ -54,9 +54,9 @@ dropdown {
 }
 
 card-v1-productpack {
-    --component-bg: var(--clr-primary);
+    --c-background: var(--clr-primary);
 
-    background-color: var(--component-bg);
+    background-color: var(--c-background);
     border-radius: var(--radius-3xs);
     display: flex;
     flex-direction: column;
@@ -231,11 +231,11 @@ card-v1-productpack {
         padding: 0 var(--scale-sm);
 
         >button {
-            --component-bg: var(--clr-tertiary);
+            --c-background: var(--clr-tertiary);
 
             >var {
                 align-items: center;
-                background-color: color-mix(in srgb, var(--component-bg), gray 16%);
+                background-color: color-mix(in srgb, var(--c-background), gray 16%);
                 border-radius: var(--radius-5xl);
                 display: flex;
                 flex-shrink: 0;
@@ -247,7 +247,7 @@ card-v1-productpack {
             }
 
             &[status=active] {
-                --component-bg: var(--clr-accent);
+                --c-background: var(--clr-accent);
                 color: var(--clr-text);
                 cursor: initial;
                 font-weight: 500;
@@ -290,10 +290,10 @@ card-v1-productpack {
 }
 
 dialog {
-    --component-bg: var(--clr-primary);
+    --c-background: var(--clr-primary);
 
     align-items: center;
-    background-color: var(--component-bg);
+    background-color: var(--c-background);
     border-radius: var(--radius-3xs);
     color: var(--clr-text);
     flex-direction: column;
@@ -324,7 +324,7 @@ dialog {
         width: 100%;
 
         >button:not([data-variant]) {
-            --component-bg: var(--clr-secondary);
+            --c-background: var(--clr-secondary);
         }
     }
 
@@ -363,7 +363,7 @@ dialog {
             }
 
             button {
-                --component-bg: var(--clr-context);
+                --c-background: var(--clr-context);
                 border-radius: var(--radius-3xs);
                 color: var(--clr-text);
                 width: 100%;
@@ -372,7 +372,7 @@ dialog {
 
         >component__footer {
             >button {
-                --component-bg: var(--clr-secondary);
+                --c-background: var(--clr-secondary);
             }
 
             >row {

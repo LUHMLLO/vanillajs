@@ -1,5 +1,21 @@
 @charset "utf-8";
 
+.align {
+    &.--center {
+        align-items: center;
+    }
+}
+
+.gap {
+    &.--5xs {
+        gap: var(--scale-5xs);
+    }
+}
+
+.justify-end {
+    justify-content: end;
+}
+
 .scroll,
 .scroll-x,
 .scroll-y {
@@ -24,8 +40,4 @@
 .scroll-y {
     overflow-x: clip;
     overflow-y: auto;
-}
-
-.justify-end {
-    justify-content: end;
 }
