@@ -7,7 +7,7 @@ export default defineConfig({
     build: {
         lib: {
             entry: './packages/pager',
-            name: 'min-router',
+            name: 'pager',
             fileName: 'index',
         },
         outDir: "dist/pager",

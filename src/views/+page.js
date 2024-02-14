@@ -65,11 +65,11 @@ export async function ViewTemplate() {
             </column>
 
             <column>
-                <input id="example-input-text" type="text"/>
+                <input id="example-input-text" type="text" placeholder="example input text (because of accessibility that's why)"/>
             </column>
 
             <column>
-                <textarea id="example-textarea"></textarea>
+                <textarea id="example-textarea" type="text" placeholder="example input text (because of accessibility that's why)"></textarea>
             </column>
 
             <column>
