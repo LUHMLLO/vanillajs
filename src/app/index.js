@@ -28,9 +28,9 @@ export class App {
         const page = match;
 
         if (page) {
-            // this.handleStyles(await route.ViewStyles());
+            this.handleStyles(await page.module.ViewStyles());
             await page.module.ViewTemplate(this.AppElement);
-            // this.handleScripts(await route.ViewScripts());
+            this.handleScripts(await page.module.ViewScripts());
 
             return page;
         } else {
@@ -46,4 +46,34 @@ export class App {
         }
     }
 
+    /**
+     * @param {String} styles
+     */
+    async handleStyles(styles) {
+        let style = document.createElement('style');
+        style.setAttribute('type', 'text/css')
+        style.innerHTML = styles;
+
+        if (style.innerHTML.trim() === '') {
+            return
+        }
+
+        document.head.appendChild(style);
+    }
+
+    /**
+     * @param {String} scripts
+     */
+    async handleScripts(scripts) {
+        let script = document.createElement('script');
+        script.type = 'module'
+        script.crossOrigin = 'user-credentials';
+        script.innerHTML = scripts;
+
+        if (script.innerHTML.trim() === '') {
+            return
+        }
+
+        document.body.appendChild(script);
+    }
 }

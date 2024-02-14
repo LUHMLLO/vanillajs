@@ -32,6 +32,8 @@
     },
     "include": [
         // Includes all JavaScript and TypeScript definition files in 'src' directory.
+        "packages/**/*.d.js",
+        "packages/**/*.js",
         "src/**/*.d.js",
         "src/**/*.js"
     ]

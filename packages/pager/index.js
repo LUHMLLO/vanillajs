@@ -1,4 +1,4 @@
-import fs from 'fs-extra';
+import fs from 'fs';
 
 /**
  * This function serves as the application's intrinsic router, auto-generating routes based on
@@ -20,7 +20,7 @@ export default async function Pager() {
      *
      * @type {string}
      */
-    const path = '../../../src/views';
+    const path = '../../src/views/';
 
     /**
      * Reads the directory contents and processes each file or subdirectory.
@@ -28,7 +28,7 @@ export default async function Pager() {
      * @param {string} path The path to the directory to read.
      * @returns {void}
      */
-    (await fs.promises.readdir(path)).forEach(
+    fs.readdirSync(path).forEach(
         async (file) => {
             /** @type {String} fullPath */
             const fullPath = `${path}/${file}`;
@@ -42,6 +42,7 @@ export default async function Pager() {
                 /** @type {Page} */
                 const page = { name: 'root', path: `/`, module: { ViewScripts, ViewStyles, ViewTemplate } };
 
+                console.log(page)
                 pages.push(page);
             }
 
@@ -51,6 +52,8 @@ export default async function Pager() {
                 /** @type {Page} */
                 const page = { name: file, path: `/${file}`, module: { ViewScripts, ViewStyles, ViewTemplate } };
 
+
+                console.log(page)
                 pages.push(page);
             }
         }
