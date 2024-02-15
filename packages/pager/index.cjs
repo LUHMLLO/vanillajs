@@ -1,7 +1,7 @@
 /**
  * Generates a list of routes based on the structure of the "pages" directory.
  *
- * @module Pagerer
+ * @module Pager
  */
 
 // Import required modules
@@ -30,29 +30,19 @@ function walkDir(dir) {
 				.replace(/\\/g, '/')
 				.replace('.js', '');
 
-			let pageName = function () {
-				let page = routeName.replace('/+page', '');
-
-				switch (page) {
-					case '+page':
-						return 'root';
-					case '+error':
-						return 'error';
-					default:
-						return page;
-				}
-			};
+			console.log('Pager: $routeName: ', routeName);
 
 			let pageUrl = function () {
 				const stripTrailingSlash = (/** @type {string} */ str) => {
 					return str.endsWith('/') ? str.slice(0, -1) : str;
 				};
 
-				let page = stripTrailingSlash(
-					`/${routeName}.js`.replace('+page.js', '')
+				const page = stripTrailingSlash(
+					`/${routeName}.js`
+						.replace('+page.js', '')
+						.replace('+', '')
+						.replace('.js', '')
 				);
-
-				console.log(stripTrailingSlash(routeName));
 
 				switch (page) {
 					case '':
@@ -62,12 +52,17 @@ function walkDir(dir) {
 				}
 			};
 
-			if (pageName() !== 'error') {
-				pages.push({
-					name: pageName(),
-					path: pageUrl(),
-					module: `../../src/pages/${routeName}.js`,
-				});
+			console.log('Pager: $pageUrl: ', pageUrl());
+
+			const page = {
+				path: pageUrl(),
+				import: `./pages/${routeName}.js`,
+			};
+
+			console.log('App: $page', page);
+
+			if (!page.import.includes('+error.js')) {
+				pages.push(page);
 			}
 		}
 	}
@@ -79,9 +74,9 @@ const pages = []; // Array to store route information
 
 // Generate the route list
 walkDir(pagesDirectory);
-const routeList = JSON.stringify(pages, null, 2);
+const pagesList = JSON.stringify(pages, null, 2);
 
 // Write the route list to a file (only during development or build time)
 if (process.env.NODE_ENV !== 'production') {
-	fs.writeFileSync('public/pages.json', routeList);
+	fs.writeFileSync('public/pages.json', pagesList);
 }

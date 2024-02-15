@@ -2,10 +2,10 @@
 export async function SEO() {
 	return {
 		author: 'lm',
-		description: 'Design System - Component Previewer Page',
+		description: 'Design System - Proposal Tool Help Center Page',
 		image: '',
 		keywords: '',
-		title: 'Preview - Component Name Here',
+		title: 'Proposal Tool - Help',
 	};
 }
 
@@ -21,7 +21,7 @@ export async function Scripts() {
 export async function Html() {
 	let html = String.raw;
 
-	return html` <h1>Preview</h1> `;
+	return html` <h1>Proposal Help</h1> `;
 }
 
 /** @returns {Promise<String>} */

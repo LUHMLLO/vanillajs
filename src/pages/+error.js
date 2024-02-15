@@ -1,25 +1,31 @@
+/** @returns {Promise<Object>} */
+export async function SEO() {
+	return {
+		author: 'lm',
+		description: 'Design System - Error Page',
+		image: '',
+		keywords: '',
+		title: '404 not found',
+	};
+}
+
 /** @returns {Promise<String>} */
-export async function ViewScripts() {
+export async function Scripts() {
 	let js = String.raw;
 
 	return js`
-        import Drops from "${
-					new URL('/assets/js/drops.js', import.meta.url).href
-				}";
-        const drops = new Drops();
-        drops.init();
     `;
 }
 
 /** @returns {Promise<String>} */
-export async function ViewTemplate() {
+export async function Html() {
 	let html = String.raw;
 
 	return html` <h1>4.0.4</h1> `;
 }
 
 /** @returns {Promise<String>} */
-export async function ViewStyles() {
+export async function Css() {
 	let css = String.raw;
 
 	return css``;

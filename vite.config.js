@@ -1,3 +1,4 @@
+import path from 'path';
 import { defineConfig } from 'vite';
 import { buildOptions } from './build.options';
 
@@ -9,5 +10,10 @@ export default defineConfig({
 	},
 	esbuild: {
 		drop: ['console', 'debugger'],
+	},
+	resolve: {
+		alias: {
+			'~': path.resolve(__dirname, './src'),
+		},
 	},
 });

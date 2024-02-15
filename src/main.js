@@ -8,11 +8,9 @@ import { App } from './app';
 
 const AppElement = document.getElementById('app');
 
-const Pages = await fetch('./pages.json')
+const Pages = await fetch('/pages.json')
 	.then((res) => res.json())
 	.then((data) => {
-		// Access the parsed JSON data through 'data' here
-		// console.log('pages', data); // Log the entire data object
 		return data;
 	})
 	.catch((err) => {

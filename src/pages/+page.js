@@ -1,5 +1,16 @@
+/** @returns {Promise<Object>} */
+export async function SEO() {
+	return {
+		author: 'lm',
+		description: 'Design System - Start Page',
+		image: '',
+		keywords: '',
+		title: 'Start',
+	};
+}
+
 /** @returns {Promise<String>} */
-export async function ViewScripts() {
+export async function Scripts() {
 	let js = String.raw;
 
 	return js`
@@ -12,7 +23,7 @@ export async function ViewScripts() {
 }
 
 /** @returns {Promise<String>} */
-export async function ViewTemplate() {
+export async function Html() {
 	let html = String.raw;
 
 	return html`
@@ -476,7 +487,7 @@ export async function ViewTemplate() {
 }
 
 /** @returns {Promise<String>} */
-export async function ViewStyles() {
+export async function Css() {
 	let css = String.raw;
 
 	return css``;

@@ -28,7 +28,9 @@
 		// Base directory to resolve non-relative module names.
 		"baseUrl": ".",
 		// Paths mapped to their alias.
-		"paths": {},
+		"paths": {
+			"~/*": ["./src/*"]
+		},
 		// Enables experimental support for decorators.
 		"experimentalDecorators": true,
 		// Disables emitting 'define' for class fields.

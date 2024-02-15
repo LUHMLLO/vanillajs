@@ -1,17 +1,26 @@
 [
-  {
-    "name": "root",
-    "path": "/",
-    "module": "../../src/pages/+page.js"
-  },
-  {
-    "name": "preview",
-    "path": "/preview",
-    "module": "../../src/pages/preview/+page.js"
-  },
-  {
-    "name": "proposal",
-    "path": "/proposal",
-    "module": "../../src/pages/proposal/+page.js"
-  }
+	{
+		"path": "/",
+		"import": "./pages/+page.js"
+	},
+	{
+		"path": "/item/[item]",
+		"import": "./pages/item/+[item].js"
+	},
+	{
+		"path": "/preview",
+		"import": "./pages/preview/+page.js"
+	},
+	{
+		"path": "/proposal/about",
+		"import": "./pages/proposal/+about.js"
+	},
+	{
+		"path": "/proposal",
+		"import": "./pages/proposal/+page.js"
+	},
+	{
+		"path": "/proposal/help",
+		"import": "./pages/proposal/help/+page.js"
+	}
 ]
