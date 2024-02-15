@@ -1,106 +1,132 @@
 @charset "utf-8";
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --clr-accent: hsl(124, 69%, 40%);
-        --clr-context: hsl(169, 69%, 40%);
+	:root {
+		--clr-accent: hsl(124, 69%, 40%);
+		--clr-context: hsl(169, 69%, 40%);
 
-        --clr-background: hsl(0, 0%, 4%);
-        --clr-text: hsl(0, 0%, 96%);
-        --clr-subtext: hsl(0, 0%, 72%);
+		--clr-background: hsl(0, 0%, 4%);
+		--clr-text: hsl(0, 0%, 96%);
+		--clr-subtext: hsl(0, 0%, 72%);
 
-        --clr-primary: hsl(0, 0%, 8%);
-        --clr-secondary: hsl(0, 0%, 12%);
-        --clr-tertiary: hsl(0, 0%, 16%);
-    }
+		--clr-primary: hsl(0, 0%, 8%);
+		--clr-secondary: hsl(0, 0%, 12%);
+		--clr-tertiary: hsl(0, 0%, 16%);
+	}
 }
 
 @media (prefers-color-scheme: light) {
-    :root {
-        --clr-accent: hsl(124, 69%, 64%);
-        --clr-context: hsl(169, 69%, 64%);
+	:root {
+		--clr-accent: hsl(124, 69%, 64%);
+		--clr-context: hsl(169, 69%, 64%);
 
-        --clr-background: color-mix(in srgb, var(--clr-accent), #fbfbfe 96%);
-        --clr-text: color-mix(in srgb, var(--clr-background), black 88%);
-        --clr-subtext: color-mix(in srgb, var(--clr-background), var(--clr-text) 56%);
+		--clr-background: color-mix(in srgb, var(--clr-accent), #fbfbfe 96%);
+		--clr-text: color-mix(in srgb, var(--clr-background), black 88%);
+		--clr-subtext: color-mix(
+			in srgb,
+			var(--clr-background),
+			var(--clr-text) 56%
+		);
 
-        --clr-primary: color-mix(in srgb, var(--clr-background), hsl(108, 6%, 75%) 12%);
-        --clr-secondary: color-mix(in srgb, var(--clr-primary), hsl(93, 6%, 72%) 18%);
-        --clr-tertiary: color-mix(in srgb, var(--clr-secondary), hsl(103, 6%, 77%) 32%);
-    }
+		--clr-primary: color-mix(
+			in srgb,
+			var(--clr-background),
+			hsl(108, 6%, 75%) 12%
+		);
+		--clr-secondary: color-mix(
+			in srgb,
+			var(--clr-primary),
+			hsl(93, 6%, 72%) 18%
+		);
+		--clr-tertiary: color-mix(
+			in srgb,
+			var(--clr-secondary),
+			hsl(103, 6%, 77%) 32%
+		);
+	}
 }
 
-html[scheme=dark] {
-    --clr-accent: hsl(124, 69%, 40%);
-    --clr-context: hsl(169, 69%, 40%);
+html[scheme='dark'] {
+	--clr-accent: hsl(124, 69%, 40%);
+	--clr-context: hsl(169, 69%, 40%);
 
-    --clr-background: hsl(0, 0%, 4%);
-    --clr-text: hsl(0, 0%, 96%);
-    --clr-subtext: hsl(0, 0%, 72%);
+	--clr-background: hsl(0, 0%, 4%);
+	--clr-text: hsl(0, 0%, 96%);
+	--clr-subtext: hsl(0, 0%, 72%);
 
-    --clr-primary: hsl(0, 0%, 8%);
-    --clr-secondary: hsl(0, 0%, 12%);
-    --clr-tertiary: hsl(0, 0%, 16%);
+	--clr-primary: hsl(0, 0%, 8%);
+	--clr-secondary: hsl(0, 0%, 12%);
+	--clr-tertiary: hsl(0, 0%, 16%);
 }
 
-html[scheme=light] {
-    --clr-accent: hsl(124, 69%, 64%);
-    --clr-context: hsl(169, 69%, 64%);
+html[scheme='light'] {
+	--clr-accent: hsl(124, 69%, 64%);
+	--clr-context: hsl(169, 69%, 64%);
 
-    --clr-background: color-mix(in srgb, var(--clr-accent), #fbfbfe 96%);
-    --clr-text: color-mix(in srgb, var(--clr-background), black 88%);
-    --clr-subtext: color-mix(in srgb, var(--clr-background), var(--clr-text) 56%);
+	--clr-background: color-mix(in srgb, var(--clr-accent), #fbfbfe 96%);
+	--clr-text: color-mix(in srgb, var(--clr-background), black 88%);
+	--clr-subtext: color-mix(in srgb, var(--clr-background), var(--clr-text) 56%);
 
-    --clr-primary: color-mix(in srgb, var(--clr-background), hsl(108, 6%, 75%) 12%);
-    --clr-secondary: color-mix(in srgb, var(--clr-primary), hsl(93, 6%, 72%) 18%);
-    --clr-tertiary: color-mix(in srgb, var(--clr-secondary), hsl(103, 6%, 77%) 32%);
+	--clr-primary: color-mix(
+		in srgb,
+		var(--clr-background),
+		hsl(108, 6%, 75%) 12%
+	);
+	--clr-secondary: color-mix(in srgb, var(--clr-primary), hsl(93, 6%, 72%) 18%);
+	--clr-tertiary: color-mix(
+		in srgb,
+		var(--clr-secondary),
+		hsl(103, 6%, 77%) 32%
+	);
 }
 
 :root {
-    /* for border radius */
-    --radius-5xs: 6.39pt;
-    --radius-4xs: 7.29pt;
-    --radius-3xs: 8.31pt;
-    --radius-2xs: 9.47pt;
-    --radius-xs: 10.8pt;
-    --radius-sm: 12.31pt;
-    --radius-md: 14.04pt;
-    --radius-nm: 16pt;
-    --radius-xl: 20.79pt;
-    --radius-2xl: 23.7pt;
-    --radius-3xl: 27.02pt;
-    --radius-4xl: 30.81pt;
-    --radius-5xl: 35.12pt;
+	/* for border radius */
+	--radius-5xs: 6.39pt;
+	--radius-4xs: 7.29pt;
+	--radius-3xs: 8.31pt;
+	--radius-2xs: 9.47pt;
+	--radius-xs: 10.8pt;
+	--radius-sm: 12.31pt;
+	--radius-md: 14.04pt;
+	--radius-nm: 16pt;
+	--radius-xl: 20.79pt;
+	--radius-2xl: 23.7pt;
+	--radius-3xl: 27.02pt;
+	--radius-4xl: 30.81pt;
+	--radius-5xl: 35.12pt;
 
-    /* for font calculations, gaps, paddings, . . . */
-    --scale-5xs: calc(0.0625rem * 6.39);
-    --scale-4xs: calc(0.0625rem * 7.29);
-    --scale-3xs: calc(0.0625rem * 8.31);
-    --scale-2xs: calc(0.0625rem * 9.47);
-    --scale-xs: calc(0.0625rem * 10.8);
-    --scale-sm: calc(0.0625rem * 12.31);
-    --scale-md: calc(0.0625rem * 14.04);
-    --scale-nm: calc(0.0625rem * 16);
-    --scale-lg: calc(0.0625rem * 18.24);
-    --scale-xl: calc(0.0625rem * 20.79);
-    --scale-2xl: calc(0.0625rem * 23.7);
-    --scale-3xl: calc(0.0625rem * 27.02);
-    --scale-4xl: calc(0.0625rem * 30.81);
-    --scale-5xl: calc(0.0625rem * 35.12);
+	/* for font calculations, gaps, paddings, . . . */
+	--scale-5xs: calc(0.0625rem * 6.39);
+	--scale-4xs: calc(0.0625rem * 7.29);
+	--scale-3xs: calc(0.0625rem * 8.31);
+	--scale-2xs: calc(0.0625rem * 9.47);
+	--scale-xs: calc(0.0625rem * 10.8);
+	--scale-sm: calc(0.0625rem * 12.31);
+	--scale-md: calc(0.0625rem * 14.04);
+	--scale-nm: calc(0.0625rem * 16);
+	--scale-lg: calc(0.0625rem * 18.24);
+	--scale-xl: calc(0.0625rem * 20.79);
+	--scale-2xl: calc(0.0625rem * 23.7);
+	--scale-3xl: calc(0.0625rem * 27.02);
+	--scale-4xl: calc(0.0625rem * 30.81);
+	--scale-5xl: calc(0.0625rem * 35.12);
 
-    /* fonts */
-    --baseFontFamily: 'DM Sans', sans-serif;
-    --baseFontSize: clamp(0.64rem, 1dvw * 0.124vmin, 1rem);
-    /* --baseFontSize: clamp(.125rem, .125vw + 16vmin, .96rem); */
-    --baseFontWeight: 400;
-    --baseLineHeight: clamp(1.25, 1.5, 1.75);
+	/* fonts */
+	--baseFontFamily: 'DM Sans', sans-serif;
+	--baseFontSize: clamp(0.64rem, 1dvw * 0.124vmin, 1rem);
+	/* --baseFontSize: clamp(.125rem, .125vw + 16vmin, .96rem); */
+	--baseFontWeight: 400;
+	--baseLineHeight: clamp(1.25, 1.5, 1.75);
 
-    /* shadows */
-    --shadow-nm: 0 var(--radius-5xs) var(--radius-nm) color-mix(in srgb, var(--clr-primary), hsla(0, 0%, 0%, 0.333) 48%);
-    --shadow-xl: 0 var(--radius-5xs) var(--radius-xl) color-mix(in srgb, var(--clr-primary), hsla(0, 0%, 0%, 0.333) 48%);
+	/* shadows */
+	--shadow-nm: 0 var(--radius-5xs) var(--radius-nm)
+		color-mix(in srgb, var(--clr-primary), hsla(0, 0%, 0%, 0.333) 48%);
+	--shadow-xl: 0 var(--radius-5xs) var(--radius-xl)
+		color-mix(in srgb, var(--clr-primary), hsla(0, 0%, 0%, 0.333) 48%);
 
-    /*animations*/
-    --animProperties: var(--animDuration) var(--animTiming);
-    --animDuration: 360ms;
-    --animTiming: cubic-bezier(0.2, 0, 0, 1);
+	/*animations*/
+	--animProperties: var(--animDuration) var(--animTiming);
+	--animDuration: 360ms;
+	--animTiming: cubic-bezier(0.2, 0, 0, 1);
 }

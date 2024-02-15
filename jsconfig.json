@@ -1,46 +1,46 @@
 {
-    "$schema": "https://json.schemastore.org/jsconfig",
-    "compilerOptions": {
-        // The module resolution strategy. 'bundler' is used for webpack or Parcel.
-        "moduleResolution": "bundler",
-        // The ECMAScript target version. 'ESNext' means the latest version.
-        "target": "ESNext",
-        // The ECMAScript module system to use. 'ESNext' means the latest version.
-        "module": "ESNext",
-        // Enforces using 'import type' instead of 'import' for Types. This is useful when using svelte-preprocess.
-        "verbatimModuleSyntax": true,
-        // Ensures every file is its own module.
-        "isolatedModules": true,
-        // Allows importing of JSON modules.
-        "resolveJsonModule": true,
-        // Generates corresponding '.map' file for debugging purposes.
-        "sourceMap": true,
-        // Enables CommonJS and ES Module interoperability.
-        "esModuleInterop": true,
-        // Skips type checking of all declaration files (*.d.ts).
-        "skipLibCheck": true,
-        // Allow JavaScript files to be a part of your program.
-        "allowJs": true,
-        // Enables type checking for JavaScript files.
-        "checkJs": true,
-        // Enable all strict type checking options.
-        "strict": true,
-        // Base directory to resolve non-relative module names.
-        "baseUrl": ".",
-        // Paths mapped to their alias.
-        "paths": {},
-        // Enables experimental support for decorators.
-        "experimentalDecorators": true,
-        // Disables emitting 'define' for class fields.
-        "useDefineForClassFields": false,
-        //Ensure that casing is correct in imports.
-        "forceConsistentCasingInFileNames": true
-    },
-    "include": [
-        // Includes all JavaScript and TypeScript definition files in 'src' directory.
-        "packages/**/*.d.js",
-        "packages/**/*.js",
-        "src/**/*.d.js",
-        "src/**/*.js"
-    ]
+	"$schema": "https://json.schemastore.org/jsconfig",
+	"compilerOptions": {
+		// The module resolution strategy. 'bundler' is used for webpack or Parcel.
+		"moduleResolution": "bundler",
+		// The ECMAScript target version. 'ESNext' means the latest version.
+		"target": "ESNext",
+		// The ECMAScript module system to use. 'ESNext' means the latest version.
+		"module": "ESNext",
+		// Enforces using 'import type' instead of 'import' for Types. This is useful when using svelte-preprocess.
+		"verbatimModuleSyntax": true,
+		// Ensures every file is its own module.
+		"isolatedModules": true,
+		// Allows importing of JSON modules.
+		"resolveJsonModule": true,
+		// Generates corresponding '.map' file for debugging purposes.
+		"sourceMap": true,
+		// Enables CommonJS and ES Module interoperability.
+		"esModuleInterop": true,
+		// Skips type checking of all declaration files (*.d.ts).
+		"skipLibCheck": true,
+		// Allow JavaScript files to be a part of your program.
+		"allowJs": true,
+		// Enables type checking for JavaScript files.
+		"checkJs": true,
+		// Enable all strict type checking options.
+		"strict": true,
+		// Base directory to resolve non-relative module names.
+		"baseUrl": ".",
+		// Paths mapped to their alias.
+		"paths": {},
+		// Enables experimental support for decorators.
+		"experimentalDecorators": true,
+		// Disables emitting 'define' for class fields.
+		"useDefineForClassFields": false,
+		//Ensure that casing is correct in imports.
+		"forceConsistentCasingInFileNames": true
+	},
+	"include": [
+		// Includes all JavaScript and TypeScript definition files in 'src' directory.
+		"packages/**/*.d.js",
+		"packages/**/*.js",
+		"src/**/*.d.js",
+		"src/**/*.js"
+	]
 }

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "root",
+    "path": "/",
+    "module": "../../src/pages/+page.js"
+  },
+  {
+    "name": "preview",
+    "path": "/preview",
+    "module": "../../src/pages/preview/+page.js"
+  },
+  {
+    "name": "proposal",
+    "path": "/proposal",
+    "module": "../../src/pages/proposal/+page.js"
+  }
+]

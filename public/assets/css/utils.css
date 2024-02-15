@@ -1,43 +1,43 @@
 @charset "utf-8";
 
 .align {
-    &.--center {
-        align-items: center;
-    }
+	&.--center {
+		align-items: center;
+	}
 }
 
 .gap {
-    &.--5xs {
-        gap: var(--scale-5xs);
-    }
+	&.--5xs {
+		gap: var(--scale-5xs);
+	}
 }
 
 .justify-end {
-    justify-content: end;
+	justify-content: end;
 }
 
 .scroll,
 .scroll-x,
 .scroll-y {
-    display: flex;
-    gap: var(--scale-5xs);
+	display: flex;
+	gap: var(--scale-5xs);
 
-    >* {
-        flex-shrink: 0;
-    }
+	> * {
+		flex-shrink: 0;
+	}
 }
 
 .scroll {
-    overflow-x: auto;
-    overflow-y: auto;
+	overflow-x: auto;
+	overflow-y: auto;
 }
 
 .scroll-x {
-    overflow-x: auto;
-    overflow-y: clip;
+	overflow-x: auto;
+	overflow-y: clip;
 }
 
 .scroll-y {
-    overflow-x: clip;
-    overflow-y: auto;
+	overflow-x: clip;
+	overflow-y: auto;
 }

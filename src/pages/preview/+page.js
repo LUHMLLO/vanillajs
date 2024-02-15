@@ -1,18 +1,21 @@
 /** @returns {Promise<String>} */
 export async function ViewScripts() {
-    return String.raw`
+	let js = String.raw;
+
+	return js`
     `;
-};
+}
 
 /** @returns {Promise<string>}*/
 export async function ViewTemplate() {
-    return String.raw`
-        <h1>Preview</h1>
-    `;
-};
+	let html = String.raw;
+
+	return html` <h1>Preview</h1> `;
+}
 
 /** @returns {Promise<String>} */
 export async function ViewStyles() {
-    return String.raw`
-    `;
-};
+	let css = String.raw;
+
+	return css``;
+}

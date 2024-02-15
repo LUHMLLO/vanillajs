@@ -5,11 +5,21 @@ import '../public/assets/css/utils.css';
 import '../public/assets/css/widgets.css';
 
 import { App } from './app';
-import { StaticPager } from './pages';
 
 const AppElement = document.getElementById('app');
 
-if (AppElement) {
-    const app = new App(AppElement, StaticPager);
-    app.mount();
+const Pages = await fetch('./pages.json')
+	.then((res) => res.json())
+	.then((data) => {
+		// Access the parsed JSON data through 'data' here
+		// console.log('pages', data); // Log the entire data object
+		return data;
+	})
+	.catch((err) => {
+		return console.error('pages not found', err);
+	});
+
+if (Pages && AppElement) {
+	const app = new App(AppElement, Pages);
+	app.mount();
 }

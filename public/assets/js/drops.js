@@ -8,7 +8,7 @@ export default class Drops {
 	 * @param {NodeListOf<Element>} [drops=document.querySelectorAll('dropdown')] - The dropdown elements.
 	 * @returns {Element[]} An array of dropdown elements.
 	 */
-	getDrops(drops = document.querySelectorAll("dropdown")) {
+	getDrops(drops = document.querySelectorAll('dropdown')) {
 		return [...drops];
 	}
 
@@ -18,7 +18,7 @@ export default class Drops {
 	 */
 	init(drops = this.getDrops()) {
 		if (!drops.length) {
-			console.warn("Drops: No dropdown component found.");
+			console.warn('Drops: No dropdown component found.');
 			return;
 		}
 
@@ -27,13 +27,13 @@ export default class Drops {
 				return;
 			}
 
-			const toggle = drop.querySelector("toggle");
+			const toggle = drop.querySelector('toggle');
 			if (!toggle) {
-				console.warn("Drops: Unable to find toggle inside dropdown.");
+				console.warn('Drops: Unable to find toggle inside dropdown.');
 				return;
 			}
 
-			toggle.addEventListener("click", (event) => {
+			toggle.addEventListener('click', (event) => {
 				event.preventDefault();
 				this.toggle(drop);
 			});
@@ -46,29 +46,29 @@ export default class Drops {
 	 */
 	toggle(dropdown) {
 		if (!dropdown) {
-			console.warn("Drops: Unable to find dropdown.");
+			console.warn('Drops: Unable to find dropdown.');
 			return;
 		}
 
-		document.addEventListener("click", this.listenClicksOutside);
+		document.addEventListener('click', this.listenClicksOutside);
 
 		/** @type {HTMLDialogElement | null} dropmenu*/
-		const dropmenu = dropdown.querySelector("[data-role=dropmenu]");
+		const dropmenu = dropdown.querySelector('[data-role=dropmenu]');
 		if (!dropmenu) {
-			console.warn("Drops: Unable to find dropmenu inside dropdown.");
+			console.warn('Drops: Unable to find dropmenu inside dropdown.');
 			return;
 		}
 
 		this.toggleAdjacents(dropdown);
 
-		if (dropmenu.hasAttribute("open")) {
+		if (dropmenu.hasAttribute('open')) {
 			dropmenu.close();
 		} else {
 			dropmenu.show();
 		}
 
-		!dropmenu.hasAttribute("open") &&
-			document.removeEventListener("click", this.listenClicksOutside);
+		!dropmenu.hasAttribute('open') &&
+			document.removeEventListener('click', this.listenClicksOutside);
 	}
 
 	/**
@@ -78,7 +78,7 @@ export default class Drops {
 	toggleAdjacents(dropdown) {
 		this.getDrops().forEach((drop) => {
 			/** @type {HTMLDialogElement | null} dropmenu*/
-			const dropmenu = drop.querySelector("[data-role=dropmenu]");
+			const dropmenu = drop.querySelector('[data-role=dropmenu]');
 			if (dropdown !== drop && dropmenu) {
 				dropmenu.close();
 			}
@@ -92,7 +92,7 @@ export default class Drops {
 	listenClicksOutside = (event) => {
 		this.getDrops().forEach((dropdown) => {
 			/** @type {HTMLDialogElement | null} dropmenu*/
-			const dropmenu = dropdown.querySelector("[data-role=dropmenu]");
+			const dropmenu = dropdown.querySelector('[data-role=dropmenu]');
 			if (
 				dropmenu &&
 				event.target instanceof Node &&
