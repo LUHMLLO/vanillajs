@@ -5,7 +5,7 @@ import { buildOptions } from './build.options';
 export default defineConfig({
 	// @ts-ignore
 	build: {
-		outDir: 'dist/codepens',
+		outDir: 'dist',
 		...buildOptions,
 	},
 	esbuild: {

@@ -55,6 +55,9 @@ export class App {
 	 * @returns {Promise<void>}
 	 */
 	async handleSEO(seo) {
+		// @ts-ignore
+		document.head.querySelector('title').innerText = seo.title;
+
 		for (const [key, value] of Object.entries(seo)) {
 			document.head
 				.querySelector(`meta[name='${key}']`)
