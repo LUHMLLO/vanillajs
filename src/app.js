@@ -32,7 +32,7 @@ export class App {
 
 		if (route) {
 			/** @type {PageModule} */
-			const { SEO, Scripts, Html, Css } = await import(route.import);
+			const { SEO, Scripts, Html, Css } = route.import;
 
 			this.handleSEO(await SEO());
 			this.handleCss(await Css());
@@ -43,7 +43,9 @@ export class App {
 
 		try {
 			console.log('App: Error');
-			const page = await import('~/pages/+error.js');
+			const page = await import('~/pages/+error.js', {
+				assert: { type: 'js' },
+			});
 			this.handleHtml(await page.Html());
 		} catch (error) {
 			console.error('App (Router): Error importing 404 from', error);

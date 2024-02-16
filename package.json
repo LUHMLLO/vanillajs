@@ -4,7 +4,7 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"package:pager": "node ./packages/pager/index.cjs",
+		"package:pager": "node ./lib/pager/index.cjs",
 		"dev": "pnpm package:pager && vite",
 		"build": "pnpm package:pager && vite build",
 		"build:pager": "vite build --config vite.config.pager.js",

@@ -1,21 +1,12 @@
-import '../public/assets/css/main.vars.css';
-import '../public/assets/css/main.reset.css';
-import '../public/assets/css/main.components.css';
-import '../public/assets/css/utils.css';
-import '../public/assets/css/widgets.css';
-
+import '../static/assets/css/main.vars.module.css';
+import '../static/assets/css/main.reset.module.css';
+import '../static/assets/css/main.components.module.css';
+import '../static/assets/css/utils.module.css';
+import '../static/assets/css/widgets.module.css';
+import Pages from './pages.js';
 import { App } from './app';
 
 const AppElement = document.getElementById('app');
-
-const Pages = await fetch('/pages.json')
-	.then((res) => res.json())
-	.then((data) => {
-		return data;
-	})
-	.catch((err) => {
-		return console.error('pages not found', err);
-	});
 
 if (Pages && AppElement) {
 	const app = new App(AppElement, Pages);

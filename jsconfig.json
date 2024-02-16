@@ -29,6 +29,7 @@
 		"baseUrl": ".",
 		// Paths mapped to their alias.
 		"paths": {
+			"~": ["./src"],
 			"~/*": ["./src/*"]
 		},
 		// Enables experimental support for decorators.
@@ -40,9 +41,11 @@
 	},
 	"include": [
 		// Includes all JavaScript and TypeScript definition files in 'src' directory.
-		"packages/**/*.d.js",
-		"packages/**/*.js",
+		"lib/**/*.d.js",
+		"lib/**/*.js",
 		"src/**/*.d.js",
-		"src/**/*.js"
+		"src/**/*.js",
+		"static/**/*.d.js",
+		"static/**/*.js"
 	]
 }

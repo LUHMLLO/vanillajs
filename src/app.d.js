@@ -10,5 +10,5 @@
 /**
  * @typedef {Object} Route
  * @property {string} path - The path of the route.
- * @property {string} import - The module to handle the route.
+ * @property {PageModule} import - The module to handle the route.
  */

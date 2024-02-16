@@ -1,16 +1,26 @@
 import path from 'path';
 import { defineConfig } from 'vite';
-import { buildOptions } from './build.options';
 
 export default defineConfig({
-	// @ts-ignore
 	build: {
+		minify: 'terser',
 		outDir: 'dist',
-		...buildOptions,
+		target: ['ESNext'],
+		terserOptions: {
+			safari10: true,
+			ie8: true,
+			compress: true,
+			mangle: true,
+			module: true,
+			output: {
+				beautify: false,
+			},
+		},
 	},
 	esbuild: {
 		drop: ['console', 'debugger'],
 	},
+	publicDir: './static',
 	resolve: {
 		alias: {
 			'~': path.resolve(__dirname, './src'),
