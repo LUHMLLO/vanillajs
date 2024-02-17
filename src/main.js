@@ -4,7 +4,7 @@ import '../static/assets/css/main.components.module.css';
 import '../static/assets/css/utils.module.css';
 import '../static/assets/css/widgets.module.css';
 import Pages from './pages.js';
-import { App } from './app';
+import { App } from './app.js';
 
 const AppElement = document.getElementById('app');
 
