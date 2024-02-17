@@ -28,25 +28,25 @@ export class App {
 			(route) => route.path === currentRoute
 		)[0];
 
-		console.log('App (Router): debug.route:', route);
-
 		if (route) {
-			/** @type {PageModule} */
-			const { SEO, Scripts, Html, Css } = route.import;
+			console.log('App (Router): debug.route:', route);
 
-			this.handleSEO(await SEO());
-			this.handleCss(await Css());
-			this.handleHtml(await Html());
-			this.handleScripts(await Scripts());
+			/** @type {any} */
+			const { page } = route.import;
+
+			this.handleSEO(page.seo);
+			this.handleCss(page.css);
+			this.handleHtml(page.html);
+			this.handleScripts(page.js);
 			return;
 		}
 
 		try {
 			console.log('App: Error');
-			const page = await import('~/pages/+error.js', {
-				assert: { type: 'js' },
-			});
-			this.handleHtml(await page.Html());
+
+			const { page } = await import('~src/pages/+error.js');
+
+			this.handleHtml(page.html);
 		} catch (error) {
 			console.error('App (Router): Error importing 404 from', error);
 		}

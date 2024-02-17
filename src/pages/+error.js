@@ -1,32 +1,20 @@
-/** @returns {Promise<Object>} */
-export async function SEO() {
-	return {
-		author: 'lm',
-		description: 'Design System - Error Page',
-		image: '',
-		keywords: '',
-		title: '404 not found',
-	};
-}
+import Page from '~lib/pager/class';
 
-/** @returns {Promise<String>} */
-export async function Scripts() {
-	let js = String.raw;
+export const page = new Page();
 
-	return js`
-    `;
-}
+page.SEO({
+	author: 'lm',
+	description: 'Design System - Error Page',
+	image: '',
+	keywords: [''],
+	title: '404 not found',
+});
 
-/** @returns {Promise<String>} */
-export async function Html() {
-	let html = String.raw;
+let js = String.raw;
+page.JS(js``);
 
-	return html` <h1>4.0.4</h1> `;
-}
+let html = String.raw;
+page.HTML(html`<h1>4.0.4</h1>`);
 
-/** @returns {Promise<String>} */
-export async function Css() {
-	let css = String.raw;
-
-	return css``;
-}
+let css = String.raw;
+page.CSS(css``);

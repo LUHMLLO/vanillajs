@@ -23,7 +23,10 @@ export default defineConfig({
 	publicDir: './static',
 	resolve: {
 		alias: {
-			'~': path.resolve(__dirname, './src'),
+			'~server': path.resolve(__dirname, './.server'),
+			'~lib': path.resolve(__dirname, './lib'),
+			'~src': path.resolve(__dirname, './src'),
+			'~root': path.resolve(__dirname, './'),
 		},
 	},
 });

@@ -1,32 +1,20 @@
-/** @returns {Promise<Object>} */
-export async function SEO() {
-	return {
-		author: 'lm',
-		description: 'Design System - Component Previewer Page',
-		image: '',
-		keywords: '',
-		title: 'Preview - Component Name Here',
-	};
-}
+import Page from '~lib/pager/class';
 
-/** @returns {Promise<String>} */
-export async function Scripts() {
-	let js = String.raw;
+export const page = new Page();
 
-	return js`
-    `;
-}
+page.SEO({
+	author: 'lm',
+	description: 'Design System - Component Previewer Page',
+	image: '',
+	keywords: [''],
+	title: 'Preview - Component Name Here',
+});
 
-/** @returns {Promise<string>}*/
-export async function Html() {
-	let html = String.raw;
+let js = String.raw;
+page.JS(js``);
 
-	return html` <h1>Preview</h1> `;
-}
+let html = String.raw;
+page.HTML(html`<h1>Preview</h1>`);
 
-/** @returns {Promise<String>} */
-export async function Css() {
-	let css = String.raw;
-
-	return css``;
-}
+let css = String.raw;
+page.CSS(css``);

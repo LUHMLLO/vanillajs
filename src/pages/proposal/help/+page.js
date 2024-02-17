@@ -1,32 +1,20 @@
-/** @returns {Promise<Object>} */
-export async function SEO() {
-	return {
-		author: 'lm',
-		description: 'Design System - Proposal Tool Help Center Page',
-		image: '',
-		keywords: '',
-		title: 'Proposal Tool - Help',
-	};
-}
+import Page from '~lib/pager/class';
 
-/** @returns {Promise<String>} */
-export async function Scripts() {
-	let js = String.raw;
+export const page = new Page();
 
-	return js`
-    `;
-}
+page.SEO({
+	author: 'lm',
+	description: 'Design System - Proposal Tool About Help',
+	image: '',
+	keywords: [''],
+	title: 'Proposal Tool - Help',
+});
 
-/** @returns {Promise<string>}*/
-export async function Html() {
-	let html = String.raw;
+let js = String.raw;
+page.JS(js``);
 
-	return html` <h1>Proposal Help</h1> `;
-}
+let html = String.raw;
+page.HTML(html`<h1>Proposal Help</h1>`);
 
-/** @returns {Promise<String>} */
-export async function Css() {
-	let css = String.raw;
-
-	return css``;
-}
+let css = String.raw;
+page.CSS(css``);
