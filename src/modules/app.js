@@ -1,3 +1,5 @@
+import { Inspect } from '~lib/lm-tools/inspect';
+
 /**
  * @description Core app module; Main Service; Heart of the app.
  */
@@ -22,14 +24,14 @@ export class App {
 		/** @type {String} */
 		const currentRoute = document.location.pathname;
 
-		console.log('App (Router): debug.currentRoute:', currentRoute);
+		Inspect('App', 'Router', 'debug', 'currentRoute', currentRoute);
 
 		let route = this.AppRoutes.filter(
 			(route) => route.path === currentRoute
 		)[0];
 
 		if (route) {
-			console.log('App (Router): debug.route:', route);
+			Inspect('App', 'Router', 'debug', 'route', route);
 
 			/** @type {any} */
 			const { page } = route.import;
@@ -42,7 +44,7 @@ export class App {
 		}
 
 		try {
-			console.log('App: Error');
+			Inspect('App', 'Router', 'error', 'route', route);
 
 			const { page } = await import('~src/pages/+error.js');
 
