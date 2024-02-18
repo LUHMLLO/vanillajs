@@ -1,9 +1,9 @@
-import { Inspect } from '~lib/lm-tools/inspect';
+import Inspect from '~lib/inspect/index.mjs';
 
 /**
  * @description Core app module; Main Service; Heart of the app.
  */
-export class App {
+export default class App {
 	/**
 	 * @param {RenderView} RenderView - The element where the content will be rendered.
 	 * @param {Routes} Routes - The array of route objects.

@@ -1,4 +1,4 @@
-import Page from '~lib/pager/class';
+import Page from '~lib/pager/@page';
 
 export const page = new Page();
 
