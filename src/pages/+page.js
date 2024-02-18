@@ -12,7 +12,7 @@ page.SEO({
 
 let js = String.raw;
 page.JS(js`
-	import Drops from "${new URL('/assets/js/drops.js', import.meta.url).href}";
+	import Drops from "/lib/plug-ins/drops.js";
 	const drops = new Drops();
 	drops.init();
 `);

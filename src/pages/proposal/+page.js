@@ -12,9 +12,7 @@ page.SEO({
 
 let js = String.raw;
 page.JS(js`
-	import ThemeSchemes from "${
-		new URL('/assets/js/themes.js', import.meta.url).href
-	}";
+	import ThemeSchemes from '~lib/plug-ins/themeSchemes/@themeSchemes.js';
 	window.themeHandler = new ThemeSchemes();
 	themeHandler.load();
 `);
