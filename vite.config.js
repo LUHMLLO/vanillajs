@@ -1,6 +1,7 @@
 import path from 'path';
 import { defineConfig } from 'vite';
 import Pager from './lib/packages/pager/vite.mjs';
+// import Plugins from './lib/plugins/vite.mjs';
 
 export default defineConfig(({}) => {
 	return {
