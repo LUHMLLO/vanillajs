@@ -1,4 +1,4 @@
-import Page from '~lib/pager/@page';
+import Page from '~lib/packages/pager/@page';
 
 export const page = new Page();
 
@@ -12,7 +12,7 @@ page.SEO({
 
 let js = String.raw;
 page.JS(js`
-	import Drops from "/lib/plug-ins/drops.js";
+	import Drops from "/assets/js/drops.js";
 	const drops = new Drops();
 	drops.init();
 `);

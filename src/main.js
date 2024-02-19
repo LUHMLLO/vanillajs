@@ -1,8 +1,8 @@
-import '~lib/atypical/main.vars.module.css';
-import '~lib/atypical/main.reset.module.css';
-import '~lib/atypical/main.components.module.css';
-import '~lib/atypical/utils.module.css';
-import '~lib/atypical/widgets.module.css';
+import '~lib/packages/atypical/main.vars.module.css';
+import '~lib/packages/atypical/main.reset.module.css';
+import '~lib/packages/atypical/main.components.module.css';
+import '~lib/packages/atypical/utils.module.css';
+import '~lib/packages/atypical/widgets.module.css';
 import App from './modules/app';
 
 const AppElement = document.getElementById('app');

@@ -1,4 +1,4 @@
-import Page from '~lib/pager/@page';
+import Page from '~lib/packages/pager/@page';
 
 export const page = new Page();
 
@@ -12,7 +12,7 @@ page.SEO({
 
 let js = String.raw;
 page.JS(js`
-	import ThemeSchemes from '~lib/plug-ins/themeSchemes/@themeSchemes.js';
+	import ThemeSchemes from '/assets/js/themeSchemes.js';
 	window.themeHandler = new ThemeSchemes();
 	themeHandler.load();
 `);
