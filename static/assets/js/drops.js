@@ -3,6 +3,8 @@
  * @class
  */
 export default class Drops {
+	constructor() {}
+
 	/**
 	 * @description Gets an array of dropdown elements.
 	 * @param {NodeListOf<Element>} [drops=document.querySelectorAll('dropdown')] - The dropdown elements.
@@ -23,10 +25,6 @@ export default class Drops {
 		}
 
 		drops.forEach((drop) => {
-			if (drop.hasAttribute('disabled')) {
-				return;
-			}
-
 			const toggle = drop.querySelector('toggle');
 			if (!toggle) {
 				console.warn('Drops: Unable to find toggle inside dropdown.');
@@ -65,6 +63,13 @@ export default class Drops {
 			dropmenu.close();
 		} else {
 			dropmenu.show();
+		}
+
+		if (dropmenu.open) {
+			dropmenu.addEventListener('click', (event) => {
+				event.preventDefault();
+				dropmenu.close();
+			});
 		}
 
 		!dropmenu.hasAttribute('open') &&
