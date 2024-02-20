@@ -1,4 +1,4 @@
-import Inspect from '~lib/packages/inspect/index.mjs';
+import Inspect from '~lib/utils/inspect.js';
 
 /**
  * @description Core app module; Main Service; Heart of the app.
