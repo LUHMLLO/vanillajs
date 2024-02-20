@@ -14,7 +14,6 @@ let js = String.raw;
 page.JS(js`
 	import Drops from "/assets/js/drops.js";
 	const drops = new Drops();
-	drops.init();
 `);
 
 let html = String.raw;
@@ -224,7 +223,7 @@ page.HTML(html`
 		</column>
 
 		<column>
-			<card-v1-productpack>
+			<card data-variant="productpack">
 				<component__header>
 					<row>
 						<tag> #1087561 </tag>
@@ -310,11 +309,11 @@ page.HTML(html`
 						<var>0</var>
 					</button>
 				</component__footer>
-			</card-v1-productpack>
+			</card>
 		</column>
 
 		<column>
-			<card-v1-productpack class="active">
+			<card data-variant="productpack" class="active">
 				<component__header>
 					<row>
 						<tag> #1087561 </tag>
@@ -400,11 +399,11 @@ page.HTML(html`
 						<var>0</var>
 					</button>
 				</component__footer>
-			</card-v1-productpack>
+			</card>
 		</column>
 
 		<column>
-			<card-v1-productpack mini class="active">
+			<card data-variant="productpack" mini class="active">
 				<component__header>
 					<row>
 						<tag> #1845915 </tag>
@@ -438,11 +437,11 @@ page.HTML(html`
 						<var>0</var>
 					</button>
 				</component__footer>
-			</card-v1-productpack>
+			</card>
 		</column>
 
 		<column>
-			<card-v1-productpack mini>
+			<card data-variant="productpack" mini>
 				<component__header>
 					<row>
 						<tag> #1845915 </tag>
@@ -472,7 +471,7 @@ page.HTML(html`
 						<var>0</var>
 					</button>
 				</component__footer>
-			</card-v1-productpack>
+			</card>
 		</column>
 	</grid>
 `);

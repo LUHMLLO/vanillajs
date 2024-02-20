@@ -28,12 +28,14 @@ page.HTML(html`
 				</h4>
 			</row>
 			<row class="align --center gap --5xs">
-				<icon> search </icon>
-				<input
-					type="search"
-					placeholder="Type to search . . ."
-					style="--c-background: transparent;" />
-				<icon> filter_alt </icon>
+				<field data-variant="command-palette-search">
+					<icon> search </icon>
+					<input
+						type="search"
+						placeholder="Type to search . . ."
+						style="--c-background: transparent;" />
+					<icon> filter_alt </icon>
+				</field>
 			</row>
 			<row class="align --center gap --5xs">
 				<button onclick="themeHandler.set('auto')">set theme auto</button>
