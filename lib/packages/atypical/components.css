@@ -404,6 +404,7 @@ dialog {
 }
 
 field {
+	background-color: var(--clr-primary);
 	overflow: clip;
 
 	> dropdown,
@@ -428,7 +429,6 @@ field {
 		padding: 0 var(--scale-sm);
 
 		> input {
-			--c-background: transparent !important;
 			background-color: transparent;
 			padding: 0;
 		}

@@ -1,8 +1,20 @@
 @charset "utf-8";
 
 .align {
+	&.--start {
+		align-items: start;
+	}
 	&.--center {
 		align-items: center;
+	}
+	&.--end {
+		align-items: end;
+	}
+	&.--between {
+		align-items: space-between;
+	}
+	&.--evenly {
+		align-items: space-evenly;
 	}
 }
 
@@ -10,34 +22,75 @@
 	&.--5xs {
 		gap: var(--scale-5xs);
 	}
+	&.--4xs {
+		gap: var(--scale-4xs);
+	}
+	&.--3xs {
+		gap: var(--scale-3xs);
+	}
+	&.--2xs {
+		gap: var(--scale-2xs);
+	}
+	&.--xs {
+		gap: var(--scale-xs);
+	}
+
+	&.--sm {
+		gap: var(--scale-sm);
+	}
+	&.--md {
+		gap: var(--scale-md);
+	}
+	&.--nm {
+		gap: var(--scale-nm);
+	}
+	&.--lg {
+		gap: var(--scale-lg);
+	}
+
+	&.--xl {
+		gap: var(--scale-xl);
+	}
+	&.--2xl {
+		gap: var(--scale-2xl);
+	}
+	&.--3xl {
+		gap: var(--scale-3xl);
+	}
+	&.--4xl {
+		gap: var(--scale-4xl);
+	}
+	&.--5xl {
+		gap: var(--scale-5xl);
+	}
 }
 
-.justify-end {
-	justify-content: end;
-}
-
-.scroll,
-.scroll-x,
-.scroll-y {
-	display: flex;
-	gap: var(--scale-5xs);
-
-	> * {
-		flex-shrink: 0;
+.justify {
+	&.--center {
+		justify-content: center;
+	}
+	&.--end {
+		justify-content: end;
 	}
 }
 
 .scroll {
+	display: flex;
+	gap: var(--scale-5xs);
 	overflow-x: auto;
 	overflow-y: auto;
-}
 
-.scroll-x {
-	overflow-x: auto;
-	overflow-y: clip;
-}
+	&.--x {
+		flex-direction: row;
+		overflow-y: clip;
+	}
 
-.scroll-y {
-	overflow-x: clip;
-	overflow-y: auto;
+	&.--y {
+		flex-direction: column;
+		overflow-x: clip;
+	}
+
+	> * {
+		flex-shrink: 0;
+	}
 }

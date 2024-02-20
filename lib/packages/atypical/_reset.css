@@ -343,6 +343,13 @@ grid {
 	}
 }
 
+hr {
+	--c-background: var(--clr-primary);
+
+	background-color: var(--c-background);
+	height: calc(var(--scale-5xs) * 0.125);
+}
+
 input,
 textarea,
 select {
