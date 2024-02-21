@@ -232,9 +232,12 @@ toggle {
 	font-weight: 400;
 	gap: var(--scale-5xs);
 	height: var(--scale-4xl);
+	overflow: clip;
 	padding: 0 var(--scale-sm);
-	width: max-content;
+	text-overflow: ellipsis;
 	transition: background-color var(--animProperties);
+	white-space: nowrap;
+	width: max-content;
 
 	&:hover {
 		background-color: color-mix(in srgb, var(--c-background), white 3%);
@@ -269,6 +272,7 @@ figure {
 	}
 
 	&[data-variant='avatar'] {
+		border-radius: 50%;
 		height: var(--scale-5xl);
 		width: var(--scale-5xl);
 	}
@@ -294,6 +298,7 @@ footer {
 }
 
 column,
+fieldset,
 section {
 	display: flex;
 	flex-direction: column;

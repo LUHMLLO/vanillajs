@@ -51,6 +51,12 @@ dropdown {
 	&[disabled] {
 		pointer-events: none;
 	}
+
+	&[data-variant='wrapper'] {
+		> toggle {
+			display: contents;
+		}
+	}
 }
 
 card {
@@ -404,9 +410,6 @@ dialog {
 }
 
 field {
-	background-color: var(--clr-primary);
-	overflow: clip;
-
 	> dropdown,
 	input,
 	select,
@@ -414,23 +417,67 @@ field {
 		align-items: center;
 		color: var(--clr-text);
 		display: inline-flex;
+		flex-grow: 1;
+		width: 100%;
+		outline: solid 0.125rem transparent;
+		outline-offset: -0.125rem;
 		padding: 0 var(--scale-sm);
-	}
 
-	&[data-variant='card'] {
-		border-radius: var(--radius-3xs);
+		&:focus {
+			outline-color: var(--clr-accent);
+		}
 	}
 
 	&[data-variant='command-palette-search'] {
+		--c-background: var(--clr-primary);
+
 		align-items: center;
+		background-color: var(--c-background);
 		border-radius: var(--scale-3xs);
 		display: inline-flex;
 		gap: var(--scale-sm);
+		outline: solid 0.125rem transparent;
+		outline-offset: -0.125rem;
 		padding: 0 var(--scale-sm);
+		transition: outline-color var(--animProperties);
 
 		> input {
 			background-color: transparent;
+			outline: unset;
 			padding: 0;
+		}
+
+		&:focus-within {
+			outline-color: var(--clr-accent);
+		}
+	}
+}
+
+stepper {
+	display: flex;
+	height: calc(var(--scale-5xl) * 2);
+	place-content: center space-between;
+	vertical-align: middle;
+
+	> step {
+		align-items: center;
+		display: inline-flex;
+		gap: var(--scale-5xs);
+		margin: auto;
+
+		> var {
+			background-color: var(--clr-primary);
+			border-radius: 50%;
+			display: grid;
+			font-size: var(--scale-nm);
+			font-style: normal;
+			height: var(--scale-5xl);
+			place-content: center;
+			width: var(--scale-5xl);
+		}
+
+		> span {
+			font-size: var(--scale-md);
 		}
 	}
 }

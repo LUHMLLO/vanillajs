@@ -32,7 +32,7 @@ page.HTML(html`
 				</h4>
 			</row>
 			<row class="align --center gap --5xs justify --center">
-				<field data-variant="command-palette-search">
+				<field data-variant="command-palette-search" class="grow">
 					<icon> search </icon>
 					<input
 						type="text"
@@ -42,24 +42,40 @@ page.HTML(html`
 				</field>
 			</row>
 			<row class="align --center gap --5xs justify --end">
-				<button onclick="themeHandler.set('auto')">set theme auto</button>
-				<button onclick="themeHandler.set('light')">set theme light</button>
-				<button onclick="themeHandler.set('dark')">set theme dark</button>
-				<figure data-variant="avatar">
-					<img
-						src="https://cdn.dribbble.com/userupload/12848764/file/original-2c583b50c3d879bd6feeaad53dc59233.jpg?resize=752x"
-						alt="avatar-thumbnail" />
-				</figure>
+				<dropdown data-variant="wrapper">
+					<toggle>
+						<figure data-variant="avatar">
+							<img
+								src="https://cdn.dribbble.com/users/18463/screenshots/15871576/media/2e14cdbe675f060297cc0b232f7712c5.png"
+								alt="avatar-thumbnail" />
+						</figure>
+					</toggle>
+					<dialog data-role="dropmenu" data-position="bottom">
+						<button onclick="themeHandler.set('auto')">set theme auto</button>
+						<button onclick="themeHandler.set('light')">set theme light</button>
+						<button onclick="themeHandler.set('dark')">set theme dark</button>
+					</dialog>
+				</dropdown>
 			</row>
 		</workspace__header>
 
 		<workspace__body>
 			<workspace__sidebar>
+				<h6>Quick Actions</h6>
 				<button>
-					<icon> dashboard </icon>
-					<span>Overview</span>
+					<icon> add </icon>
+					<span>Quick action</span>
+				</button>
+				<button>
+					<icon> add </icon>
+					<span>Quick action</span>
+				</button>
+				<button>
+					<icon> add </icon>
+					<span>Quick action</span>
 				</button>
 				<hr />
+				<h6>Modules</h6>
 				<button>
 					<icon> dashboard </icon>
 					<span>Customer information</span>
@@ -91,14 +107,80 @@ page.HTML(html`
 			</workspace__sidebar>
 
 			<workspace__content>
-				<section>
+				<stepper>
+					<step>
+						<var>1</var>
+						<span>step</span>
+					</step>
+					<step>
+						<var>2</var>
+						<span>step</span>
+					</step>
+					<step>
+						<var>3</var>
+						<span>step</span>
+					</step>
+					<step>
+						<var>4</var>
+						<span>step</span>
+					</step>
+					<step>
+						<var>5</var>
+						<span>step</span>
+					</step>
+				</stepper>
+
+				<section class="flow-content">
 					<h2>Section name</h2>
 					<hr />
-					<grid max="4">
-						<card> </card>
+					<grid max="2" style="--gap: var(--scale-2xl)">
+						<fieldset class="gap --sm">
+							<field>
+								<label>label</label>
+								<input type="text" />
+							</field>
+							<field>
+								<label>label</label>
+								<input type="text" />
+							</field>
+						</fieldset>
+
+						<fieldset class="gap --sm">
+							<field>
+								<label>label</label>
+								<input type="text" />
+							</field>
+							<field>
+								<label>label</label>
+								<input type="text" />
+							</field>
+						</fieldset>
+
+						<fieldset class="gap --sm">
+							<field>
+								<label>label</label>
+								<input type="text" />
+							</field>
+							<field>
+								<label>label</label>
+								<input type="text" />
+							</field>
+						</fieldset>
+
+						<fieldset class="gap --sm">
+							<field>
+								<label>label</label>
+								<input type="text" />
+							</field>
+							<field>
+								<label>label</label>
+								<input type="text" />
+							</field>
+						</fieldset>
 					</grid>
 				</section>
-				<section>
+
+				<section class="flow-content">
 					<h2>Section name</h2>
 					<hr />
 					<p>
@@ -112,8 +194,6 @@ page.HTML(html`
 					</p>
 				</section>
 			</workspace__content>
-
-			<workspace__sidebar> workspace sidebar </workspace__sidebar>
 		</workspace__body>
 
 		<workspace__footer> workspace footer </workspace__footer>
@@ -132,16 +212,20 @@ page.CSS(css`
 		display: flex;
 		flex-direction: column;
 		height: 100dvh;
+		isolation: isolate;
 		overflow: clip;
 		width: 100dvw;
 
 		> workspace__header {
 			align-items: center;
+
+			border-bottom: solid 0.125rem var(--clr-primary);
+
 			display: flex;
-			flex-direction: row;
-			height: calc(var(--scale-5xl) * 1.5);
+			height: calc(var(--scale-5xl) * 2);
 			justify-content: space-between;
-			padding: var(--scale-sm);
+			padding: 0 var(--scale-2xl);
+			z-index: 2;
 
 			> row {
 				flex-grow: 1;
@@ -154,24 +238,20 @@ page.CSS(css`
 			display: flex;
 			flex-direction: row;
 			flex-grow: 1;
+			z-index: 1;
 
 			> workspace__sidebar {
-				background-color: var(--clr-primary);
+				border-right: solid 0.125rem var(--clr-primary);
 
 				display: flex;
 				flex-direction: column;
 				flex-grow: 1;
 				flex-shrink: 0;
 				gap: var(--scale-sm);
-				padding: var(--scale-sm);
+				padding: var(--scale-2xl);
 
 				> button {
-					--c-background: var(--clr-secondary);
 					width: 100%;
-				}
-
-				> hr {
-					--c-background: var(--clr-secondary);
 				}
 			}
 
@@ -180,16 +260,26 @@ page.CSS(css`
 				flex-direction: column;
 				flex-grow: 999;
 				flex-shrink: 1;
-				gap: var(--scale-sm);
-				padding: var(--scale-sm) var(--scale-5xl);
+				gap: var(--scale-2xl);
+
+				> * {
+					margin: 0 auto;
+					max-width: 88%;
+					width: 100%;
+				}
 			}
 		}
 
 		> workspace__footer {
+			align-items: center;
+
+			border-top: solid 0.125rem var(--clr-primary);
+
 			display: flex;
-			flex-direction: row;
-			height: var(--scale-5xl);
-			padding: var(--scale-sm);
+			height: calc(var(--scale-5xl) * 2);
+			justify-content: space-between;
+			padding: 0 var(--scale-2xl);
+			z-index: 2;
 		}
 	}
 `);
