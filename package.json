@@ -1,13 +1,14 @@
 {
-	"name": "codepens",
+	"name": "vanilla_js",
+	"description": "vanilla js source project",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview",
-		"plugins": "vite build --config lib/plugins/_lib.compile.js"
+		"build:app": "vite build",
+		"build:plugins": "vite build --config lib/vite/vite.buildPlugins.js",
+		"preview": "vite preview"
 	},
 	"devDependencies": {
 		"terser": "^5.27.2",

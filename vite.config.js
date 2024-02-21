@@ -1,23 +1,14 @@
 import path from 'path';
-import { defineConfig } from 'vite';
+import buildOptions from './lib/vite/buildOptions';
 import Pager from './lib/packages/pager/vite.mjs';
+import { defineConfig } from 'vite';
 
+// @ts-ignore
 export default defineConfig(({}) => {
 	return {
 		build: {
-			minify: 'terser',
+			...buildOptions,
 			outDir: 'dist',
-			target: ['ESNext'],
-			terserOptions: {
-				safari10: true,
-				ie8: true,
-				compress: true,
-				mangle: true,
-				module: true,
-				output: {
-					beautify: false,
-				},
-			},
 		},
 		esbuild: {
 			drop: ['console', 'debugger'],
