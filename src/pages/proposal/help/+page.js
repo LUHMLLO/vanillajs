@@ -4,7 +4,7 @@ export const page = new Page();
 
 page.SEO({
 	author: 'lm',
-	description: 'Design System - Proposal Tool About Help',
+	description: 'Vanilla JS - Proposal Tool About Help',
 	image: '',
 	keywords: [''],
 	title: 'Proposal Tool - Help',

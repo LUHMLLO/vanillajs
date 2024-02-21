@@ -4,7 +4,7 @@ export const page = new Page();
 
 page.SEO({
 	author: 'lm',
-	description: 'Design System - Error Page',
+	description: 'Vanilla JS - Error Page',
 	image: '',
 	keywords: [''],
 	title: '404 not found',

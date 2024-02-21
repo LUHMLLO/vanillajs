@@ -4,7 +4,7 @@ export const page = new Page();
 
 page.SEO({
 	author: 'lm',
-	description: 'Design System - Start Page',
+	description: 'Vanilla JS - Start Page',
 	image: '',
 	keywords: [''],
 	title: 'Start',
