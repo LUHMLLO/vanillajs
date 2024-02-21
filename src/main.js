@@ -7,19 +7,21 @@ import App from './modules/app';
 
 const AppElement = document.getElementById('app');
 
-async function init() {
+(async () => {
 	let Pages;
+
 	try {
 		Pages = await import('../.server/pages');
 	} catch (err) {
 		console.error('Failed to load pages:', err);
-		// Handle the error appropriately in your application
 	}
 
-	if (Pages && AppElement) {
-		const app = new App(AppElement, Pages.default);
-		app.mount();
+	try {
+		if (Pages && AppElement) {
+			const app = new App(AppElement, Pages.default);
+			app.mount();
+		}
+	} catch (error) {
+		console.error('Failed to mount app:', error);
 	}
-}
-
-init();
+})();

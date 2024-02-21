@@ -6,14 +6,11 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"build:pager": "vite build --config vite.config.pager.js",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"plugins": "vite build --config lib/plugins/_lib.compile.js"
 	},
 	"devDependencies": {
-		"vite": "^5.1.1"
-	},
-	"dependencies": {
-		"glob": "^10.3.10",
-		"terser": "^5.27.0"
+		"terser": "^5.27.2",
+		"vite": "^5.1.4"
 	}
 }
