@@ -20,9 +20,6 @@ page.JS(js`
 
 	window.themeHandler = new ThemeSchemes();
 	themeHandler.load();
-
-
-	// document.querySelector('#dialogTest').showModal();
 `);
 
 let html = String.raw;
@@ -128,9 +125,11 @@ page.HTML(html`
 			<workspace__sidebar>
 				<column class="gap --5xs">
 					<h6>Quick Actions</h6>
-					<button type="button">
-						<icon> add </icon>
-						<text>Call to action</text>
+					<button
+						type="button"
+						onclick="document.querySelector('#dialogTest').showModal()">
+						<icon> search </icon>
+						<text>Search</text>
 					</button>
 					<button type="button">
 						<icon> add </icon>
@@ -328,10 +327,10 @@ page.HTML(html`
 
 			<workspace__sidebar>
 				<column class="gap --5xs">
-					<h6>Quick Actions</h6>
+					<h6>Place Holder Title</h6>
 					<button type="button">
-						<icon> add </icon>
-						<text>Call to action</text>
+						<icon> search </icon>
+						<text>Search</text>
 					</button>
 					<button type="button">
 						<icon> add </icon>
@@ -392,7 +391,11 @@ page.HTML(html`
 	<overlays>
 		<dialog id="dialogTest">
 			<component__header class="justify --end">
-				<icon>close</icon>
+				<icon
+					class="cursor --pointer"
+					onclick="document.querySelector('#dialogTest').close()"
+					>close</icon
+				>
 			</component__header>
 			<component__body>
 				<field
