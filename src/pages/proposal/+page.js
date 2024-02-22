@@ -328,58 +328,39 @@ page.HTML(html`
 			<workspace__sidebar>
 				<column class="gap --5xs">
 					<h6>Place Holder Title</h6>
-					<button type="button">
-						<icon> search </icon>
-						<text>Search</text>
-					</button>
-					<button type="button">
-						<icon> add </icon>
-						<text>Call to action</text>
-					</button>
-					<button type="button">
-						<icon> add </icon>
-						<text>Call to action</text>
-					</button>
+					<p>....</p>
 				</column>
 
-				<hr />
-
-				<details data-variant="folder-tree" open>
+				<details data-variant="folder-tree">
 					<summary>
-						<icon> folder_open </icon>
-						<text>Modules</text>
+						<text>Place Holder</text>
 						<icon> expand_more </icon>
 					</summary>
 
 					<column class="gap --5xs">
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Customer information</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>System Equipment</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Project Adders</text>
-						</a>
-						<a>
-							<icon> article </icon>
-							<text>Additional Work</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Additional Projects</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Internal Sale Notes</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Financial</text>
-						</a>
+						<p>....</p>
+					</column>
+				</details>
+
+				<details data-variant="folder-tree">
+					<summary>
+						<text>Place Holder</text>
+						<icon> expand_more </icon>
+					</summary>
+
+					<column class="gap --5xs">
+						<p>....</p>
+					</column>
+				</details>
+
+				<details data-variant="folder-tree">
+					<summary>
+						<text>Place Holder</text>
+						<icon> expand_more </icon>
+					</summary>
+
+					<column class="gap --5xs">
+						<p>....</p>
 					</column>
 				</details>
 			</workspace__sidebar>
