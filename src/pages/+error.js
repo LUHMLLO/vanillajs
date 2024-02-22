@@ -3,6 +3,7 @@ import Page from '~lib/packages/pager/@';
 export const page = new Page();
 
 page.SEO({
+	icon: '',
 	author: 'lm',
 	description: 'Vanilla JS - Error Page',
 	image: '',

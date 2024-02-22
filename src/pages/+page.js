@@ -3,6 +3,7 @@ import Page from '~lib/packages/pager/@';
 export const page = new Page();
 
 page.SEO({
+	icon: '',
 	author: 'lm',
 	description: 'Vanilla JS - Start Page',
 	image: '',
@@ -50,15 +51,15 @@ page.HTML(html`
 		<column>
 			<a href="#">
 				<icon>link</icon>
-				link
+				<text>link</text>
 				<icon>chevron_right</icon>
 			</a>
 		</column>
 
 		<column>
-			<button>
+			<button type="button">
 				<icon>link</icon>
-				button
+				<text>button</text>
 				<icon>chevron_right</icon>
 			</button>
 		</column>
@@ -130,13 +131,13 @@ page.HTML(html`
 			<dropdown>
 				<toggle>
 					<icon>dropdown</icon>
-					Dropdown
+					<text>Dropdown</text>
 					<icon>expand_more</icon>
 				</toggle>
 				<dialog data-role="dropmenu" data-position="bottom">
-					<button>option 1</button>
-					<button>option 2</button>
-					<button>option 3</button>
+					<button type="button">option 1</button>
+					<button type="button">option 2</button>
+					<button type="button">option 3</button>
 				</dialog>
 			</dropdown>
 		</column>
@@ -152,7 +153,7 @@ page.HTML(html`
 				</component__body>
 				<component__footer>
 					<small>dialog footer</small>
-					<button>call to action</button>
+					<button type="button">call to action</button>
 				</component__footer>
 			</dialog>
 		</column>
@@ -177,7 +178,7 @@ page.HTML(html`
 				</component__body>
 
 				<component__footer>
-					<button>Call to action</button>
+					<button type="button">Call to action</button>
 					<button data-variant="primary">Call to action</button>
 				</component__footer>
 			</dialog>
@@ -202,22 +203,22 @@ page.HTML(html`
 						consequatur sequi, error et adipisci porro minus quibusdam
 						voluptates corrupti amet recusandae, ad accusamus enim!
 					</p>
-					<button href="javascript:void(0)">
+					<button type="button">
 						<icon>link</icon>
-						<span>Read More about integrations</span>
+						<text>Read More about integrations</text>
 						<icon>chevron_right</icon>
 					</button>
 				</component__body>
 
 				<component__footer>
-					<button>Previous</button>
+					<button type="button">Previous</button>
 					<row>
 						<icon data-fill="true">circle</icon>
 						<icon data-fill="true" class="active">circle</icon>
 						<icon data-fill="true">circle</icon>
 						<icon data-fill="true">circle</icon>
 					</row>
-					<button>Continue</button>
+					<button type="button">Continue</button>
 				</component__footer>
 			</dialog>
 		</column>
@@ -232,9 +233,9 @@ page.HTML(html`
 								<icon>more_vert</icon>
 							</toggle>
 							<dialog data-role="dropmenu" data-position="bottom" open>
-								<button>Rename</button>
-								<button>Clone</button>
-								<button>Delete</button>
+								<button type="button">Rename</button>
+								<button type="button">Clone</button>
+								<button type="button">Delete</button>
 							</dialog>
 						</dropdown>
 					</row>
@@ -246,9 +247,9 @@ page.HTML(html`
 					<dropdown>
 						<toggle> Choose Product Type </toggle>
 						<dialog data-role="dropmenu" data-position="bottom">
-							<button>Energy Efficiency</button>
-							<button>Geothermal</button>
-							<button>HVAC</button>
+							<button type="button">Energy Efficiency</button>
+							<button type="button">Geothermal</button>
+							<button type="button">HVAC</button>
 						</dialog>
 					</dropdown>
 				</component__header>
@@ -297,14 +298,14 @@ page.HTML(html`
 				</component__body>
 
 				<component__footer>
-					<button status="active">
+					<button type="button" status="active">
 						<span>Active</span>
 					</button>
-					<button>
+					<button type="button">
 						<icon>shopping_cart</icon>
 						<var>0</var>
 					</button>
-					<button>
+					<button type="button">
 						<span>View Proposal</span>
 						<var>0</var>
 					</button>
@@ -322,9 +323,9 @@ page.HTML(html`
 								<icon>more_vert</icon>
 							</toggle>
 							<dialog data-role="dropmenu" data-position="bottom" open>
-								<button>Rename</button>
-								<button>Clone</button>
-								<button>Delete</button>
+								<button type="button">Rename</button>
+								<button type="button">Clone</button>
+								<button type="button">Delete</button>
 							</dialog>
 						</dropdown>
 					</row>
@@ -336,9 +337,9 @@ page.HTML(html`
 					<dropdown>
 						<toggle> Choose Product Type </toggle>
 						<dialog data-role="dropmenu" data-position="bottom">
-							<button>Energy Efficiency</button>
-							<button>Geothermal</button>
-							<button>HVAC</button>
+							<button type="button">Energy Efficiency</button>
+							<button type="button">Geothermal</button>
+							<button type="button">HVAC</button>
 						</dialog>
 					</dropdown>
 				</component__header>
@@ -387,14 +388,14 @@ page.HTML(html`
 				</component__body>
 
 				<component__footer>
-					<button status="active">
+					<button type="button" status="active">
 						<span>Active</span>
 					</button>
-					<button>
+					<button type="button">
 						<icon>shopping_cart</icon>
 						<var>0</var>
 					</button>
-					<button>
+					<button type="button">
 						<span>View Proposal</span>
 						<var>0</var>
 					</button>
@@ -432,7 +433,7 @@ page.HTML(html`
 				</component__body>
 
 				<component__footer>
-					<button>
+					<button type="button">
 						<icon>shopping_cart</icon>
 						<var>0</var>
 					</button>
@@ -466,7 +467,7 @@ page.HTML(html`
 				</component__body>
 
 				<component__footer>
-					<button>
+					<button type="button">
 						<icon>shopping_cart</icon>
 						<var>0</var>
 					</button>

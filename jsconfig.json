@@ -63,5 +63,5 @@
 		"static/**/*.js",
 		"static/**/*.cjs",
 		"static/**/*.mjs"
-, "lib/plugins/lib.compile.js"	]
+	]
 }

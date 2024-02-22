@@ -59,14 +59,28 @@ export default class App {
 	 * @returns {Promise<void>}
 	 */
 	async handleSEO(seo) {
-		// @ts-ignore
-		document.head.querySelector('title').innerText = seo.title;
+		// Store elements in variables for reuse
+		const head = document.head;
+		const title = head.querySelector('title');
+		const links = [...head.querySelectorAll('link')];
+		const metas = [...head.querySelectorAll('meta')];
 
-		for (const [key, value] of Object.entries(seo)) {
-			document.head
-				.querySelector(`meta[name='${key}']`)
-				?.setAttribute('content', value);
-		}
+		Object.entries(seo).forEach(([key, value]) => {
+			switch (key) {
+				case 'icon':
+					links?.filter(
+						(link) => link.rel === 'shortcut icon' && (link.href = value)
+					);
+					break;
+				case 'title':
+					title && (title.innerText = value);
+					break;
+				default:
+					metas?.filter(
+						(metaTag) => metaTag.name === key && (metaTag.content = value)
+					);
+			}
+		});
 	}
 
 	/**

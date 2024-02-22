@@ -454,16 +454,16 @@ field {
 }
 
 stepper {
+	align-items: center;
 	display: flex;
-	height: calc(var(--scale-5xl) * 2);
-	place-content: center space-between;
+	justify-content: space-between;
 	vertical-align: middle;
 
 	> step {
 		align-items: center;
 		display: inline-flex;
 		gap: var(--scale-5xs);
-		margin: auto;
+		height: max-content;
 
 		> var {
 			background-color: var(--clr-primary);
