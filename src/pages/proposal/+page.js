@@ -263,6 +263,118 @@ page.HTML(html`
 				<section class="flow-content">
 					<h2>Section name</h2>
 					<hr />
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+						aliquip ex ea commodo consequat. Duis aute irure dolor in
+						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+						pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+						culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</section>
+				<section class="flow-content">
+					<h2>Section name</h2>
+					<hr />
+					<row class="gap --2xl">
+						<card data-variant="productpack" mini>
+							<component__header>
+								<row>
+									<tag> #1845915 </tag>
+								</row>
+
+								<heading>
+									<span>Pack #54739</span>
+								</heading>
+
+								<dropdown disabled>
+									<toggle> Energy Efficiency </toggle>
+								</dropdown>
+							</component__header>
+
+							<component__body>
+								<productpack__product>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+										architecto quos, vitae est illum voluptates.
+									</p>
+								</productpack__product>
+							</component__body>
+
+							<component__footer>
+								<button type="button">
+									<icon>shopping_cart</icon>
+									<var>0</var>
+								</button>
+							</component__footer>
+						</card>
+						<card data-variant="productpack" mini>
+							<component__header>
+								<row>
+									<tag> #1845915 </tag>
+								</row>
+
+								<heading>
+									<span>Pack #54739</span>
+								</heading>
+
+								<dropdown disabled>
+									<toggle> Energy Efficiency </toggle>
+								</dropdown>
+							</component__header>
+
+							<component__body>
+								<productpack__product>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+										architecto quos, vitae est illum voluptates.
+									</p>
+								</productpack__product>
+							</component__body>
+
+							<component__footer>
+								<button type="button">
+									<icon>shopping_cart</icon>
+									<var>0</var>
+								</button>
+							</component__footer>
+						</card>
+						<card data-variant="productpack" mini>
+							<component__header>
+								<row>
+									<tag> #1845915 </tag>
+								</row>
+
+								<heading>
+									<span>Pack #54739</span>
+								</heading>
+
+								<dropdown disabled>
+									<toggle> Energy Efficiency </toggle>
+								</dropdown>
+							</component__header>
+
+							<component__body>
+								<productpack__product>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+										architecto quos, vitae est illum voluptates.
+									</p>
+								</productpack__product>
+							</component__body>
+
+							<component__footer>
+								<button type="button">
+									<icon>shopping_cart</icon>
+									<var>0</var>
+								</button>
+							</component__footer>
+						</card>
+					</row>
+				</section>
+				<section class="flow-content">
+					<h2>Section name</h2>
+					<hr />
 					<grid max="4" style="--gap: var(--scale-2xl)">
 						<fieldset class="gap --2xl">
 							<field>
@@ -308,20 +420,6 @@ page.HTML(html`
 							</field>
 						</fieldset>
 					</grid>
-				</section>
-
-				<section class="flow-content">
-					<h2>Section name</h2>
-					<hr />
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-						aliquip ex ea commodo consequat. Duis aute irure dolor in
-						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-						pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-						culpa qui officia deserunt mollit anim id est laborum.
-					</p>
 				</section>
 			</workspace__content>
 
