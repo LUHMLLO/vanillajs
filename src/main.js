@@ -1,3 +1,4 @@
+import '~lib/packages/atypical/_properties.css';
 import '~lib/packages/atypical/_reset.css';
 import '~lib/packages/atypical/components.css';
 import '~lib/packages/atypical/utils.css';

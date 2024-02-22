@@ -20,6 +20,9 @@ page.JS(js`
 
 	window.themeHandler = new ThemeSchemes();
 	themeHandler.load();
+
+
+	// document.querySelector('#dialogTest').showModal();
 `);
 
 let html = String.raw;
@@ -74,14 +77,28 @@ page.HTML(html`
 				<h6>Proposals by Gizmo</h6>
 			</row>
 			<row class="align --center gap --5xs justify --center">
-				<field data-variant="command-palette-search" class="grow">
-					<icon> search </icon>
-					<input
-						type="text"
-						placeholder="Type to search . . ."
-						style="--c-background: transparent;" />
-					<icon> filter_alt </icon>
-				</field>
+				<stepper class="grow">
+					<step>
+						<var>1</var>
+						<span>step</span>
+					</step>
+					<step>
+						<var>2</var>
+						<span>step</span>
+					</step>
+					<step>
+						<var>3</var>
+						<span>step</span>
+					</step>
+					<step>
+						<var>4</var>
+						<span>step</span>
+					</step>
+					<step>
+						<var>5</var>
+						<span>step</span>
+					</step>
+				</stepper>
 			</row>
 			<row class="align --center gap --5xs justify --end">
 				<dropdown data-variant="wrapper">
@@ -125,9 +142,85 @@ page.HTML(html`
 					</button>
 				</column>
 
-				<hr />
-
 				<details data-variant="folder-tree" open>
+					<summary>
+						<icon> folder_open </icon>
+						<text>Modules</text>
+						<icon> expand_more </icon>
+					</summary>
+
+					<column class="gap --5xs">
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Customer information</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>System Equipment</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Project Adders</text>
+						</a>
+						<a>
+							<icon> article </icon>
+							<text>Additional Work</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Additional Projects</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Internal Sale Notes</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Financial</text>
+						</a>
+					</column>
+				</details>
+
+				<details data-variant="folder-tree">
+					<summary>
+						<icon> folder_open </icon>
+						<text>Modules</text>
+						<icon> expand_more </icon>
+					</summary>
+
+					<column class="gap --5xs">
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Customer information</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>System Equipment</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Project Adders</text>
+						</a>
+						<a>
+							<icon> article </icon>
+							<text>Additional Work</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Additional Projects</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Internal Sale Notes</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Financial</text>
+						</a>
+					</column>
+				</details>
+
+				<details data-variant="folder-tree">
 					<summary>
 						<icon> folder_open </icon>
 						<text>Modules</text>
@@ -168,29 +261,6 @@ page.HTML(html`
 			</workspace__sidebar>
 
 			<workspace__content>
-				<stepper>
-					<step>
-						<var>1</var>
-						<span>step</span>
-					</step>
-					<step>
-						<var>2</var>
-						<span>step</span>
-					</step>
-					<step>
-						<var>3</var>
-						<span>step</span>
-					</step>
-					<step>
-						<var>4</var>
-						<span>step</span>
-					</step>
-					<step>
-						<var>5</var>
-						<span>step</span>
-					</step>
-				</stepper>
-
 				<section class="flow-content">
 					<h2>Section name</h2>
 					<hr />
@@ -318,6 +388,28 @@ page.HTML(html`
 
 		<workspace__footer> workspace footer </workspace__footer>
 	</workspace>
+
+	<overlays>
+		<dialog id="dialogTest">
+			<component__header class="justify --end">
+				<icon>close</icon>
+			</component__header>
+			<component__body>
+				<field
+					data-variant="command-palette-search"
+					class="grow"
+					style="--c-background: var(--clr-secondary)">
+					<icon> search </icon>
+					<input
+						type="text"
+						placeholder="Type to search . . ."
+						style="--c-background: transparent;" />
+					<icon> filter_alt </icon>
+				</field>
+			</component__body>
+			<component__footer> </component__footer>
+		</dialog>
+	</overlays>
 `);
 
 let css = String.raw;
@@ -328,13 +420,27 @@ page.CSS(css`
 		display: contents;
 	}
 
-	workspace {
-		display: flex;
-		flex-direction: column;
+	workspace,
+	overlays {
+		display: grid;
 		height: 100dvh;
+		inset: 0;
 		isolation: isolate;
+		margin: auto;
 		overflow: clip;
+		place-content: center;
+		position: fixed;
 		width: 100dvw;
+	}
+
+	workspace {
+		grid-template-columns: 1fr;
+		grid-template-rows: max-content 1fr max-content;
+		z-index: 1;
+
+		> * {
+			width: 100%;
+		}
 
 		> workspace__header {
 			align-items: center;
@@ -342,7 +448,6 @@ page.CSS(css`
 			border-bottom: solid 0.125rem var(--clr-primary);
 
 			display: flex;
-			flex-shrink: 0;
 			height: calc(var(--scale-5xl) * 2);
 			justify-content: space-between;
 			padding: 0 var(--scale-2xl);
@@ -356,19 +461,18 @@ page.CSS(css`
 		}
 
 		> workspace__body {
-			display: grid;
-			grid-template-columns: minmax(8rem, 16rem) 1fr minmax(8rem, 16rem);
-			flex-grow: 1;
-			flex-shrink: 1;
+			display: flex;
 			z-index: 1;
 
 			> workspace__sidebar {
 				display: flex;
 				flex-direction: column;
+				flex-shrink: 0;
 				gap: var(--scale-2xl);
 				overflow-x: clip;
 				overflow-y: auto;
 				padding: var(--scale-2xl);
+				width: 16rem;
 
 				> * {
 					flex-shrink: 0;
@@ -389,12 +493,14 @@ page.CSS(css`
 				gap: var(--scale-2xl);
 				grid-auto-rows: max-content;
 				grid-template-columns:
-					minmax(1.5rem, 3.5rem)
+					clamp(1.5rem, 1vw, 3.5rem)
 					[content-start] 1fr [content-end]
-					minmax(1.5rem, 3.5rem);
+					clamp(1.5rem, 1vw, 3.5rem);
+
 				overflow-x: clip;
 				overflow-y: auto;
 				padding: var(--scale-2xl) 0;
+				width: 100%;
 
 				> * {
 					grid-column: content;
@@ -414,6 +520,15 @@ page.CSS(css`
 			justify-content: space-between;
 			padding: 0 var(--scale-2xl);
 			z-index: 2;
+		}
+	}
+
+	overlays {
+		visibility: hidden;
+		z-index: 2;
+
+		> * {
+			visibility: visible;
 		}
 	}
 `);
