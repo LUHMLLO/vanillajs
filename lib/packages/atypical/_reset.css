@@ -431,11 +431,11 @@ select {
 	width: max-content;
 	transition: background-color var(--animProperties);
 
-	&:hover {
+	&:not(:focus):hover {
 		background-color: color-mix(in srgb, var(--c-background), white 3%);
 	}
 
-	&:active {
+	&:not(:focus):active {
 		background-color: color-mix(in srgb, var(--c-background), black 6%);
 	}
 }

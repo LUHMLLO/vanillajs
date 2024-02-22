@@ -257,49 +257,62 @@ page.HTML(html`
 			</workspace__content>
 
 			<workspace__sidebar>
-				<h6>Quick Actions</h6>
-				<button type="button">
-					<icon> add </icon>
-					<span>Quick action</span>
-				</button>
-				<button type="button">
-					<icon> add </icon>
-					<span>Quick action</span>
-				</button>
-				<button type="button">
-					<icon> add </icon>
-					<span>Quick action</span>
-				</button>
+				<column class="gap --5xs">
+					<h6>Quick Actions</h6>
+					<button type="button">
+						<icon> add </icon>
+						<text>Call to action</text>
+					</button>
+					<button type="button">
+						<icon> add </icon>
+						<text>Call to action</text>
+					</button>
+					<button type="button">
+						<icon> add </icon>
+						<text>Call to action</text>
+					</button>
+				</column>
+
 				<hr />
-				<h6>Modules</h6>
-				<button type="button">
-					<icon> dashboard </icon>
-					<span>Customer information</span>
-				</button>
-				<button type="button">
-					<icon> dashboard </icon>
-					<span>System Equipment</span>
-				</button>
-				<button type="button">
-					<icon> dashboard </icon>
-					<span>Project Adders</span>
-				</button>
-				<button type="button">
-					<icon> dashboard </icon>
-					<span>Additional Work</span>
-				</button>
-				<button type="button">
-					<icon> dashboard </icon>
-					<span>Additional Projects</span>
-				</button>
-				<button type="button">
-					<icon> dashboard </icon>
-					<span>Internal Sale Notes</span>
-				</button>
-				<button type="button">
-					<icon> dashboard </icon>
-					<span>Financial</span>
-				</button>
+
+				<details data-variant="folder-tree" open>
+					<summary>
+						<icon> folder_open </icon>
+						<text>Modules</text>
+						<icon> expand_more </icon>
+					</summary>
+
+					<column class="gap --5xs">
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Customer information</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>System Equipment</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Project Adders</text>
+						</a>
+						<a>
+							<icon> article </icon>
+							<text>Additional Work</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Additional Projects</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Internal Sale Notes</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> article </icon>
+							<text>Financial</text>
+						</a>
+					</column>
+				</details>
 			</workspace__sidebar>
 		</workspace__body>
 
@@ -332,7 +345,7 @@ page.CSS(css`
 			flex-shrink: 0;
 			height: calc(var(--scale-5xl) * 2);
 			justify-content: space-between;
-			padding: 0 clamp(var(--scale-sm), 1vw, var(--scale-2xl));
+			padding: 0 var(--scale-2xl);
 			z-index: 2;
 
 			> row {
@@ -352,10 +365,10 @@ page.CSS(css`
 			> workspace__sidebar {
 				display: flex;
 				flex-direction: column;
-				gap: var(--scale-sm);
+				gap: var(--scale-2xl);
 				overflow-x: clip;
 				overflow-y: auto;
-				padding: clamp(var(--scale-sm), 1vw, var(--scale-2xl));
+				padding: var(--scale-2xl);
 
 				> * {
 					flex-shrink: 0;
@@ -373,7 +386,7 @@ page.CSS(css`
 			> workspace__content {
 				display: grid;
 				flex-shrink: 1;
-				gap: clamp(var(--scale-sm), 1vw, var(--scale-2xl));
+				gap: var(--scale-2xl);
 				grid-auto-rows: max-content;
 				grid-template-columns:
 					minmax(1.5rem, 3.5rem)
@@ -381,10 +394,11 @@ page.CSS(css`
 					minmax(1.5rem, 3.5rem);
 				overflow-x: clip;
 				overflow-y: auto;
-				padding: clamp(var(--scale-sm), 1vw, var(--scale-2xl)) 0;
+				padding: var(--scale-2xl) 0;
 
 				> * {
 					grid-column: content;
+					width: 100%;
 				}
 			}
 		}
@@ -398,7 +412,7 @@ page.CSS(css`
 			flex-shrink: 0;
 			height: calc(var(--scale-5xl) * 2);
 			justify-content: space-between;
-			padding: 0 clamp(var(--scale-sm), 1vw, var(--scale-2xl));
+			padding: 0 var(--scale-2xl);
 			z-index: 2;
 		}
 	}

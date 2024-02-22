@@ -445,6 +445,12 @@ field {
 			background-color: transparent;
 			outline: unset;
 			padding: 0;
+
+			&:focus,
+			&:hover,
+			&:active {
+				background-color: transparent;
+			}
 		}
 
 		&:focus-within {
@@ -457,11 +463,13 @@ stepper {
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
+	overflow: clip;
 	vertical-align: middle;
 
 	> step {
 		align-items: center;
 		display: inline-flex;
+		flex-shrink: 0;
 		gap: var(--scale-5xs);
 		height: max-content;
 
@@ -469,6 +477,7 @@ stepper {
 			background-color: var(--clr-primary);
 			border-radius: 50%;
 			display: grid;
+			flex-shrink: 0;
 			font-size: var(--scale-nm);
 			font-style: normal;
 			height: var(--scale-5xl);
