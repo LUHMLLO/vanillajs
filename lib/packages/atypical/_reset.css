@@ -334,9 +334,17 @@ grid {
 
 hr {
 	--c-background: var(--clr-primary);
-
 	background-color: var(--c-background);
-	height: calc(var(--scale-5xs) * 0.125);
+
+	&[data-variant='vertical'] {
+		height: 100%;
+		width: calc(var(--scale-5xs) * 0.125);
+	}
+
+	&[data-variant='horizontal'] {
+		height: calc(var(--scale-5xs) * 0.125);
+		width: 100%;
+	}
 }
 
 input,

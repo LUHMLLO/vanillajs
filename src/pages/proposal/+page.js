@@ -193,9 +193,13 @@ page.HTML(html`
 						<icon> keyboard_command_key </icon>
 						<text> Action Center </text>
 					</button>
-					<button type="button">
+					<button type="button" onclick="toggleModal('#choose-products')">
 						<icon> package_2 </icon>
 						<text>Change Product-Pack</text>
+					</button>
+					<button type="button" onclick="toggleModal('#cart-items')">
+						<icon> shopping_cart </icon>
+						<text> Manage your cart items </text>
 					</button>
 				</column>
 
@@ -242,7 +246,7 @@ page.HTML(html`
 			<workspace__content>
 				<section class="flow-content">
 					<h2>Section name</h2>
-					<hr />
+					<hr data-variant="horizontal" />
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -255,7 +259,7 @@ page.HTML(html`
 				</section>
 				<section class="flow-content">
 					<h2>Section name</h2>
-					<hr />
+					<hr data-variant="horizontal" />
 					<row class="gap --sm">
 						<card data-variant="productpack" mini>
 							<component__header>
@@ -323,7 +327,7 @@ page.HTML(html`
 				</section>
 				<section class="flow-content">
 					<h2>Section name</h2>
-					<hr />
+					<hr data-variant="horizontal" />
 					<grid max="4" style="--gap: var(--scale-2xl)">
 						<field>
 							<label>label</label>
@@ -363,13 +367,7 @@ page.HTML(html`
 			</workspace__content>
 		</workspace__body>
 
-		<workspace__footer>
-			workspace footer
-			<button type="button" onclick="toggleModal('#cart-items')">
-				<icon> shopping_cart </icon>
-				<text> Manage your cart items </text>
-			</button>
-		</workspace__footer>
+		<workspace__footer> workspace footer </workspace__footer>
 	</workspace>
 
 	<overlays>
@@ -385,8 +383,63 @@ page.HTML(html`
 			</component__header>
 		</dialog>
 
+		<dialog id="choose-products" data-variant="modal" class="w --max">
+			<component__header>
+				<icon>conveyor_belt</icon>
+				<h6 class="grow">Choose Products</h6>
+				<icon
+					type="button"
+					class="cursor --pointer"
+					onclick="toggleModal('#choose-products')">
+					close
+				</icon>
+			</component__header>
+
+			<component__body>
+				<row class="w --100 gap --5xs">
+					<card data-variant="product">
+						<figure>
+							<icon> imagesmode </icon>
+							<img src="" alt="product-thumbnail" />
+						</figure>
+						<text>product title</text>
+						<text>product description</text>
+					</card>
+					<card data-variant="product">
+						<figure>
+							<icon> imagesmode </icon>
+							<img src="" alt="product-thumbnail" />
+						</figure>
+						<text>product title</text>
+						<text>product description</text>
+					</card>
+					<card data-variant="product">
+						<figure>
+							<icon> imagesmode </icon>
+							<img src="" alt="product-thumbnail" />
+						</figure>
+						<text>product title</text>
+						<text>product description</text>
+					</card>
+				</row>
+			</component__body>
+
+			<component__footer> </component__footer>
+		</dialog>
+
 		<dialog id="command-palette" class="w --max">
-			<component__header class="gap --sm" style="flex-direction: column;">
+			<component__header>
+				<icon>keyboard_command_key</icon>
+				<h6 class="grow">Command Palette</h6>
+				<icon
+					type="button"
+					class="cursor --pointer"
+					onclick="toggleModal('#command-palette')">
+					close
+				</icon>
+			</component__header>
+
+			<component__body>
 				<field
 					data-variant="command-palette-search"
 					class="w --100"
@@ -476,9 +529,12 @@ page.HTML(html`
 						<dialog data-role="dropmenu" data-position="bottom">. . .</dialog>
 					</dropdown>
 				</row>
-			</component__header>
 
-			<component__body>
+				<hr
+					data-variant="horizontal"
+					class="w --"
+					style="--c-background: var(--clr-secondary);" />
+
 				<details data-variant="folder-tree" open>
 					<summary>
 						<icon> list </icon>

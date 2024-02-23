@@ -299,6 +299,57 @@ card {
 			}
 		}
 	}
+
+	&[data-variant='product'] {
+		--c-background: var(--clr-primary);
+
+		background-color: var(--c-background);
+		border-radius: var(--radius-3xs);
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 0;
+		isolation: isolate;
+		outline: solid 0.125rem color-mix(in srgb, var(--c-background), white 3%);
+		outline-offset: -0.125rem;
+		overflow: clip;
+
+		> figure {
+			display: grid;
+			background-color: color-mix(in srgb, var(--c-background), white 6%);
+			height: 6rem;
+			margin: 0;
+			width: 100%;
+
+			> img[src=''],
+			> img[src='_'],
+			> img[src=' '] {
+				display: none;
+			}
+		}
+
+		p {
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+			display: -webkit-box;
+			font-size: var(--scale-sm);
+			margin: var(--scale-xs) auto;
+			overflow: clip;
+			padding: 0 var(--scale-sm);
+			position: relative;
+			text-overflow: ellipsis;
+		}
+
+		&[empty] {
+			opacity: 0.5;
+
+			> figure {
+				> i,
+				> img {
+					display: none;
+				}
+			}
+		}
+	}
 }
 
 dialog {
@@ -320,6 +371,7 @@ dialog {
 		inset: 0;
 		margin: auto;
 		min-height: 32dvh;
+		min-width: 48dvw;
 		max-height: 96dvh;
 		max-width: 96dvw;
 
