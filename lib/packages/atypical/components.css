@@ -18,7 +18,7 @@ dropdown {
 
 		border-radius: var(--radius-3xs);
 		border: none;
-		box-shadow: var(--shadow-xl);
+		box-shadow: var(--shadow);
 
 		flex-direction: column;
 		gap: var(--scale-5xs);
@@ -75,7 +75,7 @@ card {
 		z-index: auto;
 
 		&:hover {
-			box-shadow: var(--shadow-nm);
+			box-shadow: var(--shadow);
 		}
 
 		&.active {
@@ -85,7 +85,7 @@ card {
 			&:hover {
 				box-shadow: 0 0 calc(var(--scale-5xs) - 1rem)
 						calc(var(--scale-5xs) / 2.56) var(--clr-accent),
-					var(--shadow-nm);
+					var(--shadow);
 			}
 		}
 

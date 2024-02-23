@@ -120,10 +120,7 @@ html[scheme='light'] {
 	--baseLineHeight: clamp(1.25, 1.5, 1.75);
 
 	/* shadows */
-	--shadow-nm: 0 var(--radius-5xs) var(--radius-nm)
-		color-mix(in srgb, var(--clr-primary), hsla(0, 0%, 0%, 0.333) 48%);
-	--shadow-xl: 0 var(--radius-5xs) var(--radius-xl)
-		color-mix(in srgb, var(--clr-primary), hsla(0, 0%, 0%, 0.333) 48%);
+	--shadow: 0 var(--radius-5xs) var(--radius-sm) hsla(0, 0%, 0%, 0.072);
 
 	/*animations*/
 	--animProperties: var(--animDuration) var(--animTiming);

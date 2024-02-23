@@ -99,6 +99,30 @@
 	}
 }
 
+.m {
+	&.--right {
+		&.--0 {
+			margin-right: 0;
+		}
+	}
+}
+
+.top {
+	top: 0;
+}
+
+.right {
+	right: 0;
+}
+
+.left {
+	left: 0;
+}
+
+.bottom {
+	bottom: 0;
+}
+
 .flow-content {
 	> * + *:not(hr) {
 		margin-top: 1rem;

@@ -75,7 +75,7 @@ page.HTML(html`
 			</row>
 			<row class="align --center gap --5xs justify --center">
 				<stepper class="grow">
-					<step>
+					<step class="active">
 						<var>1</var>
 						<span>step</span>
 					</step>
@@ -386,7 +386,7 @@ page.HTML(html`
 				</section>
 			</workspace__content>
 
-			<workspace__sidebar>
+			<aside data-variant="pane" data-position="right" style="z-index: 2;">
 				<column class="gap --5xs">
 					<h6>Place Holder Title</h6>
 					<p>....</p>
@@ -424,7 +424,7 @@ page.HTML(html`
 						<p>....</p>
 					</column>
 				</details>
-			</workspace__sidebar>
+			</aside>
 		</workspace__body>
 
 		<workspace__footer> workspace footer </workspace__footer>
@@ -507,6 +507,7 @@ page.CSS(css`
 
 		> workspace__body {
 			display: flex;
+			isolation: isolate;
 			z-index: 1;
 
 			> workspace__sidebar {
@@ -518,6 +519,7 @@ page.CSS(css`
 				overflow-y: auto;
 				padding: var(--scale-2xl);
 				width: 16rem;
+				z-index: 2;
 
 				> * {
 					flex-shrink: 0;
@@ -546,6 +548,7 @@ page.CSS(css`
 				overflow-y: auto;
 				padding: var(--scale-2xl) 0;
 				width: 100%;
+				z-index: 1;
 
 				> * {
 					grid-column: content;
