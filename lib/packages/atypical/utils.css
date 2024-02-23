@@ -110,3 +110,112 @@
 		cursor: pointer;
 	}
 }
+
+.w {
+	&.--25 {
+		width: calc(25% * 0.25);
+	}
+
+	&.--50 {
+		width: calc(25% * 0.5);
+	}
+
+	&.--75 {
+		width: calc(25% * 0.75);
+	}
+
+	&.--100 {
+		width: 100%;
+	}
+
+	&.--fill-available {
+		width: 100%;
+		width: fill-available;
+		width: -webkit-fill-available;
+		width: -moz-fill-available;
+	}
+
+	&.--fit {
+		width: fit-content;
+	}
+
+	&.--max {
+		width: max-content;
+	}
+
+	&.--min {
+		width: min-content;
+	}
+}
+
+.w-max {
+	&.--25 {
+		max-width: calc(25% * 0.25);
+	}
+
+	&.--50 {
+		max-width: calc(25% * 0.5);
+	}
+
+	&.--75 {
+		max-width: calc(25% * 0.75);
+	}
+
+	&.--100 {
+		max-width: 100%;
+	}
+
+	&.--fill-available {
+		max-width: fill-available;
+		max-width: -webkit-fill-available;
+		max-width: -moz-fill-available;
+	}
+
+	&.--fit {
+		max-width: fit-content;
+	}
+
+	&.--max {
+		max-width: max-content;
+	}
+
+	&.--min {
+		max-width: min-content;
+	}
+}
+
+.w-min {
+	&.--25 {
+		min-width: calc(25% * 0.25);
+	}
+
+	&.--50 {
+		min-width: calc(25% * 0.5);
+	}
+
+	&.--75 {
+		min-width: calc(25% * 0.75);
+	}
+
+	&.--100 {
+		min-width: 100%;
+	}
+
+	&.--fill-available {
+		min-width: fill-available;
+		min-width: -webkit-fill-available;
+		min-width: -moz-fill-available;
+	}
+
+	&.--fit {
+		min-width: fit-content;
+	}
+
+	&.--max {
+		min-width: max-content;
+	}
+
+	&.--min {
+		min-width: min-content;
+	}
+}

@@ -247,7 +247,7 @@ card {
 				> var {
 					align-items: center;
 					background-color: color-mix(in srgb, var(--c-background), gray 16%);
-					border-radius: var(--radius-5xl);
+					border-radius: 50%;
 					display: flex;
 					flex-shrink: 0;
 					font-size: var(--scale-xs);
@@ -458,19 +458,23 @@ field {
 stepper {
 	align-items: center;
 	display: flex;
+	gap: var(--scale-5xs);
 	justify-content: space-between;
 	overflow: clip;
 	vertical-align: middle;
 
 	> step {
+		--step-background: var(--clr-primary);
+
 		align-items: center;
 		display: inline-flex;
 		flex-shrink: 0;
 		gap: var(--scale-5xs);
 		height: max-content;
+		overflow: clip;
 
 		> var {
-			background-color: var(--clr-primary);
+			background-color: var(--step-background);
 			border-radius: 50%;
 			display: grid;
 			flex-shrink: 0;
@@ -483,6 +487,28 @@ stepper {
 
 		> span {
 			font-size: var(--scale-md);
+		}
+
+		&:not(:last-of-type) {
+			flex: 1 0 auto;
+
+			&::after {
+				background-color: color-mix(
+					in srgb,
+					var(--step-background),
+					transparent 50%
+				);
+				border-radius: var(--scale-sm);
+				clear: both;
+				content: '';
+				display: inline-flex;
+				flex: 1 1 0;
+				height: var(--scale-5xs);
+			}
+		}
+
+		&.active {
+			--step-background: var(--clr-accent);
 		}
 	}
 }

@@ -98,26 +98,30 @@ page.HTML(html`
 				</stepper>
 			</row>
 			<row class="align --center gap --5xs justify --end">
-				<dropdown data-variant="wrapper">
-					<toggle>
-						<figure data-variant="avatar">
-							<img
-								src="https://cdn.dribbble.com/users/18463/screenshots/15871576/media/2e14cdbe675f060297cc0b232f7712c5.png"
-								alt="avatar-thumbnail" />
-						</figure>
-					</toggle>
-					<dialog data-role="dropmenu" data-position="bottom">
-						<button type="button" onclick="themeHandler.set('auto')">
-							set theme auto
-						</button>
-						<button type="button" onclick="themeHandler.set('light')">
-							set theme light
-						</button>
-						<button type="button" onclick="themeHandler.set('dark')">
-							set theme dark
-						</button>
-					</dialog>
-				</dropdown>
+				<nav data-variant="pill">
+					<icon> notifications </icon>
+					<icon> settings </icon>
+					<dropdown data-variant="wrapper">
+						<toggle>
+							<figure data-variant="avatar">
+								<img
+									src="https://cdn.dribbble.com/users/18463/screenshots/15871576/media/2e14cdbe675f060297cc0b232f7712c5.png"
+									alt="avatar-thumbnail" />
+							</figure>
+						</toggle>
+						<dialog data-role="dropmenu" data-position="bottom">
+							<button type="button" onclick="themeHandler.set('auto')">
+								set theme auto
+							</button>
+							<button type="button" onclick="themeHandler.set('light')">
+								set theme light
+							</button>
+							<button type="button" onclick="themeHandler.set('dark')">
+								set theme dark
+							</button>
+						</dialog>
+					</dropdown>
+				</nav>
 			</row>
 		</workspace__header>
 
@@ -276,38 +280,7 @@ page.HTML(html`
 				<section class="flow-content">
 					<h2>Section name</h2>
 					<hr />
-					<row class="gap --2xl">
-						<card data-variant="productpack" mini>
-							<component__header>
-								<row>
-									<tag> #1845915 </tag>
-								</row>
-
-								<heading>
-									<span>Pack #54739</span>
-								</heading>
-
-								<dropdown disabled>
-									<toggle> Energy Efficiency </toggle>
-								</dropdown>
-							</component__header>
-
-							<component__body>
-								<productpack__product>
-									<p>
-										Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-										architecto quos, vitae est illum voluptates.
-									</p>
-								</productpack__product>
-							</component__body>
-
-							<component__footer>
-								<button type="button">
-									<icon>shopping_cart</icon>
-									<var>0</var>
-								</button>
-							</component__footer>
-						</card>
+					<row class="gap --sm">
 						<card data-variant="productpack" mini>
 							<component__header>
 								<row>
@@ -376,49 +349,39 @@ page.HTML(html`
 					<h2>Section name</h2>
 					<hr />
 					<grid max="4" style="--gap: var(--scale-2xl)">
-						<fieldset class="gap --2xl">
-							<field>
-								<label>label</label>
-								<input type="text" />
-							</field>
-							<field>
-								<label>label</label>
-								<input type="text" />
-							</field>
-						</fieldset>
+						<field>
+							<label>label</label>
+							<input type="text" />
+						</field>
+						<field>
+							<label>label</label>
+							<input type="text" />
+						</field>
+						<field>
+							<label>label</label>
+							<input type="text" />
+						</field>
+						<field>
+							<label>label</label>
+							<input type="text" />
+						</field>
+						<field>
+							<label>label</label>
+							<input type="text" />
+						</field>
+						<field>
+							<label>label</label>
+							<input type="text" />
+						</field>
 
-						<fieldset class="gap --2xl">
-							<field>
-								<label>label</label>
-								<input type="text" />
-							</field>
-							<field>
-								<label>label</label>
-								<input type="text" />
-							</field>
-						</fieldset>
-
-						<fieldset class="gap --2xl">
-							<field>
-								<label>label</label>
-								<input type="text" />
-							</field>
-							<field>
-								<label>label</label>
-								<input type="text" />
-							</field>
-						</fieldset>
-
-						<fieldset class="gap --2xl">
-							<field>
-								<label>label</label>
-								<input type="text" />
-							</field>
-							<field>
-								<label>label</label>
-								<input type="text" />
-							</field>
-						</fieldset>
+						<field>
+							<label>label</label>
+							<input type="text" />
+						</field>
+						<field>
+							<label>label</label>
+							<input type="text" />
+						</field>
 					</grid>
 				</section>
 			</workspace__content>

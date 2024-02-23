@@ -12,6 +12,14 @@
 	position: relative;
 	-webkit-tap-highlight-color: transparent;
 	text-decoration: none;
+
+	&::before {
+		box-sizing: inherit;
+	}
+
+	&::after {
+		box-sizing: inherit;
+	}
 }
 
 html {
@@ -213,6 +221,17 @@ row {
 	flex-direction: row;
 }
 
+nav {
+	place-items: center center;
+	&[data-variant='pill'] {
+		background-color: var(--clr-primary);
+		border-radius: var(--radius-3xs);
+		gap: calc(var(--scale-5xs) * 1.5);
+		height: calc(var(--scale-5xl) * 0.88);
+		padding: 0 var(--scale-sm);
+	}
+}
+
 component__header,
 header {
 	min-height: var(--scale-5xl);
@@ -233,31 +252,42 @@ section {
 grid {
 	--gap: var(--scale-5xs);
 	--minWidth: clamp(18rem, 1vw, 24rem);
+	--maxWidth: 1fr;
+	--repeat: auto-fill;
 	display: grid;
 	gap: var(--gap);
-	grid-template-columns: 1fr;
+	grid-template-columns: var(--maxWidth);
 
 	&[max='2'] {
 		--max: 2;
 		grid-template-columns: repeat(
-			auto-fill,
-			minmax(max(var(--minWidth), calc(100% / var(--max) - var(--gap))), 1fr)
+			var(--repeat),
+			minmax(
+				max(var(--minWidth), calc(100% / var(--max) - var(--gap))),
+				var(--maxWidth)
+			)
 		);
 	}
 
 	&[max='3'] {
 		--max: 3;
 		grid-template-columns: repeat(
-			auto-fill,
-			minmax(max(var(--minWidth), calc(100% / var(--max) - var(--gap))), 1fr)
+			var(--repeat),
+			minmax(
+				max(var(--minWidth), calc(100% / var(--max) - var(--gap))),
+				var(--maxWidth)
+			)
 		);
 	}
 
 	&[max='4'] {
 		--max: 4;
 		grid-template-columns: repeat(
-			auto-fill,
-			minmax(max(var(--minWidth), calc(100% / var(--max) - var(--gap))), 1fr)
+			var(--repeat),
+			minmax(
+				max(var(--minWidth), calc(100% / var(--max) - var(--gap))),
+				var(--maxWidth)
+			)
 		);
 	}
 
