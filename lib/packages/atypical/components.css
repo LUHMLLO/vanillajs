@@ -323,7 +323,7 @@ dialog {
 
 	&::backdrop {
 		background-color: hsla(0, 0%, 0%, 0.88);
-		backdrop-filter: blur(var(--radius-5xl));
+		backdrop-filter: blur(var(--radius-5xs, 6.39pt));
 	}
 
 	> component__header,
@@ -401,6 +401,22 @@ dialog {
 					}
 				}
 			}
+		}
+	}
+
+	&[data-variant='pane'] {
+		height: auto;
+		inset: 0;
+
+		margin-top: var(--scale-sm);
+		margin-right: var(--scale-sm);
+		margin-bottom: var(--scale-sm);
+		margin-left: var(--scale-sm);
+
+		position: absolute;
+
+		&[data-position='right'] {
+			margin-left: auto;
 		}
 	}
 }

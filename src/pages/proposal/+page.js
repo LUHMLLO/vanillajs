@@ -20,6 +20,12 @@ page.JS(js`
 
 	window.themeHandler = new ThemeSchemes();
 	themeHandler.load();
+
+	function toggleCommandPalette(){
+		const modal = document.querySelector('#command-palette');
+
+		modal.open ? modal.close() : modal.showModal();
+	}
 `);
 
 let html = String.raw;
@@ -99,10 +105,53 @@ page.HTML(html`
 			</row>
 			<row class="align --center gap --5xs justify --end">
 				<nav data-variant="pill">
-					<icon> notifications </icon>
-					<icon> settings </icon>
+					<icon
+						type="button"
+						class="cursor --pointer"
+						onclick="themeHandler.set('auto')">
+						contrast
+					</icon>
+					<icon
+						type="button"
+						class="cursor --pointer"
+						onclick="themeHandler.set('light')">
+						light_mode
+					</icon>
+					<icon
+						type="button"
+						class="cursor --pointer"
+						onclick="themeHandler.set('dark')">
+						dark_mode
+					</icon>
+				</nav>
+				<nav data-variant="pill">
 					<dropdown data-variant="wrapper">
-						<toggle>
+						<toggle type="button">
+							<icon> notifications </icon>
+						</toggle>
+						<dialog data-role="dropmenu" data-position="bottom">
+							<component__header> </component__header>
+
+							<component__body>
+								<p>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+									architecto quos, vitae est illum voluptates.
+								</p>
+							</component__body>
+
+							<component__footer>
+								<button type="button">
+									<icon>shopping_cart</icon>
+									<var>0</var>
+								</button>
+							</component__footer>
+						</dialog>
+					</dropdown>
+
+					<icon type="button" class="cursor --pointer"> settings </icon>
+
+					<dropdown data-variant="wrapper">
+						<toggle type="button">
 							<figure data-variant="avatar">
 								<img
 									src="https://cdn.dribbble.com/users/18463/screenshots/15871576/media/2e14cdbe675f060297cc0b232f7712c5.png"
@@ -110,14 +159,13 @@ page.HTML(html`
 							</figure>
 						</toggle>
 						<dialog data-role="dropmenu" data-position="bottom">
-							<button type="button" onclick="themeHandler.set('auto')">
-								set theme auto
+							<button type="button">
+								<icon>account_circle</icon>
+								<text>My Profile</text>
 							</button>
-							<button type="button" onclick="themeHandler.set('light')">
-								set theme light
-							</button>
-							<button type="button" onclick="themeHandler.set('dark')">
-								set theme dark
+							<button type="button">
+								<icon>logout</icon>
+								<text>Log Out</text>
 							</button>
 						</dialog>
 					</dropdown>
@@ -131,9 +179,9 @@ page.HTML(html`
 					<h6>Quick Actions</h6>
 					<button
 						type="button"
-						onclick="document.querySelector('#dialogTest').showModal()">
-						<icon> search </icon>
-						<text>Search</text>
+						onclick="document.querySelector('#command-palette').showModal()">
+						<icon> keyboard_command_key </icon>
+						<text> Action Center </text>
 					</button>
 					<button type="button">
 						<icon> add </icon>
@@ -385,57 +433,37 @@ page.HTML(html`
 					</grid>
 				</section>
 			</workspace__content>
-
-			<aside data-variant="pane" data-position="right" style="z-index: 2;">
-				<column class="gap --5xs">
-					<h6>Place Holder Title</h6>
-					<p>....</p>
-				</column>
-
-				<details data-variant="folder-tree">
-					<summary>
-						<text>Place Holder</text>
-						<icon> expand_more </icon>
-					</summary>
-
-					<column class="gap --5xs">
-						<p>....</p>
-					</column>
-				</details>
-
-				<details data-variant="folder-tree">
-					<summary>
-						<text>Place Holder</text>
-						<icon> expand_more </icon>
-					</summary>
-
-					<column class="gap --5xs">
-						<p>....</p>
-					</column>
-				</details>
-
-				<details data-variant="folder-tree">
-					<summary>
-						<text>Place Holder</text>
-						<icon> expand_more </icon>
-					</summary>
-
-					<column class="gap --5xs">
-						<p>....</p>
-					</column>
-				</details>
-			</aside>
 		</workspace__body>
 
-		<workspace__footer> workspace footer </workspace__footer>
+		<workspace__footer>
+			workspace footer
+			<button
+				type="button"
+				onclick="document.querySelector('#cart-items').showModal()">
+				<icon> shopping_cart </icon>
+				<text> Manage your cart items </text>
+			</button>
+		</workspace__footer>
 	</workspace>
 
 	<overlays>
-		<dialog id="dialogTest">
+		<dialog id="cart-items" data-variant="pane" data-position="right">
+			<component__header>
+				<h6 class="grow">Pane Title</h6>
+				<icon
+					type="button"
+					class="cursor --pointer"
+					onclick="document.querySelector('#cart-items').close()">
+					close
+				</icon>
+			</component__header>
+		</dialog>
+
+		<dialog id="command-palette">
 			<component__header class="justify --end">
 				<icon
 					class="cursor --pointer"
-					onclick="document.querySelector('#dialogTest').close()"
+					onclick="document.querySelector('#command-palette').close()"
 					>close</icon
 				>
 			</component__header>
@@ -499,9 +527,7 @@ page.CSS(css`
 			z-index: 2;
 
 			> row {
-				flex-grow: 1;
-				flex-shrink: 1;
-				flex-basis: 0;
+				flex: 1 1 16rem;
 			}
 		}
 

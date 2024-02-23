@@ -433,32 +433,3 @@ details {
 		}
 	}
 }
-
-aside {
-	background-color: var(--clr-primary);
-	border-radius: var(--radius-3xs);
-	display: flex;
-	flex-direction: column;
-	flex-shrink: 0;
-	gap: var(--scale-2xl);
-	overflow-x: clip;
-	overflow-y: auto;
-	padding: var(--scale-2xl);
-	z-index: auto;
-
-	&[data-variant='pane'] {
-		box-shadow: var(--shadow);
-		flex-shrink: 1;
-		inset: 0;
-		margin-top: var(--scale-sm);
-		margin-right: var(--scale-sm);
-		margin-bottom: var(--scale-sm);
-		margin-left: var(--scale-sm);
-		position: absolute;
-		width: max-content;
-
-		&[data-position='right'] {
-			margin-left: auto;
-		}
-	}
-}
