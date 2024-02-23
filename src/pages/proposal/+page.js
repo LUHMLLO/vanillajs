@@ -18,14 +18,26 @@ page.JS(js`
 
 	const drops = new Drops();
 
+	/** @param {String} id */
+	window.toggleModal = function(id){
+		const modal = document.querySelector(id);
+
+		if(modal.open) {		
+			modal.close()
+		} else {
+			modal.showModal();
+		}		
+
+		// modal.addEventListener('click', function(event) {
+		// 	if(!modal.contains(event.target)) {
+		// 		modal.close();
+		// 	}
+		// });
+		
+	}
+
 	window.themeHandler = new ThemeSchemes();
 	themeHandler.load();
-
-	function toggleCommandPalette(){
-		const modal = document.querySelector('#command-palette');
-
-		modal.open ? modal.close() : modal.showModal();
-	}
 `);
 
 let html = String.raw;
@@ -177,134 +189,50 @@ page.HTML(html`
 			<workspace__sidebar>
 				<column class="gap --5xs">
 					<h6>Quick Actions</h6>
-					<button
-						type="button"
-						onclick="document.querySelector('#command-palette').showModal()">
+					<button type="button" onclick="toggleModal('#command-palette')">
 						<icon> keyboard_command_key </icon>
 						<text> Action Center </text>
 					</button>
 					<button type="button">
-						<icon> add </icon>
-						<text>Call to action</text>
-					</button>
-					<button type="button">
-						<icon> add </icon>
-						<text>Call to action</text>
+						<icon> package_2 </icon>
+						<text>Change Product-Pack</text>
 					</button>
 				</column>
 
 				<details data-variant="folder-tree" open>
 					<summary>
-						<icon> folder_open </icon>
-						<text>Modules</text>
+						<icon> fiber_smart_record </icon>
+						<text>Module</text>
 						<icon> expand_more </icon>
 					</summary>
 
 					<column class="gap --5xs">
 						<a href="javascript:void(0)">
-							<icon> article </icon>
+							<icon> fiber_manual_record </icon>
 							<text>Customer information</text>
 						</a>
 						<a href="javascript:void(0)">
-							<icon> article </icon>
+							<icon> fiber_manual_record </icon>
 							<text>System Equipment</text>
 						</a>
 						<a href="javascript:void(0)">
-							<icon> article </icon>
+							<icon> fiber_manual_record </icon>
 							<text>Project Adders</text>
 						</a>
 						<a>
-							<icon> article </icon>
+							<icon> fiber_manual_record </icon>
 							<text>Additional Work</text>
 						</a>
 						<a href="javascript:void(0)">
-							<icon> article </icon>
+							<icon> fiber_manual_record </icon>
 							<text>Additional Projects</text>
 						</a>
 						<a href="javascript:void(0)">
-							<icon> article </icon>
+							<icon> fiber_manual_record </icon>
 							<text>Internal Sale Notes</text>
 						</a>
 						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Financial</text>
-						</a>
-					</column>
-				</details>
-
-				<details data-variant="folder-tree">
-					<summary>
-						<icon> folder_open </icon>
-						<text>Modules</text>
-						<icon> expand_more </icon>
-					</summary>
-
-					<column class="gap --5xs">
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Customer information</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>System Equipment</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Project Adders</text>
-						</a>
-						<a>
-							<icon> article </icon>
-							<text>Additional Work</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Additional Projects</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Internal Sale Notes</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Financial</text>
-						</a>
-					</column>
-				</details>
-
-				<details data-variant="folder-tree">
-					<summary>
-						<icon> folder_open </icon>
-						<text>Modules</text>
-						<icon> expand_more </icon>
-					</summary>
-
-					<column class="gap --5xs">
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Customer information</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>System Equipment</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Project Adders</text>
-						</a>
-						<a>
-							<icon> article </icon>
-							<text>Additional Work</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Additional Projects</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
-							<text>Internal Sale Notes</text>
-						</a>
-						<a href="javascript:void(0)">
-							<icon> article </icon>
+							<icon> fiber_manual_record </icon>
 							<text>Financial</text>
 						</a>
 					</column>
@@ -437,9 +365,7 @@ page.HTML(html`
 
 		<workspace__footer>
 			workspace footer
-			<button
-				type="button"
-				onclick="document.querySelector('#cart-items').showModal()">
+			<button type="button" onclick="toggleModal('#cart-items')">
 				<icon> shopping_cart </icon>
 				<text> Manage your cart items </text>
 			</button>
@@ -453,24 +379,17 @@ page.HTML(html`
 				<icon
 					type="button"
 					class="cursor --pointer"
-					onclick="document.querySelector('#cart-items').close()">
+					onclick="toggleModal('#cart-items')">
 					close
 				</icon>
 			</component__header>
 		</dialog>
 
-		<dialog id="command-palette">
-			<component__header class="justify --end">
-				<icon
-					class="cursor --pointer"
-					onclick="document.querySelector('#command-palette').close()"
-					>close</icon
-				>
-			</component__header>
-			<component__body>
+		<dialog id="command-palette" class="w --max">
+			<component__header class="gap --sm" style="flex-direction: column;">
 				<field
 					data-variant="command-palette-search"
-					class="grow"
+					class="w --100"
 					style="--c-background: var(--clr-secondary)">
 					<icon> search </icon>
 					<input
@@ -479,8 +398,177 @@ page.HTML(html`
 						style="--c-background: transparent;" />
 					<icon> filter_alt </icon>
 				</field>
+
+				<row class="gap --sm">
+					<dropdown>
+						<toggle>
+							<icon>swap_vert</icon>
+							<text>Sort</text>
+							<icon>expand_more</icon>
+						</toggle>
+						<dialog data-role="dropmenu" data-position="bottom">. . .</dialog>
+					</dropdown>
+
+					<button type="button" style="--c-background: var(--clr-secondary);">
+						<icon>text_fields</icon>
+						<text>Name only</text>
+					</button>
+
+					<dropdown>
+						<toggle>
+							<icon>person</icon>
+							<text>Created by</text>
+							<icon>expand_more</icon>
+						</toggle>
+						<dialog data-role="dropmenu" data-position="bottom">. . .</dialog>
+					</dropdown>
+
+					<dropdown>
+						<toggle>
+							<icon>folder_open</icon>
+							<text>In</text>
+							<icon>expand_more</icon>
+						</toggle>
+						<dialog data-role="dropmenu" data-position="bottom">
+							<field data-variant="command-palette-search">
+								<input type="text" placeholder=". . . ." />
+							</field>
+
+							<column class="gap --5xs">
+								<a href="javascript:void(0)" style="--c-text:var(--clr-text);">
+									<icon> folder </icon>
+									<text>Customer information</text>
+								</a>
+								<a href="javascript:void(0)" style="--c-text:var(--clr-text);">
+									<icon> folder </icon>
+									<text>System Equipment</text>
+								</a>
+								<a href="javascript:void(0)" style="--c-text:var(--clr-text);">
+									<icon> folder </icon>
+									<text>Project Adders</text>
+								</a>
+								<a href="javascript:void(0)" style="--c-text:var(--clr-text);">
+									<icon> folder </icon>
+									<text>Additional Work</text>
+								</a>
+								<a href="javascript:void(0)" style="--c-text:var(--clr-text);">
+									<icon> folder </icon>
+									<text>Additional Projects</text>
+								</a>
+								<a href="javascript:void(0)" style="--c-text:var(--clr-text);">
+									<icon> folder </icon>
+									<text>Internal Sale Notes</text>
+								</a>
+								<a href="javascript:void(0)" style="--c-text:var(--clr-text);">
+									<icon> folder </icon>
+									<text>Financial</text>
+								</a>
+							</column>
+						</dialog>
+					</dropdown>
+
+					<dropdown>
+						<toggle>
+							<icon>calendar_month</icon>
+							<text>Date</text>
+							<icon>expand_more</icon>
+						</toggle>
+						<dialog data-role="dropmenu" data-position="bottom">. . .</dialog>
+					</dropdown>
+				</row>
+			</component__header>
+
+			<component__body>
+				<details data-variant="folder-tree" open>
+					<summary>
+						<icon> list </icon>
+						<text>Today</text>
+						<icon> expand_more </icon>
+					</summary>
+
+					<column class="gap --5xs">
+						<a href="javascript:void(0)">
+							<icon> fiber_manual_record </icon>
+							<text>System Equipment</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> fiber_manual_record </icon>
+							<text>Project Adders</text>
+						</a>
+						<a>
+							<icon> fiber_manual_record </icon>
+							<text>Additional Work</text>
+						</a>
+					</column>
+				</details>
+
+				<details data-variant="folder-tree" open>
+					<summary>
+						<icon> list </icon>
+						<text>Yesterday</text>
+						<icon> expand_more </icon>
+					</summary>
+
+					<column class="gap --5xs">
+						<a href="javascript:void(0)">
+							<icon> fiber_manual_record </icon>
+							<text>Customer information</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> fiber_manual_record </icon>
+							<text>System Equipment</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> fiber_manual_record </icon>
+							<text>Project Adders</text>
+						</a>
+						<a>
+							<icon> fiber_manual_record </icon>
+							<text>Additional Work</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> fiber_manual_record </icon>
+							<text>Additional Projects</text>
+						</a>
+					</column>
+				</details>
+
+				<details data-variant="folder-tree">
+					<summary>
+						<icon> list </icon>
+						<text>Past week</text>
+						<icon> expand_more </icon>
+					</summary>
+
+					<column class="gap --5xs">
+						<a href="javascript:void(0)">
+							<icon> fiber_manual_record </icon>
+							<text>Customer information</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> fiber_manual_record </icon>
+							<text>System Equipment</text>
+						</a>
+						<a href="javascript:void(0)">
+							<icon> fiber_manual_record </icon>
+							<text>Project Adders</text>
+						</a>
+					</column>
+				</details>
 			</component__body>
-			<component__footer> </component__footer>
+
+			<component__footer>
+				<button type="button">
+					<icon>arrow_upward</icon>
+					<text>Move</text>
+					<icon>arrow_downward</icon>
+				</button>
+
+				<button type="button">
+					<icon>keyboard_return</icon>
+					<text>Select</text>
+				</button>
+			</component__footer>
 		</dialog>
 	</overlays>
 `);

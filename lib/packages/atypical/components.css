@@ -319,6 +319,20 @@ dialog {
 	&:modal {
 		inset: 0;
 		margin: auto;
+		min-height: 32dvh;
+		max-height: 96dvh;
+		max-width: 96dvw;
+
+		> component__body {
+			flex-grow: 1;
+			flex-shrink: 1;
+			overflow-x: clip;
+			overflow-y: auto;
+
+			> * {
+				flex-shrink: 0;
+			}
+		}
 	}
 
 	&::backdrop {
@@ -331,7 +345,8 @@ dialog {
 	> component__footer {
 		align-items: center;
 		display: flex;
-		gap: var(--scale-5xs);
+		flex-shrink: 0;
+		gap: var(--scale-sm);
 		padding: var(--scale-sm);
 		width: 100%;
 
@@ -343,11 +358,13 @@ dialog {
 	> component__header {
 		border-bottom: solid var(--clr-secondary) calc(var(--scale-3xs) * 0.1);
 		justify-content: space-between;
+		z-index: 2;
 	}
 
 	> component__body {
 		flex-direction: column;
 		flex-grow: 1;
+		z-index: 1;
 
 		> h6 {
 			font-size: var(--scale-nm);
@@ -363,6 +380,7 @@ dialog {
 	> component__footer {
 		border-top: solid var(--clr-secondary) calc(var(--scale-3xs) * 0.1);
 		justify-content: space-between;
+		z-index: 2;
 	}
 
 	&[data-variant='onboarding'] {
@@ -422,6 +440,9 @@ dialog {
 }
 
 field {
+	display: inline-flex;
+	flex-direction: column;
+
 	> dropdown,
 	input,
 	select,
@@ -429,11 +450,10 @@ field {
 		align-items: center;
 		color: var(--clr-text);
 		display: inline-flex;
-		flex-grow: 1;
-		width: 100%;
 		outline: solid 0.125rem transparent;
 		outline-offset: -0.125rem;
 		padding: 0 var(--scale-sm);
+		width: 100%;
 
 		&:focus {
 			outline-color: var(--clr-accent);
@@ -447,6 +467,7 @@ field {
 		background-color: var(--c-background);
 		border-radius: var(--scale-3xs);
 		display: inline-flex;
+		flex-direction: row;
 		gap: var(--scale-sm);
 		outline: solid 0.125rem transparent;
 		outline-offset: -0.125rem;
