@@ -218,6 +218,7 @@ text {
 
 figure {
 	border-radius: var(--radius-3xs);
+	flex-shrink: 0;
 	overflow: clip;
 
 	> img {

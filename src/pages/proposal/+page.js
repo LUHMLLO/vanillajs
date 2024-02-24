@@ -43,7 +43,7 @@ page.JS(js`
 let html = String.raw;
 page.HTML(html`
 	<workspace>
-		<workspace__header>
+		<workspace__header class="gap --5xs">
 			<row class="align --center gap --5xs">
 				<figure data-variant="logo">
 					<svg
@@ -89,7 +89,9 @@ page.HTML(html`
 					</svg>
 				</figure>
 
-				<h6>Proposals by Gizmo</h6>
+				<h6>
+					<small>Proposal Tool<br />by Gizmo</small>
+				</h6>
 			</row>
 			<row class="align --center gap --5xs justify --center">
 				<stepper class="grow">
@@ -262,8 +264,10 @@ page.HTML(html`
 				<section class="flow-content">
 					<h2>Section name</h2>
 					<hr data-variant="horizontal" />
-					<row class="gap --sm">
-						<card data-variant="productpack" mini>
+					<grid
+						max="4"
+						style="--gap: var(--scale-2xl); --minWidth: clamp(12rem, 1vw, 16rem);">
+						<card data-variant="productpack" mini class="w-min --100">
 							<component__header>
 								<row>
 									<tag> #1845915 </tag>
@@ -294,7 +298,7 @@ page.HTML(html`
 								</button>
 							</component__footer>
 						</card>
-						<card data-variant="productpack" mini>
+						<card data-variant="productpack" mini class="w-min --100">
 							<component__header>
 								<row>
 									<tag> #1845915 </tag>
@@ -325,12 +329,14 @@ page.HTML(html`
 								</button>
 							</component__footer>
 						</card>
-					</row>
+					</grid>
 				</section>
 				<section class="flow-content">
 					<h2>Section name</h2>
 					<hr data-variant="horizontal" />
-					<grid max="4" style="--gap: var(--scale-2xl)">
+					<grid
+						max="4"
+						style="--gap: var(--scale-2xl); --minWidth: clamp(12rem, 1vw, 16rem);">
 						<field>
 							<label>label</label>
 							<input type="text" />
@@ -689,7 +695,7 @@ page.CSS(css`
 			z-index: 2;
 
 			> row {
-				flex: 1 1 16rem;
+				flex: 1 1 max-content;
 			}
 		}
 

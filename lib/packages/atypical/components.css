@@ -3,6 +3,7 @@
 dropdown {
 	display: flex;
 	flex-direction: column;
+	flex-shrink: 0;
 	isolation: isolate;
 	position: relative;
 	vertical-align: middle;
@@ -595,11 +596,11 @@ stepper {
 			border-radius: 50%;
 			display: grid;
 			flex-shrink: 0;
-			font-size: var(--scale-nm);
+			font-size: var(--scale-sm);
 			font-style: normal;
-			height: var(--scale-5xl);
+			height: var(--scale-2xl);
 			place-content: center;
-			width: var(--scale-5xl);
+			width: var(--scale-2xl);
 		}
 
 		> span {
