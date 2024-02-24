@@ -4,7 +4,7 @@ import '~lib/packages/atypical/components.css';
 import '~lib/packages/atypical/utils.css';
 import '~lib/packages/atypical/widgets.css';
 
-import App from './modules/app';
+import App from '../lib/app';
 
 const AppElement = document.getElementById('app');
 
@@ -12,7 +12,7 @@ const AppElement = document.getElementById('app');
 	let Pages;
 
 	try {
-		Pages = await import('../.server/pages');
+		Pages = await import('../.kit/pages');
 	} catch (err) {
 		console.error('Failed to load pages:', err);
 	}

@@ -16,6 +16,7 @@ dropdown {
 	> dialog[data-role='dropmenu'] {
 		--c-background: var(--clr-secondary);
 
+		background-color: var(--c-background);
 		border-radius: var(--radius-3xs);
 		border: none;
 		box-shadow: var(--shadow);
@@ -356,12 +357,82 @@ dialog {
 	--c-background: var(--clr-primary);
 
 	align-items: center;
-	background-color: var(--c-background);
-	border-radius: var(--radius-3xs);
+	background-color: transparent;
 	color: var(--clr-text);
 	flex-direction: column;
+	isolation: isolate;
+	overflow: visible;
 	width: calc(var(--scale-nm) * 24);
-	overflow: clip;
+
+	> component__header,
+	> component__toolbar,
+	> component__body,
+	> component__footer {
+		align-items: center;
+		background-color: var(--c-background);
+		display: flex;
+		flex-shrink: 0;
+		gap: var(--scale-sm);
+		padding: var(--scale-sm);
+		width: 100%;
+
+		> button:not([data-variant]) {
+			--c-background: var(--clr-secondary);
+		}
+
+		&:first-child {
+			border-top-left-radius: var(--radius-3xs);
+			border-top-right-radius: var(--radius-3xs);
+		}
+
+		&:last-child {
+			border-bottom-left-radius: var(--radius-3xs);
+			border-bottom-right-radius: var(--radius-3xs);
+		}
+	}
+
+	> component__header {
+		border-bottom: solid var(--clr-secondary) calc(var(--scale-3xs) * 0.1);
+		justify-content: space-between;
+		z-index: 2;
+	}
+
+	> component__toolbar {
+		border-bottom: solid var(--clr-secondary) calc(var(--scale-3xs) * 0.1);
+		justify-content: safe center;
+		overflow-x: clip;
+		overflow-y: visible;
+		z-index: 3;
+
+		> * {
+			flex-shrink: 0;
+		}
+
+		/* &::-webkit-scrollbar {
+			display: none;
+		} */
+	}
+
+	> component__body {
+		flex-direction: column;
+		flex-grow: 1;
+
+		> h6 {
+			font-size: var(--scale-nm);
+			width: 100%;
+		}
+
+		> p {
+			color: var(--clr-subtext);
+			font-size: var(--scale-md);
+		}
+	}
+
+	> component__footer {
+		border-top: solid var(--clr-secondary) calc(var(--scale-3xs) * 0.1);
+		justify-content: space-between;
+		z-index: 2;
+	}
 
 	&[open] {
 		display: flex;
@@ -390,49 +461,6 @@ dialog {
 	&::backdrop {
 		background-color: hsla(0, 0%, 0%, 0.88);
 		backdrop-filter: blur(var(--radius-5xs, 6.39pt));
-	}
-
-	> component__header,
-	> component__body,
-	> component__footer {
-		align-items: center;
-		display: flex;
-		flex-shrink: 0;
-		gap: var(--scale-sm);
-		padding: var(--scale-sm);
-		width: 100%;
-
-		> button:not([data-variant]) {
-			--c-background: var(--clr-secondary);
-		}
-	}
-
-	> component__header {
-		border-bottom: solid var(--clr-secondary) calc(var(--scale-3xs) * 0.1);
-		justify-content: space-between;
-		z-index: 2;
-	}
-
-	> component__body {
-		flex-direction: column;
-		flex-grow: 1;
-		z-index: 1;
-
-		> h6 {
-			font-size: var(--scale-nm);
-			width: 100%;
-		}
-
-		> p {
-			color: var(--clr-subtext);
-			font-size: var(--scale-md);
-		}
-	}
-
-	> component__footer {
-		border-top: solid var(--clr-secondary) calc(var(--scale-3xs) * 0.1);
-		justify-content: space-between;
-		z-index: 2;
 	}
 
 	&[data-variant='onboarding'] {

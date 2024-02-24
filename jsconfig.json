@@ -29,14 +29,26 @@
 		"baseUrl": ".",
 		// Paths mapped to their alias.
 		"paths": {
-			"~server": ["./.server"],
-			"~server/*": ["./.server/*"],
+			"~dist": ["./.dist"],
+			"~dist/*": ["./.dist/*"],
+
+			"~kit": ["./.kit"],
+			"~kit/*": ["./.kit/*"],
+
 			"~lib": ["./lib"],
 			"~lib/*": ["./lib/*"],
+
+			"~public": ["./public"],
+			"~public/*": ["./public/*"],
+
 			"~src": ["./src"],
 			"~src/*": ["./src/*"],
-			"~root": ["./"],
-			"~root/*": ["./*"]
+
+			"~tools": ["./tools"],
+			"~tools/*": ["./tools/*"],
+
+			"~": ["./"],
+			"~/*": ["./*"]
 		},
 		// Enables experimental support for decorators.
 		"experimentalDecorators": true,
@@ -47,21 +59,29 @@
 	},
 	"include": [
 		// Includes all JavaScript and TypeScript definition files in 'src' directory.
-		".server/**/*.d.js",
-		".server/**/*.js",
-		".server/**/*.cjs",
-		".server/**/*.mjs",
+		".dist/**/*.d.js",
+		".dist/**/*.js",
+		".dist/**/*.cjs",
+		".dist/**/*.mjs",
+
+		".kit/**/*.d.js",
+		".kit/**/*.js",
+		".kit/**/*.cjs",
+		".kit/**/*.mjs",
+
 		"lib/**/*.d.js",
 		"lib/**/*.js",
 		"lib/**/*.cjs",
 		"lib/**/*.mjs",
+
 		"src/**/*.d.js",
 		"src/**/*.js",
 		"src/**/*.cjs",
 		"src/**/*.mjs",
-		"static/**/*.d.js",
-		"static/**/*.js",
-		"static/**/*.cjs",
-		"static/**/*.mjs"
+
+		"tools/**/*.d.js",
+		"tools/**/*.js",
+		"tools/**/*.cjs",
+		"tools/**/*.mjs"
 	]
 }

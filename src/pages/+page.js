@@ -135,7 +135,9 @@ page.HTML(html`
 					<icon>expand_more</icon>
 				</toggle>
 				<dialog data-role="dropmenu" data-position="bottom">
-					<button type="button">option 1</button>
+					<button type="button" data-trigger="close">
+						this will trigger a close
+					</button>
 					<button type="button">option 2</button>
 					<button type="button">option 3</button>
 				</dialog>
@@ -233,9 +235,9 @@ page.HTML(html`
 								<icon>more_vert</icon>
 							</toggle>
 							<dialog data-role="dropmenu" data-position="bottom" open>
-								<button type="button">Rename</button>
-								<button type="button">Clone</button>
-								<button type="button">Delete</button>
+								<button type="button" data-trigger="close">Rename</button>
+								<button type="button" data-trigger="close">Clone</button>
+								<button type="button" data-trigger="close">Delete</button>
 							</dialog>
 						</dropdown>
 					</row>
@@ -247,9 +249,11 @@ page.HTML(html`
 					<dropdown>
 						<toggle> Choose Product Type </toggle>
 						<dialog data-role="dropmenu" data-position="bottom">
-							<button type="button">Energy Efficiency</button>
-							<button type="button">Geothermal</button>
-							<button type="button">HVAC</button>
+							<button type="button" data-trigger="close">
+								Energy Efficiency
+							</button>
+							<button type="button" data-trigger="close">Geothermal</button>
+							<button type="button" data-trigger="close">HVAC</button>
 						</dialog>
 					</dropdown>
 				</component__header>
@@ -323,9 +327,9 @@ page.HTML(html`
 								<icon>more_vert</icon>
 							</toggle>
 							<dialog data-role="dropmenu" data-position="bottom" open>
-								<button type="button">Rename</button>
-								<button type="button">Clone</button>
-								<button type="button">Delete</button>
+								<button type="button" data-trigger="close">Rename</button>
+								<button type="button" data-trigger="close">Clone</button>
+								<button type="button" data-trigger="close">Delete</button>
 							</dialog>
 						</dropdown>
 					</row>
@@ -337,9 +341,9 @@ page.HTML(html`
 					<dropdown>
 						<toggle> Choose Product Type </toggle>
 						<dialog data-role="dropmenu" data-position="bottom">
-							<button type="button">Energy Efficiency</button>
-							<button type="button">Geothermal</button>
-							<button type="button">HVAC</button>
+							<button type="button" data-trigger="close">Energy Efficiency</button>
+							<button type="button" data-trigger="close">Geothermal</button>
+							<button type="button" data-trigger="close">HVAC</button>
 						</dialog>
 					</dropdown>
 				</component__header>

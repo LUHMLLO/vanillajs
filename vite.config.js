@@ -1,5 +1,5 @@
 import path from 'path';
-import buildOptions from './lib/vite/buildOptions';
+import buildOptions from './tools/vite.buildOptions.js';
 import Pager from './lib/packages/pager/vite.mjs';
 import { defineConfig } from 'vite';
 
@@ -8,19 +8,22 @@ export default defineConfig(({}) => {
 	return {
 		build: {
 			...buildOptions,
-			outDir: 'dist',
+			outDir: '.dist',
 		},
 		esbuild: {
 			drop: ['console', 'debugger'],
 		},
 		plugins: [Pager],
-		publicDir: './static',
+		publicDir: './public',
 		resolve: {
 			alias: {
-				'~server': path.resolve(__dirname, './.server'),
+				'~dist': path.resolve(__dirname, './.dist'),
+				'~kit': path.resolve(__dirname, './.kit'),
 				'~lib': path.resolve(__dirname, './lib'),
+				'~public': path.resolve(__dirname, './public'),
 				'~src': path.resolve(__dirname, './src'),
-				'~root': path.resolve(__dirname, './'),
+				'~tools': path.resolve(__dirname, './tools'),
+				'~': path.resolve(__dirname, './'),
 			},
 		},
 	};
