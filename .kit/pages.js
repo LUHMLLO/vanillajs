@@ -1,5 +1,6 @@
 import * as _src_pages__error_js from '~src/pages/+error.js';
 import * as _src_pages__page_js from '~src/pages/+page.js';
+import * as _src_pages_auth__page_js from '~src/pages/auth/+page.js';
 import * as _src_pages_preview__page_js from '~src/pages/preview/+page.js';
 import * as _src_pages_proposal__about_js from '~src/pages/proposal/+about.js';
 import * as _src_pages_proposal__page_js from '~src/pages/proposal/+page.js';
@@ -12,6 +13,10 @@ export default [
 	{
 		path: '/',
 		import: _src_pages__page_js,
+	},
+	{
+		path: '/auth',
+		import: _src_pages_auth__page_js,
 	},
 	{
 		path: '/preview',
