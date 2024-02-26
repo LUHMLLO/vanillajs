@@ -1,5 +1,6 @@
 import '~lib/packages/atypical/_properties.css';
 import '~lib/packages/atypical/_reset.css';
+import '~lib/packages/atypical/colors.css';
 import '~lib/packages/atypical/components.css';
 import '~lib/packages/atypical/utils.css';
 import '~lib/packages/atypical/widgets.css';

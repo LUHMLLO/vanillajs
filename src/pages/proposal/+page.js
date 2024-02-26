@@ -14,8 +14,6 @@ page.SEO({
 let js = String.raw;
 page.JS(js`
 	import Drops from "/assets/js/drops.js";
-	import ThemeSchemes from '/assets/js/themeSchemes.js';
-
 	const drops = new Drops();
 
 	/** @param {String} id */
@@ -33,11 +31,7 @@ page.JS(js`
 		// 		modal.close();
 		// 	}
 		// });
-		
 	}
-
-	window.themeHandler = new ThemeSchemes();
-	themeHandler.load();
 `);
 
 let html = String.raw;
@@ -190,7 +184,7 @@ page.HTML(html`
 		</workspace__header>
 
 		<workspace__body>
-			<workspace__sidebar>
+			<workspace__sidebar style="resize: horizontal;">
 				<column class="gap --5xs">
 					<h6>Quick Actions</h6>
 					<button type="button" onclick="toggleModal('#command-palette')">
@@ -709,9 +703,11 @@ page.CSS(css`
 				flex-direction: column;
 				flex-shrink: 0;
 				gap: var(--scale-2xl);
+				max-width: max-content;
+				min-width: var(--scale-5xl);
 				overflow-x: clip;
 				overflow-y: auto;
-				padding: var(--scale-2xl);
+				padding: clamp(var(--scale-xl), 1vw, var(--scale-2xl));
 				width: 16rem;
 				z-index: 2;
 
@@ -725,6 +721,18 @@ page.CSS(css`
 
 				&:last-of-type {
 					border-left: solid 0.125rem var(--clr-primary);
+				}
+
+				&::-webkit-resizer {
+					background-color: red;
+					height: 100px;
+					width: 10px;
+
+					top: 0;
+					right: 0;
+					bottom: 0;
+					margin: 0 0 0 auto;
+					position: absolute;
 				}
 			}
 

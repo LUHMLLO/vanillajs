@@ -126,4 +126,6 @@ html[scheme='light'] {
 	--animProperties: var(--animDuration) var(--animTiming);
 	--animDuration: 360ms;
 	--animTiming: cubic-bezier(0.2, 0, 0, 1);
+
+	--sttng-iconScale: clamp(var(--scale-sm), 16vmin, var(--scale-lg));
 }

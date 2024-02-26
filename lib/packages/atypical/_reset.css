@@ -59,6 +59,7 @@ html {
 	font-size: var(--baseFontSize);
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+	font-size: var(--scale-nm);
 	font-style: normal;
 	font-variant-ligatures: normal;
 	font-optical-sizing: auto;
@@ -204,6 +205,13 @@ toggle {
 	&[data-variant='primary'] {
 		--c-background: var(--clr-accent);
 	}
+
+	&[data-variant='form-action'] {
+		--c-background: var(--clr-accent);
+		font-size: var(--scale-md);
+		height: var(--scale-5xl);
+		padding: 0 var(--scale-md);
+	}
 }
 
 text {
@@ -273,6 +281,7 @@ footer {
 
 column,
 fieldset,
+form,
 section {
 	display: flex;
 	flex-direction: column;
@@ -387,7 +396,7 @@ icon,
 	-webkit-font-feature-settings: 'liga';
 	font-feature-settings: 'liga';
 	font-weight: normal;
-	font-size: var(--scale-lg);
+	font-size: var(--sttng-iconScale);
 	font-style: normal;
 	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 400, 'opsz' 48;
 	height: max-content;

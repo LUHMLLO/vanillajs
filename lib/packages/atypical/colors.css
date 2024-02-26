@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+.bg {
+	&.--accent {
+		background-color: var(--clr-accent);
+	}
+	&.--context {
+		background-color: var(--clr-context);
+	}
+	&.--text {
+		background-color: var(--clr-text);
+	}
+	&.--subtext {
+		background-color: var(--clr-subtext);
+	}
+	&.--primary {
+		background-color: var(--clr-primary);
+	}
+	&.--secondary {
+		background-color: var(--clr-secondary);
+	}
+	&.--tertiary {
+		background-color: var(--clr-tertiary);
+	}
+}
+
+.clr {
+	&.--accent {
+		color: var(--clr-accent);
+	}
+	&.--context {
+		color: var(--clr-context);
+	}
+	&.--text {
+		color: var(--clr-text);
+	}
+	&.--subtext {
+		color: var(--clr-subtext);
+	}
+	&.--primary {
+		color: var(--clr-primary);
+	}
+	&.--secondary {
+		color: var(--clr-secondary);
+	}
+	&.--tertiary {
+		color: var(--clr-tertiary);
+	}
+}

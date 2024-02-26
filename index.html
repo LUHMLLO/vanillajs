@@ -30,6 +30,12 @@
 			<!--app-templates-->
 		</div>
 		<script type="module" src="/src/main.js"></script>
+
+		<script type="module" defer>
+			import ThemeSchemes from '/lib/utils/themeSchemes.js';
+			window.themeHandler = new ThemeSchemes();
+			themeHandler.load();
+		</script>
 		<!--app-modules-->
 	</body>
 </html>

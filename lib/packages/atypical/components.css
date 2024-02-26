@@ -523,6 +523,7 @@ dialog {
 field {
 	display: inline-flex;
 	flex-direction: column;
+	gap: var(--scale-5xs);
 
 	> dropdown,
 	input,
@@ -627,6 +628,56 @@ stepper {
 
 		&.active {
 			--step-background: var(--clr-accent);
+		}
+	}
+}
+
+label {
+	&[data-variant='checkbox'] {
+		display: inline-flex;
+		flex-shrink: 1;
+		overflow: hidden;
+
+		> input[type='checkbox'] {
+			all: unset;
+
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			aspect-ratio: 1/1;
+			cursor: pointer;
+			display: flex;
+			flex-shrink: 0;
+			height: var(--scale-2xl);
+			margin: calc(var(--scale-5xs) - 0.48rem) 0;
+			overflow: hidden;
+			position: relative;
+			width: var(--scale-2xl);
+
+			> p {
+				display: inline-block;
+				color: var(--clr-text);
+				font-size: var(--scale-md);
+				flex-shrink: 1;
+			}
+
+			&:after {
+				aspect-ratio: 1/1;
+				content: 'check_box_outline_blank';
+				display: block;
+				font-family: Material Symbols Outlined, Material Symbols Roudned,
+					Material Symbols Sharp;
+				font-size: var(--sttng-iconScale);
+				font-variation-settings: 'FILL' 0;
+				left: 50%;
+				position: absolute;
+				transform: translate(-50%, 0%);
+			}
+
+			&:checked:after {
+				content: 'check_box';
+				font-variation-settings: 'FILL' 1;
+			}
 		}
 	}
 }
