@@ -184,7 +184,7 @@ page.HTML(html`
 		</workspace__header>
 
 		<workspace__body>
-			<workspace__sidebar style="resize: horizontal;">
+			<workspace__sidebar>
 				<column class="gap --5xs">
 					<h6>Quick Actions</h6>
 					<button type="button" onclick="toggleModal('#command-palette')">
@@ -258,10 +258,8 @@ page.HTML(html`
 				<section class="flow-content">
 					<h2>Section name</h2>
 					<hr data-variant="horizontal" />
-					<grid
-						max="4"
-						style="--gap: var(--scale-2xl); --minWidth: clamp(12rem, 1vw, 16rem);">
-						<card data-variant="productpack" mini class="w-min --100">
+					<row class="scroll --x gap --2xl">
+						<card data-variant="productpack" mini class="w-min --75">
 							<component__header>
 								<row>
 									<tag> #1845915 </tag>
@@ -292,7 +290,7 @@ page.HTML(html`
 								</button>
 							</component__footer>
 						</card>
-						<card data-variant="productpack" mini class="w-min --100">
+						<card data-variant="productpack" mini class="w-min --75">
 							<component__header>
 								<row>
 									<tag> #1845915 </tag>
@@ -323,7 +321,224 @@ page.HTML(html`
 								</button>
 							</component__footer>
 						</card>
-					</grid>
+						<card data-variant="productpack" mini class="w-min --75">
+							<component__header>
+								<row>
+									<tag> #1845915 </tag>
+								</row>
+
+								<heading>
+									<span>Pack #54739</span>
+								</heading>
+
+								<dropdown disabled>
+									<toggle> Energy Efficiency </toggle>
+								</dropdown>
+							</component__header>
+
+							<component__body>
+								<productpack__product>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+										architecto quos, vitae est illum voluptates.
+									</p>
+								</productpack__product>
+							</component__body>
+
+							<component__footer>
+								<button type="button">
+									<icon>shopping_cart</icon>
+									<var>0</var>
+								</button>
+							</component__footer>
+						</card>
+						<card data-variant="productpack" mini class="w-min --75">
+							<component__header>
+								<row>
+									<tag> #1845915 </tag>
+								</row>
+
+								<heading>
+									<span>Pack #54739</span>
+								</heading>
+
+								<dropdown disabled>
+									<toggle> Energy Efficiency </toggle>
+								</dropdown>
+							</component__header>
+
+							<component__body>
+								<productpack__product>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+										architecto quos, vitae est illum voluptates.
+									</p>
+								</productpack__product>
+							</component__body>
+
+							<component__footer>
+								<button type="button">
+									<icon>shopping_cart</icon>
+									<var>0</var>
+								</button>
+							</component__footer>
+						</card>
+						<card data-variant="productpack" mini class="w-min --75">
+							<component__header>
+								<row>
+									<tag> #1845915 </tag>
+								</row>
+
+								<heading>
+									<span>Pack #54739</span>
+								</heading>
+
+								<dropdown disabled>
+									<toggle> Energy Efficiency </toggle>
+								</dropdown>
+							</component__header>
+
+							<component__body>
+								<productpack__product>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+										architecto quos, vitae est illum voluptates.
+									</p>
+								</productpack__product>
+							</component__body>
+
+							<component__footer>
+								<button type="button">
+									<icon>shopping_cart</icon>
+									<var>0</var>
+								</button>
+							</component__footer>
+						</card>
+						<card data-variant="productpack" mini class="w-min --75">
+							<component__header>
+								<row>
+									<tag> #1845915 </tag>
+								</row>
+
+								<heading>
+									<span>Pack #54739</span>
+								</heading>
+
+								<dropdown disabled>
+									<toggle> Energy Efficiency </toggle>
+								</dropdown>
+							</component__header>
+
+							<component__body>
+								<productpack__product>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+										architecto quos, vitae est illum voluptates.
+									</p>
+								</productpack__product>
+							</component__body>
+
+							<component__footer>
+								<button type="button">
+									<icon>shopping_cart</icon>
+									<var>0</var>
+								</button>
+							</component__footer>
+						</card>
+						<card data-variant="productpack" mini class="w-min --75">
+							<component__header>
+								<row>
+									<tag> #1845915 </tag>
+								</row>
+
+								<heading>
+									<span>Pack #54739</span>
+								</heading>
+
+								<dropdown disabled>
+									<toggle> Energy Efficiency </toggle>
+								</dropdown>
+							</component__header>
+
+							<component__body>
+								<productpack__product>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+										architecto quos, vitae est illum voluptates.
+									</p>
+								</productpack__product>
+							</component__body>
+
+							<component__footer>
+								<button type="button">
+									<icon>shopping_cart</icon>
+									<var>0</var>
+								</button>
+							</component__footer>
+						</card>
+						<card data-variant="productpack" mini class="w-min --75">
+							<component__header>
+								<row>
+									<tag> #1845915 </tag>
+								</row>
+
+								<heading>
+									<span>Pack #54739</span>
+								</heading>
+
+								<dropdown disabled>
+									<toggle> Energy Efficiency </toggle>
+								</dropdown>
+							</component__header>
+
+							<component__body>
+								<productpack__product>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+										architecto quos, vitae est illum voluptates.
+									</p>
+								</productpack__product>
+							</component__body>
+
+							<component__footer>
+								<button type="button">
+									<icon>shopping_cart</icon>
+									<var>0</var>
+								</button>
+							</component__footer>
+						</card>
+						<card data-variant="productpack" mini class="w-min --75">
+							<component__header>
+								<row>
+									<tag> #1845915 </tag>
+								</row>
+
+								<heading>
+									<span>Pack #54739</span>
+								</heading>
+
+								<dropdown disabled>
+									<toggle> Energy Efficiency </toggle>
+								</dropdown>
+							</component__header>
+
+							<component__body>
+								<productpack__product>
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
+										architecto quos, vitae est illum voluptates.
+									</p>
+								</productpack__product>
+							</component__body>
+
+							<component__footer>
+								<button type="button">
+									<icon>shopping_cart</icon>
+									<var>0</var>
+								</button>
+							</component__footer>
+						</card>
+					</row>
 				</section>
 				<section class="flow-content">
 					<h2>Section name</h2>
@@ -679,9 +894,7 @@ page.CSS(css`
 
 		> workspace__header {
 			align-items: center;
-
 			border-bottom: solid 0.125rem var(--clr-primary);
-
 			display: flex;
 			height: calc(var(--scale-5xl) * 2);
 			justify-content: space-between;
@@ -703,12 +916,12 @@ page.CSS(css`
 				flex-direction: column;
 				flex-shrink: 0;
 				gap: var(--scale-2xl);
-				max-width: max-content;
-				min-width: var(--scale-5xl);
+				max-width: calc(var(--scale-nm) * 16);
+				min-width: calc(var(--scale-nm) * 6);
 				overflow-x: clip;
 				overflow-y: auto;
 				padding: clamp(var(--scale-xl), 1vw, var(--scale-2xl));
-				width: 16rem;
+				width: 100%;
 				z-index: 2;
 
 				> * {
@@ -722,18 +935,6 @@ page.CSS(css`
 				&:last-of-type {
 					border-left: solid 0.125rem var(--clr-primary);
 				}
-
-				&::-webkit-resizer {
-					background-color: red;
-					height: 100px;
-					width: 10px;
-
-					top: 0;
-					right: 0;
-					bottom: 0;
-					margin: 0 0 0 auto;
-					position: absolute;
-				}
 			}
 
 			> workspace__content {
@@ -745,7 +946,6 @@ page.CSS(css`
 					clamp(1.5rem, 1vw, 3.5rem)
 					[content-start] 1fr [content-end]
 					clamp(1.5rem, 1vw, 3.5rem);
-
 				overflow-x: clip;
 				overflow-y: auto;
 				padding: var(--scale-2xl) 0;
@@ -761,9 +961,7 @@ page.CSS(css`
 
 		> workspace__footer {
 			align-items: center;
-
 			border-top: solid 0.125rem var(--clr-primary);
-
 			display: flex;
 			flex-shrink: 0;
 			height: calc(var(--scale-5xl) * 2);

@@ -10,6 +10,9 @@
 	outline: none;
 	padding: 0;
 	position: relative;
+
+	scroll-behavior: smooth;
+
 	-webkit-tap-highlight-color: transparent;
 	text-decoration: none;
 
@@ -26,9 +29,11 @@
 	--bar-color: trasparent;
 	--bar-size: var(--scale-5xs);
 	--bar-radius: var(--radius-3xs);
+
 	--thumb-color: color-mix(in srgb, var(--clr-tertiary), transparent 32%);
 	--thumb-size: var(--scale-5xs);
 	--thumb-radius: var(--radius-3xs);
+
 	scrollbar-color: var(--thumb-color) var(--bar-color);
 	scrollbar-width: auto;
 }
@@ -57,19 +62,24 @@ html {
 	font-kerning: auto;
 	font-family: var(--baseFontFamily);
 	font-size: var(--baseFontSize);
+
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+
 	font-size: var(--scale-nm);
 	font-style: normal;
 	font-variant-ligatures: normal;
 	font-optical-sizing: auto;
 	font-stretch: normal;
 	font-weight: var(--baseFontWeight);
+
 	/* letter-spacing: .0125rem; */
+
 	line-height: var(--baseLineHeight);
 	overflow: clip;
 	text-align: left;
 	text-rendering: optimizeLegibility;
+
 	/* word-spacing: .0625rem; */
 }
 
