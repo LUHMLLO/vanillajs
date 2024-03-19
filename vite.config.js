@@ -1,10 +1,11 @@
 import path from 'path';
 import buildOptions from './tools/vite.buildOptions.js';
+import { terserMinify } from './tools/vite.terserMinify.js'
 import Pager from './lib/packages/pager/vite.mjs';
 import { defineConfig } from 'vite';
 
 // @ts-ignore
-export default defineConfig(({}) => {
+export default defineConfig(() => {
 	return {
 		build: {
 			...buildOptions,
@@ -13,7 +14,7 @@ export default defineConfig(({}) => {
 		esbuild: {
 			drop: ['console', 'debugger'],
 		},
-		plugins: [Pager],
+		plugins: [Pager, terserMinify()],
 		publicDir: './public',
 		resolve: {
 			alias: {

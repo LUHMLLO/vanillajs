@@ -13,6 +13,7 @@ page.SEO({
 
 let js = String.raw;
 page.JS(js`
+	import "/assets/js/lit/index.js"
 	import Drops from "/assets/js/drops.js";
 	const drops = new Drops();
 `);
@@ -20,6 +21,19 @@ page.JS(js`
 let html = String.raw;
 page.HTML(html`
 	<grid max="4" demo>
+		<column>
+			<lm-radio
+				label="This Radio contains an input(text)"
+				group="radio-component-showcase"
+				checked>
+				<input type="text" name="" id="" />
+			</lm-radio>
+			<lm-radio
+				label="This Radio contains a textarea"
+				group="radio-component-showcase">
+				<textarea name="" id="" cols="30" rows="10"></textarea>
+			</lm-radio>
+		</column>
 		<column>
 			<h1>Heading 1</h1>
 		</column>
@@ -341,7 +355,9 @@ page.HTML(html`
 					<dropdown>
 						<toggle> Choose Product Type </toggle>
 						<dialog data-role="dropmenu" data-position="bottom">
-							<button type="button" data-trigger="close">Energy Efficiency</button>
+							<button type="button" data-trigger="close">
+								Energy Efficiency
+							</button>
 							<button type="button" data-trigger="close">Geothermal</button>
 							<button type="button" data-trigger="close">HVAC</button>
 						</dialog>
